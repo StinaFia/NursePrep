@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-PER-003
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-PER-003
+  aihe: LAA
+  aihekori: PER
+  tier: 0
+  questionText: "Mik\xE4 seuraavista l\xE4\xE4kemuodoista k\xE4ytet\xE4\xE4n tavallisimmin
+    hengitysteiden kautta annosteltavan l\xE4\xE4kkeen ottamiseen?"
+  options:
+  - Tabletti
+  - Inhalaattori
+  - Voide
+  - "L\xE4\xE4kelaastari"
+  correctIndices: 01000000
+  feedbackCorrect: Hienoa! Vastasit oikein.
+  feedbackIncorrect: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
+    Oppiminen rakentuu v\xE4hitellen, eik\xE4 kaikkea tarvitse osata ensimm\xE4isell\xE4
+    kerralla. Tutustu rauhassa oikeaan vastaukseen ja sen perusteluun \u2013 seuraavalla
+    kerralla osaat jo enemm\xE4n."
+  perustelu: "Inhalaattorin avulla l\xE4\xE4ke annostellaan hengitysteihin."
+  ammattilaisenMerkki: "Oikean l\xE4\xE4kemuodon ja annostelutavan tunnistaminen
+    auttaa turvallisessa l\xE4\xE4kehoidossa."
