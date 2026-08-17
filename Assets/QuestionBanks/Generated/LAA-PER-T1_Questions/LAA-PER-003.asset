@@ -24,11 +24,11 @@ MonoBehaviour:
   - Voide
   - "L\xE4\xE4kelaastari"
   correctIndices: 01000000
-  feedbackCorrect: Hienoa! Vastasit oikein.
-  feedbackIncorrect: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
     Oppiminen rakentuu v\xE4hitellen, eik\xE4 kaikkea tarvitse osata ensimm\xE4isell\xE4
     kerralla. Tutustu rauhassa oikeaan vastaukseen ja sen perusteluun \u2013 seuraavalla
     kerralla osaat jo enemm\xE4n."
-  perustelu: "Inhalaattorin avulla l\xE4\xE4ke annostellaan hengitysteihin."
-  ammattilaisenMerkki: "Oikean l\xE4\xE4kemuodon ja annostelutavan tunnistaminen
-    auttaa turvallisessa l\xE4\xE4kehoidossa."
+  rationale: "Inhalaattorin avulla l\xE4\xE4ke annostellaan hengitysteihin."
+  professionalPatch: "Oikean l\xE4\xE4kemuodon ja annostelutavan tunnistaminen auttaa
+    turvallisessa l\xE4\xE4kehoidossa."

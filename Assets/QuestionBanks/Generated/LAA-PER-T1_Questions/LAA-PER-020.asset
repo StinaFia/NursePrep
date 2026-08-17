@@ -23,13 +23,13 @@ MonoBehaviour:
   - Laskimoon
   - Ihon alle
   correctIndices: 00000000
-  feedbackCorrect: Hienoa! Vastasit oikein.
-  feedbackIncorrect: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
     Oppiminen rakentuu v\xE4hitellen, eik\xE4 kaikkea tarvitse osata ensimm\xE4isell\xE4
     kerralla. Tutustu rauhassa oikeaan vastaukseen ja sen perusteluun \u2013 seuraavalla
     kerralla osaat jo enemm\xE4n."
-  perustelu: "Inhalaattori on l\xE4\xE4keannostelija, jonka avulla l\xE4\xE4ke saadaan
+  rationale: "Inhalaattori on l\xE4\xE4keannostelija, jonka avulla l\xE4\xE4ke saadaan
     hengitysteihin."
-  ammattilaisenMerkki: "Opettele erottamaan l\xE4\xE4kemuodot, annostelulaitteet
-    ja antoreitit toisistaan \u2013 yhdess\xE4 ne muodostavat turvallisen l\xE4\xE4kehoidon
+  professionalPatch: "Opettele erottamaan l\xE4\xE4kemuodot, annostelulaitteet ja
+    antoreitit toisistaan \u2013 yhdess\xE4 ne muodostavat turvallisen l\xE4\xE4kehoidon
     perustan."

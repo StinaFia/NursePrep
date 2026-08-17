@@ -23,11 +23,10 @@ MonoBehaviour:
   - Lihakseen
   - Korvaan
   correctIndices: 00000000
-  feedbackCorrect: Hienoa! Vastasit oikein.
-  feedbackIncorrect: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
     Oppiminen rakentuu v\xE4hitellen, eik\xE4 kaikkea tarvitse osata ensimm\xE4isell\xE4
     kerralla. Tutustu rauhassa oikeaan vastaukseen ja sen perusteluun \u2013 seuraavalla
     kerralla osaat jo enemm\xE4n."
-  perustelu: "Per rectum tarkoittaa l\xE4\xE4kkeen antamista per\xE4suoleen."
-  ammattilaisenMerkki: "Latinankieliset lyhenteet ovat edelleen k\xE4yt\xF6ss\xE4
-    l\xE4\xE4kem\xE4\xE4r\xE4yksiss\xE4."
+  rationale: "Per rectum tarkoittaa l\xE4\xE4kkeen antamista per\xE4suoleen."
+  professionalPatch: "Latinankieliset lyhenteet ovat edelleen k\xE4yt\xF6ss\xE4 l\xE4\xE4kem\xE4\xE4r\xE4yksiss\xE4."

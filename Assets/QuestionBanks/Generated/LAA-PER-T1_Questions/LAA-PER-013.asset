@@ -25,14 +25,14 @@ MonoBehaviour:
   - "Antoreitti vaikuttaa vain l\xE4\xE4kkeen hintaan."
   - "Antoreitill\xE4 ei ole merkityst\xE4, kun l\xE4\xE4ke on oikea."
   correctIndices: 00000000
-  feedbackCorrect: Hienoa! Vastasit oikein.
-  feedbackIncorrect: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
     Oppiminen rakentuu v\xE4hitellen, eik\xE4 kaikkea tarvitse osata ensimm\xE4isell\xE4
     kerralla. Tutustu rauhassa oikeaan vastaukseen ja sen perusteluun \u2013 seuraavalla
     kerralla osaat jo enemm\xE4n."
-  perustelu: "L\xE4\xE4kkeen antoreitti vaikuttaa siihen, miten l\xE4\xE4ke annetaan,
+  rationale: "L\xE4\xE4kkeen antoreitti vaikuttaa siihen, miten l\xE4\xE4ke annetaan,
     kuinka nopeasti se alkaa vaikuttaa ja miten l\xE4\xE4ke imeytyy elimist\xF6\xF6n.
     Oikean antoreitin varmistaminen on osa turvallista l\xE4\xE4kehoitoa."
-  ammattilaisenMerkki: "Tarkista aina l\xE4\xE4kem\xE4\xE4r\xE4yksest\xE4 my\xF6s
-    l\xE4\xE4kkeen antoreitti. Oikea l\xE4\xE4ke v\xE4\xE4r\xE4ll\xE4 antoreitill\xE4
-    annettuna voi aiheuttaa vakavia haittoja."
+  professionalPatch: "Tarkista aina l\xE4\xE4kem\xE4\xE4r\xE4yksest\xE4 my\xF6s l\xE4\xE4kkeen
+    antoreitti. Oikea l\xE4\xE4ke v\xE4\xE4r\xE4ll\xE4 antoreitill\xE4 annettuna
+    voi aiheuttaa vakavia haittoja."

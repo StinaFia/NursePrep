@@ -25,10 +25,10 @@ namespace NursingQuiz.Data
         public List<int> correctIndices = new List<int>();
 
         [Header("Feedback")]
-        [TextArea(1, 3)] public string feedbackCorrect;
-        [TextArea(1, 3)] public string feedbackIncorrect;
-        [TextArea(2, 5)] public string perustelu;
-        [TextArea(1, 4)] public string ammattilaisenMerkki;
+        [TextArea(1, 3)] public string correctFeedback;
+        [TextArea(1, 3)] public string incorrectFeedback;
+        [TextArea(2, 5)] public string rationale;
+        [TextArea(1, 4)] public string professionalPatch;
 
         /// <summary>
         /// Whether the answer UI should allow selecting more than one option.

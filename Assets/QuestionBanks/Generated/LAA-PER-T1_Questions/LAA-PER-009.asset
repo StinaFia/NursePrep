@@ -23,10 +23,10 @@ MonoBehaviour:
   - Laskimoon
   - Suun kautta
   correctIndices: 00000000
-  feedbackCorrect: Hienoa! Vastasit oikein.
-  feedbackIncorrect: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
     Oppiminen rakentuu v\xE4hitellen, eik\xE4 kaikkea tarvitse osata ensimm\xE4isell\xE4
     kerralla. Tutustu rauhassa oikeaan vastaukseen ja sen perusteluun \u2013 seuraavalla
     kerralla osaat jo enemm\xE4n."
-  perustelu: "Voide on l\xE4\xE4kemuoto."
-  ammattilaisenMerkki: "Erota aina l\xE4\xE4kemuoto ja antoreitti toisistaan."
+  rationale: "Voide on l\xE4\xE4kemuoto."
+  professionalPatch: "Erota aina l\xE4\xE4kemuoto ja antoreitti toisistaan."

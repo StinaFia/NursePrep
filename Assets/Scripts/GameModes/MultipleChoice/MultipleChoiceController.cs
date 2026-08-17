@@ -28,6 +28,20 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
         public int CurrentQuestionNumber => currentIndex + 1;
         public int TotalQuestionsThisRound => roundQuestions?.Count ?? 0;
+        public bool HasSelection => currentSelection.Count > 0;
+        public bool RoundFinished => roundQuestions != null && currentIndex >= roundQuestions.Count;
+
+        public QuestionData LastAnsweredQuestion { get; private set; }
+        public bool LastAnswerWasCorrect { get; private set; }
+
+        public int CorrectCount => correctCount;
+        public int TotalAnswered => totalAnswered;
+
+        /// <summary>Assign banks at runtime (e.g. from a test-scene bootstrapper). The Inspector list still works too.</summary>
+        public void SetAvailableBanks(IEnumerable<QuestionBank> banks)
+        {
+            availableBanks = banks.ToList();
+        }
 
         public override void StartRound()
         {
@@ -78,8 +92,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
             totalAnswered++;
             if (correct) correctCount++;
 
-            // TODO: notify the view layer to show feedbackCorrect/feedbackIncorrect,
-            // perustelu, and ammattilaisenMerkki here, before advancing.
+            LastAnsweredQuestion = q;
+            LastAnswerWasCorrect = correct;
 
             currentIndex++;
             currentSelection.Clear();

@@ -23,12 +23,12 @@ MonoBehaviour:
   - "L\xE4\xE4kkeen annoskokoa"
   - "L\xE4\xE4kkeen vaikutusaikaa"
   correctIndices: 01000000
-  feedbackCorrect: Hienoa! Vastasit oikein.
-  feedbackIncorrect: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
     Oppiminen rakentuu v\xE4hitellen, eik\xE4 kaikkea tarvitse osata ensimm\xE4isell\xE4
     kerralla. Tutustu rauhassa oikeaan vastaukseen ja sen perusteluun \u2013 seuraavalla
     kerralla osaat jo enemm\xE4n."
-  perustelu: "L\xE4\xE4kemuoto kertoo, millaisessa muodossa l\xE4\xE4ke on valmistettu."
-  ammattilaisenMerkki: "Sama l\xE4\xE4keaine voi olla saatavilla useana eri l\xE4\xE4kemuotona.
+  rationale: "L\xE4\xE4kemuoto kertoo, millaisessa muodossa l\xE4\xE4ke on valmistettu."
+  professionalPatch: "Sama l\xE4\xE4keaine voi olla saatavilla useana eri l\xE4\xE4kemuotona.
     Oikean l\xE4\xE4kemuodon valinta tukee turvallista l\xE4\xE4kehoitoa ja potilaan
     yksil\xF6llisi\xE4 tarpeita."

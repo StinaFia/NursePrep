@@ -216,10 +216,10 @@ namespace NursingQuiz.EditorTools
                 q.questionText = Get(row, col, "Kysymys");
                 q.options = options;
                 q.correctIndices = correctIndices;
-                q.feedbackCorrect = Get(row, col, "Palaute oikein");
-                q.feedbackIncorrect = Get(row, col, "Palaute väärin");
-                q.perustelu = Get(row, col, "Perustelu");
-                q.ammattilaisenMerkki = col.ContainsKey("Ammattilaisen merkki") ? Get(row, col, "Ammattilaisen merkki") : "";
+                q.correctFeedback = Get(row, col, "Palaute oikein");
+                q.incorrectFeedback = Get(row, col, "Palaute väärin");
+                q.rationale = Get(row, col, "Perustelu");
+                q.professionalPatch = col.ContainsKey("Ammattilaisen merkki") ? Get(row, col, "Ammattilaisen merkki") : "";
 
                 EditorUtility.SetDirty(q);
                 bank.questions.Add(q);

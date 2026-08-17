@@ -23,11 +23,11 @@ MonoBehaviour:
   - Posken limakalvolle
   - "Nen\xE4\xE4n"
   correctIndices: 01000000
-  feedbackCorrect: Hienoa! Vastasit oikein.
-  feedbackIncorrect: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
     Oppiminen rakentuu v\xE4hitellen, eik\xE4 kaikkea tarvitse osata ensimm\xE4isell\xE4
     kerralla. Tutustu rauhassa oikeaan vastaukseen ja sen perusteluun \u2013 seuraavalla
     kerralla osaat jo enemm\xE4n."
-  perustelu: "Sub lingua tarkoittaa l\xE4\xE4kkeen antamista kielen alle."
-  ammattilaisenMerkki: "Kielen alle annettavat l\xE4\xE4kkeet imeytyv\xE4t nopeasti
+  rationale: "Sub lingua tarkoittaa l\xE4\xE4kkeen antamista kielen alle."
+  professionalPatch: "Kielen alle annettavat l\xE4\xE4kkeet imeytyv\xE4t nopeasti
     limakalvolta."
