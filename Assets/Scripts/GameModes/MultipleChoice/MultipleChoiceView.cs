@@ -18,14 +18,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
     [RequireComponent(typeof(MultipleChoiceController))]
     public class MultipleChoiceView : MonoBehaviour
     {
-        [Header("Test data (temporary -- a real menu will set aihe/tier at runtime later)")]
-        [Tooltip("Drag ALL your imported QuestionBank assets here, across every theme and tier. " +
-                 "The Test Aihe / Test Tier fields below pick which one actually plays -- this is " +
-                 "exactly what a real theme/difficulty menu will do automatically once it exists.")]
-        [SerializeField] private List<QuestionBank> testBanks = new List<QuestionBank>();
-        [SerializeField] private string testAihe = "LAA";
-        [SerializeField] private DifficultyTier testTier = DifficultyTier.T1;
-        [SerializeField] private int questionCount = 5;
+        [Header("Round setup")]
+        [SerializeField] private int defaultQuestionCount = 5;
 
         [Header("Question")]
         [SerializeField] private TMP_Text questionText;
@@ -49,17 +43,21 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [SerializeField] private TMP_Text completeText;
 
         [Header("Colors")]
-        [SerializeField] private Color normalOptionColor = Color.white;
-        [SerializeField] private Color selectedOptionColor = new Color(0.55f, 0.75f, 1f);
-        [SerializeField] private Color correctColor = new Color(0.6f, 0.85f, 0.6f);
+        [SerializeField] private Color normalOptionColor = new Color(0.953f, 0.957f, 0.945f); // #F3F4F1
+        [SerializeField] private Color selectedOptionColor = new Color(0.812f, 0.890f, 0.941f); // #CFE3F0
+        [SerializeField] private Color correctColor = new Color(0.812f, 0.910f, 0.827f); // #CFE8D3
 
         private MultipleChoiceController controller;
 
-        private void Start()
+        private void Awake()
         {
             controller = GetComponent<MultipleChoiceController>();
 
-            if (!ValidateReferences()) return;
+            if (!ValidateReferences())
+            {
+                enabled = false;
+                return;
+            }
 
             for (int i = 0; i < options.Count; i++)
             {
@@ -71,21 +69,47 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             feedbackPanel.SetActive(false);
             completePanel.SetActive(false);
+        }
 
-            controller.SetAvailableBanks(testBanks);
+        /// <summary>
+        /// Starts a round for the given theme/tier, using whichever bank in the supplied list
+        /// matches. Called by GameFlowController once the player has picked both a theme and
+        /// a difficulty -- this is the real entry point now, not Awake/Start, since the same
+        /// view needs to be reusable across multiple rounds without the player restarting the game.
+        /// </summary>
+        public void BeginRound(List<QuestionBank> banks, string aihe, DifficultyTier tier, int questionCount = -1)
+        {
+            ResetUIForNewRound();
 
-            if (!testBanks.Any(b => b.aihe == testAihe && b.tier == testTier))
+            controller.SetAvailableBanks(banks);
+
+            if (!banks.Any(b => b.aihe == aihe && b.tier == tier))
             {
-                var available = string.Join(", ", testBanks.Select(b => $"{b.aihe}/{b.tier}"));
-                Debug.LogError($"MultipleChoiceView: no bank in Test Banks matches aihe='{testAihe}', tier={testTier}. " +
-                                $"Available combinations: [{available}]. Check for typos in Test Aihe.");
+                var available = string.Join(", ", banks.Select(b => $"{b.aihe}/{b.tier}"));
+                Debug.LogError($"MultipleChoiceView: no bank matches aihe='{aihe}', tier={tier}. " +
+                                $"Available: [{available}].");
                 return;
             }
 
-            controller.Setup(testAihe, testTier, questionCount);
+            controller.Setup(aihe, tier, questionCount > 0 ? questionCount : defaultQuestionCount);
             controller.StartRound();
 
             RenderCurrentQuestion();
+        }
+
+        /// <summary>
+        /// Re-activates everything ShowRoundComplete() hid last time, so a second (or third...)
+        /// round works correctly instead of leaving the question UI permanently hidden after
+        /// the first round ends. Without this, going Menu -> Play again would show a blank screen.
+        /// </summary>
+        private void ResetUIForNewRound()
+        {
+            questionText.gameObject.SetActive(true);
+            progressText.gameObject.SetActive(true);
+            submitButton.gameObject.SetActive(true);
+            foreach (var o in options) o.gameObject.SetActive(true);
+            feedbackPanel.SetActive(false);
+            completePanel.SetActive(false);
         }
 
         /// <summary>
@@ -96,7 +120,6 @@ namespace NursingQuiz.GameModes.MultipleChoice
         private bool ValidateReferences()
         {
             var missing = new List<string>();
-            if (testBanks == null || testBanks.Count == 0) missing.Add("Test Banks (list is empty)");
             if (questionText == null) missing.Add("Question Text");
             if (progressText == null) missing.Add("Progress Text");
             if (options == null || options.Count == 0) missing.Add("Options (list is empty)");
