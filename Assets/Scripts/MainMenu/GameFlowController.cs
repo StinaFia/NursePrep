@@ -10,9 +10,14 @@ using NursingQuiz.GameModes.MultipleChoice;
 namespace NursingQuiz.UI
 {
     /// <summary>
-    /// Owns screen navigation: Main Menu -> Theme Select -> Difficulty Select -> Quiz.
+    /// Owns screen navigation: Main Menu -> combined Theme + Difficulty Select -> Quiz.
     /// Holds all imported content (themes + question banks) and hands the relevant slice
     /// to MultipleChoiceView once the player has made both choices.
+    ///
+    /// Theme and difficulty are on ONE screen (theme list left, difficulty right) --
+    /// clicking a theme updates the difficulty side in place rather than navigating to a
+    /// new screen. The first available theme is auto-selected on entry so the difficulty
+    /// side is never empty.
     ///
     /// Theme buttons are generated at runtime from Available Themes -- adding a new theme
     /// later is just dragging its ThemeInfo and QuestionBank assets into the lists below,
@@ -27,27 +32,29 @@ namespace NursingQuiz.UI
 
         [Header("Panels")]
         [SerializeField] private GameObject mainMenuPanel;
-        [SerializeField] private GameObject themeSelectPanel;
-        [SerializeField] private GameObject difficultySelectPanel;
+        [SerializeField] private GameObject themeAndDifficultyPanel;
         [SerializeField] private GameObject quizScreen;
 
         [Header("Main Menu")]
-        [SerializeField] private Button playButton;
+        [SerializeField] private Button multipleChoiceModeButton;
 
-        [Header("Theme Select")]
+        [Header("Theme + Difficulty Select - Left column (themes)")]
         [SerializeField] private Transform themeButtonContainer;
         [SerializeField] private ThemeButtonUI themeButtonTemplate;
-        [SerializeField] private Button themeBackButton;
 
-        [Header("Difficulty Select")]
-        [SerializeField] private TMP_Text difficultyThemeTitle;
+        [Header("Theme + Difficulty Select - Right column (difficulty)")]
         [SerializeField] private Button t1Button;
         [SerializeField] private TMP_Text t1ObjectiveText;
         [SerializeField] private Button t2Button;
         [SerializeField] private TMP_Text t2ObjectiveText;
         [SerializeField] private Button t3Button;
         [SerializeField] private TMP_Text t3ObjectiveText;
-        [SerializeField] private Button difficultyBackButton;
+
+        [SerializeField] private Button selectBackButton;
+
+        [Header("Theme highlight colors")]
+        [SerializeField] private Color themeNormalColor = new Color(0.953f, 0.957f, 0.945f); // #F3F4F1
+        [SerializeField] private Color themeSelectedColor = new Color(0.812f, 0.890f, 0.941f); // #CFE3F0
 
         [Header("Quiz")]
         [SerializeField] private MultipleChoiceView quizView;
@@ -56,12 +63,12 @@ namespace NursingQuiz.UI
         [SerializeField] private Button backToMenuButton;
 
         private string selectedAihe;
+        private readonly List<ThemeButtonUI> spawnedThemeButtons = new List<ThemeButtonUI>();
 
         private void Awake()
         {
-            playButton.onClick.AddListener(ShowThemeSelect);
-            themeBackButton.onClick.AddListener(ShowMainMenu);
-            difficultyBackButton.onClick.AddListener(ShowThemeSelect);
+            multipleChoiceModeButton.onClick.AddListener(ShowThemeAndDifficultySelect);
+            selectBackButton.onClick.AddListener(ShowMainMenu);
             t1Button.onClick.AddListener(() => StartQuiz(DifficultyTier.T1));
             t2Button.onClick.AddListener(() => StartQuiz(DifficultyTier.T2));
             t3Button.onClick.AddListener(() => StartQuiz(DifficultyTier.T3));
@@ -74,7 +81,7 @@ namespace NursingQuiz.UI
 
         private void ShowMainMenu() => SetActivePanel(mainMenuPanel);
 
-        private void ShowThemeSelect()
+        private void ShowThemeAndDifficultySelect()
         {
             // Clear any buttons from a previous visit, but keep the template itself.
             foreach (Transform child in themeButtonContainer)
@@ -82,30 +89,42 @@ namespace NursingQuiz.UI
                 if (child == themeButtonTemplate.transform) continue;
                 Destroy(child.gameObject);
             }
+            spawnedThemeButtons.Clear();
 
             foreach (var theme in availableThemes)
             {
                 var clone = Instantiate(themeButtonTemplate, themeButtonContainer);
                 clone.gameObject.SetActive(true);
                 clone.Label.text = string.IsNullOrEmpty(theme.displayName) ? theme.aihekori : theme.displayName;
+                clone.Aihe = theme.aihe;
 
                 var capturedAihe = theme.aihe;
-                clone.Button.onClick.AddListener(() => ShowDifficultySelect(capturedAihe));
+                clone.Button.onClick.AddListener(() => SelectTheme(capturedAihe));
+
+                spawnedThemeButtons.Add(clone);
             }
 
-            SetActivePanel(themeSelectPanel);
+            SetActivePanel(themeAndDifficultyPanel);
+
+            // Auto-select the first theme so the difficulty side is never empty on entry.
+            if (availableThemes.Count > 0)
+                SelectTheme(availableThemes[0].aihe);
         }
 
-        private void ShowDifficultySelect(string aihe)
+        /// <summary>
+        /// Updates the right-hand (difficulty) side in place and highlights the chosen theme
+        /// on the left -- no panel switch, this is what makes it feel like one combined screen.
+        /// </summary>
+        private void SelectTheme(string aihe)
         {
             selectedAihe = aihe;
-            difficultyThemeTitle.text = aihe;
 
             SetupTierButton(t1Button, t1ObjectiveText, aihe, DifficultyTier.T1);
             SetupTierButton(t2Button, t2ObjectiveText, aihe, DifficultyTier.T2);
             SetupTierButton(t3Button, t3ObjectiveText, aihe, DifficultyTier.T3);
 
-            SetActivePanel(difficultySelectPanel);
+            foreach (var themeButton in spawnedThemeButtons)
+                themeButton.Background.color = themeButton.Aihe == aihe ? themeSelectedColor : themeNormalColor;
         }
 
         /// <summary>
@@ -132,8 +151,7 @@ namespace NursingQuiz.UI
         private void SetActivePanel(GameObject panelToShow)
         {
             mainMenuPanel.SetActive(panelToShow == mainMenuPanel);
-            themeSelectPanel.SetActive(panelToShow == themeSelectPanel);
-            difficultySelectPanel.SetActive(panelToShow == difficultySelectPanel);
+            themeAndDifficultyPanel.SetActive(panelToShow == themeAndDifficultyPanel);
             quizScreen.SetActive(panelToShow == quizScreen);
         }
     }
