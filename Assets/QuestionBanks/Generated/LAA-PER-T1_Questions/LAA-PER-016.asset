@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-PER-016
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-PER-016
+  aihe: LAA
+  aihekori: PER
+  tier: 0
+  questionText: "Mit\xE4 tarkoittaa l\xE4\xE4kkeen antaminen vag.?"
+  options:
+  - Virtsarakkoon
+  - "Em\xE4ttimeen"
+  - "Per\xE4suoleen"
+  - "Nen\xE4\xE4n"
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Hyv\xE4 yritys! T\xE4ll\xE4 kertaa oikea vastaus oli toinen.
+    Oppiminen rakentuu v\xE4hitellen, eik\xE4 kaikkea tarvitse osata ensimm\xE4isell\xE4
+    kerralla. Tutustu rauhassa oikeaan vastaukseen ja sen perusteluun \u2013 seuraavalla
+    kerralla osaat jo enemm\xE4n."
+  rationale: "Per vaginam tarkoittaa l\xE4\xE4kkeen antamista em\xE4ttimeen."
+  professionalPatch: "Huolehdi potilaan yksityisyydest\xE4 ja kerro rauhallisesti
+    etuk\xE4teen, mit\xE4 olet tekem\xE4ss\xE4. Tarvittaessa l\xE4\xE4kkeen annostelussa
+    voidaan k\xE4ytt\xE4\xE4 l\xE4\xE4kepakkauksen mukana toimitettavaa asetinta
+    valmistajan ohjeiden mukaisesti."
