@@ -15,10 +15,6 @@ namespace NursingQuiz.Data
         public DifficultyTier tier;
         public string sourceFileName;
 
-        [Tooltip("This tier's learning objective (Oppimistavoite), shown to the player once they've picked this difficulty.")]
-        [TextArea(2, 6)]
-        public string oppimistavoite;
-
         public List<QuestionData> questions = new List<QuestionData>();
     }
 }

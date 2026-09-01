@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-003
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-003
+  aihe: LAA
+  aihekori: TUR
+  tier: 0
+  questionText: "Miksi l\xE4\xE4kkeet tulee s\xE4ilytt\xE4\xE4 valmistajan ohjeiden
+    mukaisesti?"
+  options:
+  - "Jotta l\xE4\xE4ke s\xE4ilytt\xE4\xE4 tehonsa ja turvallisuutensa"
+  - "Koska pakkaukset n\xE4ytt\xE4v\xE4t siistimmilt\xE4"
+  - "Vain l\xE4\xE4kekaapin j\xE4rjestyksen vuoksi"
+  - "S\xE4ilytyksell\xE4 ei ole vaikutusta"
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista viel\xE4, miksi valmistajan s\xE4ilytysohjeita tulee
+    aina noudattaa."
+  rationale: "Virheellinen s\xE4ilytys voi heikent\xE4\xE4 l\xE4\xE4kkeen laatua,
+    tehoa ja turvallisuutta."
+  professionalPatch: "Oikea s\xE4ilytys on t\xE4rke\xE4 osa turvallista l\xE4\xE4kehoitoa."

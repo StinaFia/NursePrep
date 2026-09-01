@@ -17,12 +17,13 @@ namespace NursingQuiz.EditorTools
     /// Source: Assets/QuestionBanks/CSV/**/*.csv
     /// Output: Assets/QuestionBanks/Generated/
     ///
-    /// FILENAME CONVENTION (see project notes):
+    /// FILENAME CONVENTION:
     ///   AIHE-AIHEKORI-anything_tN_anything.csv
     ///   e.g. LAA-PER-laakehoito_t1_tietovisa_perustiedot.csv
     ///   -> aihe = LAA, aihekori = PER, tier = T1
     ///
-    /// CSV COLUMNS (header row required, must match exactly):
+    /// CSV COLUMNS (header row required, must match exactly -- may have a preamble row like
+    /// "Oppimistavoite: ..." above it, the importer finds the header row wherever it is):
     ///   Tunniste, Kysymys, A, B, C, D, Oikea vastaus,
     ///   Palaute oikein, Palaute väärin, Perustelu, Ammattilaisen merkki
     ///
@@ -31,7 +32,7 @@ namespace NursingQuiz.EditorTools
     ///   T2/T3, multiple  -> comma-separated letters, e.g. "A,C"
     ///   T3, zero correct -> literal keyword "EI YHTAAN" (accents optional, case-insensitive)
     ///
-    /// When exporting from Excel, use "CSV UTF-8 (Comma delimited)" to keep ä/ö/å intact.
+    /// Delimiter (comma/semicolon/tab) is auto-detected per file.
     /// </summary>
     public static class QuestionBankImporter
     {
@@ -40,6 +41,7 @@ namespace NursingQuiz.EditorTools
         private const string ThemesFolder = OutputFolder + "/Themes";
 
         private static readonly Regex TierPattern = new Regex(@"_t([1-3])_", RegexOptions.IgnoreCase);
+        private static readonly char[] CandidateDelimiters = { ',', ';', '\t' };
 
         private static readonly string[] RequiredColumns =
         {
@@ -118,9 +120,6 @@ namespace NursingQuiz.EditorTools
                 return null;
             }
 
-            // The header row isn't always the first line -- sheets commonly have a leading
-            // "Oppimistavoite: ..." line above the real column headers. Find whichever row
-            // actually contains "Tunniste" as a cell and treat that as the header.
             int headerIndex = rows.FindIndex(r => r.Any(cell => cell.Trim().Equals("Tunniste", StringComparison.OrdinalIgnoreCase)));
             if (headerIndex == -1)
             {
@@ -142,7 +141,7 @@ namespace NursingQuiz.EditorTools
             }
 
             var objective = ExtractObjective(rows, headerIndex);
-            UpsertThemeInfo(aihe, aihekori);
+            UpsertThemeInfo(aihe, aihekori, objective, fileName, errors);
 
             var bankAssetPath = $"{OutputFolder}/{aihe}-{aihekori}-{tier}.asset";
             var bank = AssetDatabase.LoadAssetAtPath<QuestionBank>(bankAssetPath);
@@ -156,7 +155,6 @@ namespace NursingQuiz.EditorTools
             bank.aihekori = aihekori;
             bank.tier = tier;
             bank.sourceFileName = Path.GetFileName(path);
-            bank.oppimistavoite = objective ?? "";
             bank.questions.Clear();
 
             var questionsFolder = $"{OutputFolder}/{aihe}-{aihekori}-{tier}_Questions";
@@ -229,11 +227,6 @@ namespace NursingQuiz.EditorTools
             return bank;
         }
 
-        /// <summary>
-        /// Looks through the preamble rows above the header (e.g. a leading "Oppimistavoite: ..."
-        /// line) for a cell that starts with "Oppimistavoite" and returns the text after the colon.
-        /// Returns null if no such line is present -- not every sheet needs one.
-        /// </summary>
         private static string ExtractObjective(List<List<string>> rows, int headerIndex)
         {
             for (int i = 0; i < headerIndex; i++)
@@ -252,12 +245,7 @@ namespace NursingQuiz.EditorTools
             return null;
         }
 
-        /// <summary>
-        /// Creates the theme-level ThemeInfo asset for this aihe+aihekori if it doesn't exist yet.
-        /// Only holds the display name -- the learning objective lives per-tier on QuestionBank
-        /// instead (see ImportFile), since it's written separately for T1/T2/T3.
-        /// </summary>
-        private static void UpsertThemeInfo(string aihe, string aihekori)
+        private static void UpsertThemeInfo(string aihe, string aihekori, string objective, string fileName, List<string> errors)
         {
             Directory.CreateDirectory(ThemesFolder);
             var path = $"{ThemesFolder}/{aihe}-{aihekori}.asset";
@@ -273,6 +261,20 @@ namespace NursingQuiz.EditorTools
             if (string.IsNullOrEmpty(theme.displayName))
                 theme.displayName = aihekori;
 
+            if (!string.IsNullOrWhiteSpace(objective))
+            {
+                if (!string.IsNullOrEmpty(theme.oppimistavoite) && theme.oppimistavoite != objective)
+                {
+                    errors.Add($"{fileName}: this file's Oppimistavoite text differs from one already imported " +
+                               $"for theme {aihe}-{aihekori}. Keeping the first version found -- align the wording " +
+                               "across the T1/T2/T3 files for this theme if that wasn't intentional.");
+                }
+                else
+                {
+                    theme.oppimistavoite = objective;
+                }
+            }
+
             EditorUtility.SetDirty(theme);
         }
 
@@ -281,13 +283,12 @@ namespace NursingQuiz.EditorTools
             aihe = aihekori = null;
             tier = DifficultyTier.T1;
 
-            var firstSegment = fileName.Split('_')[0]; // e.g. "LAA-PER-laakehoito"
+            var firstSegment = fileName.Split('_')[0];
             var parts = firstSegment.Split('-');
             if (parts.Length < 2) return false;
             aihe = parts[0];
             aihekori = parts[1];
 
-            // Pad with underscores so the tier marker is always found regardless of position.
             var match = TierPattern.Match("_" + fileName + "_");
             if (!match.Success) return false;
 
@@ -310,7 +311,7 @@ namespace NursingQuiz.EditorTools
             if (raw.Equals("EI YHTAAN", StringComparison.OrdinalIgnoreCase) ||
                 raw.Equals("EI YHTÄÄN", StringComparison.OrdinalIgnoreCase))
             {
-                return true; // valid: empty index list = no correct answer
+                return true;
             }
 
             foreach (var letter in raw.Split(','))
@@ -332,7 +333,7 @@ namespace NursingQuiz.EditorTools
 
         private static Dictionary<string, int> BuildColumnMap(List<string> header)
         {
-            var map = new Dictionary<string, int>();
+            var map = new Dictionary<string, int>(System.StringComparer.OrdinalIgnoreCase);
             for (int i = 0; i < header.Count; i++)
                 map[header[i].Trim()] = i;
             return map;
@@ -351,9 +352,6 @@ namespace NursingQuiz.EditorTools
             return name;
         }
 
-        private static readonly char[] CandidateDelimiters = { ',', ';', '\t' };
-
-        /// <summary>Reads a file as UTF-8, sharing the handle so an open Excel/Explorer lock doesn't fail the read, and strips a leading BOM if present.</summary>
         private static string ReadFileText(string path)
         {
             using var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
@@ -362,13 +360,6 @@ namespace NursingQuiz.EditorTools
             return text.TrimStart('\uFEFF');
         }
 
-        /// <summary>
-        /// Detects the field delimiter by checking which of comma/semicolon/tab appears most
-        /// often in the header line. Char-counting (not just presence) is deliberate: Excel's
-        /// CSV export honors the OS regional list separator regardless of what the format name
-        /// says, so on some systems (e.g. Finnish Windows) even a "CSV UTF-8 (Comma delimited)"
-        /// export can come out semicolon- or tab-separated.
-        /// </summary>
         private static char DetectDelimiter(string text)
         {
             var firstLineEnd = text.IndexOf('\n');
@@ -388,11 +379,6 @@ namespace NursingQuiz.EditorTools
             return best;
         }
 
-        /// <summary>
-        /// Minimal RFC4180-style CSV parser: handles quoted fields, delimiter characters inside
-        /// quotes, and escaped double quotes (""). Needed because plain string.Split(delimiter)
-        /// breaks on any answer text or feedback text that contains the delimiter character.
-        /// </summary>
         private static List<List<string>> ParseCsv(string text, char delimiter)
         {
             var rows = new List<List<string>>();

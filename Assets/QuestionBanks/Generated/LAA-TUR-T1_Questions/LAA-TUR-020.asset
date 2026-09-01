@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-020
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-020
+  aihe: LAA
+  aihekori: TUR
+  tier: 0
+  questionText: "Miten potilaan henkil\xF6llisyys voidaan varmistaa ennen l\xE4\xE4kkeen
+    antamista?"
+  options:
+  - "Kysym\xE4ll\xE4 viereiselt\xE4 potilaalta"
+  - "Katsomalla oven nimikyltti\xE4"
+  - "Antamalla l\xE4\xE4ke muistamisen perusteella"
+  - "Kysym\xE4ll\xE4 potilaan nimi ja henkil\xF6tunnus tai syntym\xE4aika sek\xE4
+    tarvittaessa tarkistamalla potilasranneke tai muu luotettava tunniste"
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Potilaan henkil\xF6llisyys tulee aina varmistaa ennen l\xE4\xE4kkeen
+    antamista."
+  rationale: "Potilaan henkil\xF6llisyydest\xE4 tulee aina varmistua ennen l\xE4\xE4kkeen
+    antamista organisaation ohjeiden mukaisesti."
+  professionalPatch: "Potilaan henkil\xF6llisyys varmistetaan joka kerta \u2013 my\xF6s
+    tutun potilaan kohdalla."

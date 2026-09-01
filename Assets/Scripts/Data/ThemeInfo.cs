@@ -19,5 +19,9 @@ namespace NursingQuiz.Data
 
         [Tooltip("Player-facing name for this theme. Only auto-filled if empty -- edit freely.")]
         public string displayName;
+
+        [Tooltip("This theme's learning objective (Oppimistavoite), shown once when the theme is selected.")]
+        [TextArea(2, 6)]
+        public string oppimistavoite;
     }
 }

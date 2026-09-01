@@ -12,8 +12,6 @@ namespace NursingQuiz.GameModes.MultipleChoice
     /// Binds a hand-built Unity UI to MultipleChoiceController. Build the actual screen in the
     /// Editor (Canvas, buttons, text, feedback panel) and drag each piece onto the matching
     /// field below -- this script has no UI-construction code, only wiring and game-flow logic.
-    ///
-    /// See the README for the recommended hierarchy to build before wiring this up.
     /// </summary>
     [RequireComponent(typeof(MultipleChoiceController))]
     public class MultipleChoiceView : MonoBehaviour
@@ -35,6 +33,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [SerializeField] private GameObject feedbackPanel;
         [SerializeField] private TMP_Text correctAnswerText;
         [SerializeField] private TMP_Text feedbackText;
+        [SerializeField] private GameObject professionalPatchRow;
         [SerializeField] private TMP_Text professionalText;
         [SerializeField] private Button nextButton;
 
@@ -74,8 +73,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
         /// <summary>
         /// Starts a round for the given theme/tier, using whichever bank in the supplied list
         /// matches. Called by GameFlowController once the player has picked both a theme and
-        /// a difficulty -- this is the real entry point now, not Awake/Start, since the same
-        /// view needs to be reusable across multiple rounds without the player restarting the game.
+        /// a difficulty.
         /// </summary>
         public void BeginRound(List<QuestionBank> banks, string aihe, DifficultyTier tier, int questionCount = -1)
         {
@@ -97,11 +95,6 @@ namespace NursingQuiz.GameModes.MultipleChoice
             RenderCurrentQuestion();
         }
 
-        /// <summary>
-        /// Re-activates everything ShowRoundComplete() hid last time, so a second (or third...)
-        /// round works correctly instead of leaving the question UI permanently hidden after
-        /// the first round ends. Without this, going Menu -> Play again would show a blank screen.
-        /// </summary>
         private void ResetUIForNewRound()
         {
             questionText.gameObject.SetActive(true);
@@ -112,11 +105,6 @@ namespace NursingQuiz.GameModes.MultipleChoice
             completePanel.SetActive(false);
         }
 
-        /// <summary>
-        /// Checks every field is wired before touching it -- a missing Inspector reference
-        /// otherwise surfaces as a NullReferenceException with no indication of which field
-        /// was forgotten, which is a frustrating way to debug a hand-built hierarchy.
-        /// </summary>
         private bool ValidateReferences()
         {
             var missing = new List<string>();
@@ -140,6 +128,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
             if (feedbackPanel == null) missing.Add("Feedback Panel");
             if (correctAnswerText == null) missing.Add("Correct Answer Text");
             if (feedbackText == null) missing.Add("Feedback Text");
+            if (professionalPatchRow == null) missing.Add("Professional Patch Row");
             if (professionalText == null) missing.Add("Professional Text");
             if (nextButton == null) missing.Add("Next Button");
             if (completePanel == null) missing.Add("Complete Panel");
@@ -177,7 +166,10 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             correctAnswerText.text = correct ? q.correctFeedback : q.incorrectFeedback;
             feedbackText.text = q.rationale ?? "";
-            professionalText.text = string.IsNullOrEmpty(q.professionalPatch) ? "" : q.professionalPatch;
+
+            bool hasPatch = !string.IsNullOrEmpty(q.professionalPatch);
+            professionalPatchRow.SetActive(hasPatch);
+            professionalText.text = hasPatch ? q.professionalPatch : "";
 
             submitButton.gameObject.SetActive(false);
             feedbackPanel.SetActive(true);

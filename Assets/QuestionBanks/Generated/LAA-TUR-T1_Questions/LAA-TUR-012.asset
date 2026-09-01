@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-012
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-012
+  aihe: LAA
+  aihekori: TUR
+  tier: 0
+  questionText: "Miten l\xE4\xE4kkeen soveltuvuus murskattavaksi tai liuotettavaksi
+    tulee varmistaa?"
+  options:
+  - "Kysym\xE4ll\xE4 potilaalta"
+  - "Tarkistamalla l\xE4\xE4kekohtaiset ohjeet"
+  - "Katsomalla tabletin v\xE4ri\xE4"
+  - Arvaamalla kokemuksen perusteella
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "\xC4l\xE4 tee oletuksia l\xE4\xE4kkeen ominaisuuksista."
+  rationale: "L\xE4\xE4kkeen soveltuvuus murskattavaksi tai liuotettavaksi tulee
+    aina tarkistaa luotettavasta l\xE4hteest\xE4."
+  professionalPatch: "Tarkistaminen on t\xE4rke\xE4 osa turvallista l\xE4\xE4kehoitoa."
