@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-064
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-064
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miten toimit, jos potilas kertoo unohtavansa l\xE4\xE4kkeens\xE4
+    usein?"
+  options:
+  - "Toteat, ett\xE4 potilaan t\xE4ytyy vain muistaa paremmin."
+  - "Ohjaat potilasta pohtimaan yhdess\xE4 keinoja l\xE4\xE4kkeiden muistamisen tueksi
+    ja tarvittaessa ottamaan asian puheeksi hoitavan tahon kanssa."
+  - "Kehotat lopettamaan l\xE4\xE4kkeen k\xE4yt\xF6n."
+  - Et reagoi asiaan.
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, miten potilasta voidaan tukea onnistumaan
+    l\xE4\xE4kehoidossaan."
+  rationale: "L\xE4\xE4kkeiden unohtamiseen kannattaa etsi\xE4 yhdess\xE4 ratkaisuja.
+    Tarvittaessa asia otetaan esille hoitavan tahon kanssa."
+  professionalPatch: "Ratkaisu l\xF6ytyy usein yhdess\xE4 keskustelemalla. Muistamisen
+    tueksi on olemassa monia k\xE4yt\xE4nn\xF6n keinoja."

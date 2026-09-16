@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-067
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-067
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miksi potilaalle kerrotaan l\xE4\xE4kkeen tavallisimmista haittavaikutuksista?"
+  options:
+  - Jotta potilas osaa tunnistaa tavallisimmat haittavaikutukset ja tarvittaessa
+    toimia annettujen ohjeiden mukaisesti.
+  - "Jotta potilas lopettaa l\xE4\xE4kkeen k\xE4yt\xF6n herkemmin."
+  - "Jotta l\xE4\xE4kkeen vaikutus nopeutuu."
+  - "Jotta l\xE4\xE4k\xE4ri\xE4 tarvitsee tavata harvemmin."
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Ei aivan oikein. Mieti, miksi haittavaikutuksista keskustellaan
+    jo ennen niiden mahdollista ilmaantumista.
+  rationale: "Potilas hy\xF6tyy siit\xE4, ett\xE4 h\xE4n tiet\xE4\xE4 etuk\xE4teen
+    tavallisimmista haittavaikutuksista ja osaa tarvittaessa toimia oikein."
+  professionalPatch: "Kerro tavallisimmat haittavaikutukset rauhallisesti. Tavoitteena
+    ei ole pelotella vaan lis\xE4t\xE4 turvallisuutta."

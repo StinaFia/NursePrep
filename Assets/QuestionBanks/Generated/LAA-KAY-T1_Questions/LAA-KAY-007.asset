@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-007
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-007
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miksi ennen l\xE4\xE4kkeen antamista varmistetaan, ett\xE4 potilas
+    pystyy ottamaan l\xE4\xE4kkeen turvallisesti?"
+  options:
+  - "Jotta voidaan varmistaa l\xE4\xE4kkeen turvallinen antaminen ja potilaan senhetkinen
+    toimintakyky."
+  - "Jotta l\xE4\xE4kkeen vaikutus kest\xE4\xE4 pidemp\xE4\xE4n."
+  - "Jotta l\xE4\xE4kett\xE4 voidaan antaa suurempi annos."
+  - "Jotta l\xE4\xE4kett\xE4 ei tarvitse kirjata."
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, miksi potilaan senhetkinen vointi tarkistetaan
+    ennen l\xE4\xE4kkeen antamista."
+  rationale: "Ennen l\xE4\xE4kkeen antamista varmistetaan, ett\xE4 potilas pystyy
+    ottamaan l\xE4\xE4kkeen turvallisesti ja h\xE4nen vointinsa mahdollistaa l\xE4\xE4kkeen
+    annon."
+  professionalPatch: "Ennen l\xE4\xE4kkeen antamista pys\xE4hdy hetkeksi arvioimaan
+    potilaan senhetkinen vointi. Turvallinen l\xE4\xE4kehoito alkaa aina potilaan
+    kohtaamisesta."

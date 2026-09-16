@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-018
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-018
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miksi potilasta ohjataan sulkemaan silm\xE4 l\xE4\xE4kkeen annon
+    j\xE4lkeen ohjeen mukaisesti?"
+  options:
+  - "Jotta l\xE4\xE4ke ehtii vaikuttaa silm\xE4n pinnalla."
+  - "Jotta l\xE4\xE4ke ei kirvelisi."
+  - "Jotta n\xE4k\xF6 palautuisi nopeammin."
+  - Jotta tiputuspullo voidaan sulkea.
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Pohdi, mik\xE4 auttaa silm\xE4tippaa vaikuttamaan
+    oikeassa paikassa."
+  rationale: "Silm\xE4n rauhallinen sulkeminen auttaa l\xE4\xE4kett\xE4 levi\xE4m\xE4\xE4n
+    tasaisesti silm\xE4n pinnalle."
+  professionalPatch: "Rauhallinen ohjaus tekee tilanteesta miellytt\xE4v\xE4mm\xE4n
+    my\xF6s potilaalle."

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-069
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-069
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miksi potilaan ajantasainen l\xE4\xE4kelista tarkistetaan hoitoon
+    tullessa?"
+  options:
+  - "Jotta k\xE4yt\xF6ss\xE4 oleva l\xE4\xE4kitys vastaa potilaan t\xE4m\xE4nhetkist\xE4
+    l\xE4\xE4kehoitoa."
+  - "Jotta l\xE4\xE4kkeit\xE4 voidaan m\xE4\xE4r\xE4t\xE4 enemm\xE4n."
+  - "Jotta l\xE4\xE4kelista saadaan tulostettua."
+  - "Jotta l\xE4\xE4kkeiden vaikutus nopeutuu."
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, miksi k\xE4yt\xF6ss\xE4 olevan l\xE4\xE4kityksen
+    tulee olla ajan tasalla."
+  rationale: "Ajantasainen l\xE4\xE4kelista tukee turvallista l\xE4\xE4kehoitoa ja
+    auttaa ehk\xE4isem\xE4\xE4n l\xE4\xE4kitysvirheit\xE4."
+  professionalPatch: "Potilas tuntee usein oman l\xE4\xE4kityksens\xE4 hyvin. Ep\xE4selviss\xE4
+    tilanteissa tiedot varmistetaan k\xE4ytett\xE4viss\xE4 olevista tietol\xE4hteist\xE4
+    ja tarvittaessa l\xE4\xE4k\xE4rilt\xE4."

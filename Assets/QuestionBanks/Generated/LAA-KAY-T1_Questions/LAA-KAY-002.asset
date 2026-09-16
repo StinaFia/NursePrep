@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-002
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-002
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miksi l\xE4\xE4kkeen antamiseen tarvittavat v\xE4lineet kannattaa
+    ker\xE4t\xE4 valmiiksi ennen aloittamista?"
+  options:
+  - "Jotta l\xE4\xE4kkeen vaikutus nopeutuisi."
+  - "Jotta l\xE4\xE4kkeen antaminen sujuu turvallisesti ja keskeytyksett\xE4."
+  - "Jotta l\xE4\xE4kett\xE4 voidaan antaa useammalle potilaalle samalla kertaa."
+  - "Jotta l\xE4\xE4kkeet voidaan s\xE4ilytt\xE4\xE4 pidemp\xE4\xE4n."
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, mik\xE4 auttaa ty\xF6skentelem\xE4\xE4n
+    rauhallisesti ja turvallisesti."
+  rationale: "Tarvittavien v\xE4lineiden kokoaminen etuk\xE4teen v\xE4hent\xE4\xE4
+    keskeytyksi\xE4 ja auttaa keskittym\xE4\xE4n turvalliseen l\xE4\xE4kehoitoon."
+  professionalPatch: "Rauhallinen valmistautuminen v\xE4hent\xE4\xE4 virheiden mahdollisuutta
+    ja tekee ty\xF6skentelyst\xE4 sujuvampaa."

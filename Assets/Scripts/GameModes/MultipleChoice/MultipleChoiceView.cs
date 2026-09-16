@@ -26,8 +26,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [Header("Answer options (assign in order: A, B, C, D)")]
         [SerializeField] private List<AnswerOptionUI> options = new List<AnswerOptionUI>();
 
-        [Header("Submit")]
-        [SerializeField] private Button submitButton;
+        //[Header("Submit")]
+        //[SerializeField] private Button submitButton;
 
         [Header("Feedback panel")]
         [SerializeField] private GameObject feedbackPanel;
@@ -63,7 +63,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
                 int captured = i;
                 options[i].Button.onClick.AddListener(() => OnOptionClicked(captured));
             }
-            submitButton.onClick.AddListener(OnSubmitClicked);
+
+            //submitButton.onClick.AddListener(OnSubmitClicked);
             nextButton.onClick.AddListener(OnNextClicked);
 
             feedbackPanel.SetActive(false);
@@ -99,7 +100,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
         {
             questionText.gameObject.SetActive(true);
             progressText.gameObject.SetActive(true);
-            submitButton.gameObject.SetActive(true);
+            //submitButton.gameObject.SetActive(true);
             foreach (var o in options) o.gameObject.SetActive(true);
             feedbackPanel.SetActive(false);
             completePanel.SetActive(false);
@@ -124,7 +125,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
                     }
                 }
             }
-            if (submitButton == null) missing.Add("Submit Button");
+            //if (submitButton == null) missing.Add("Submit Button");
             if (feedbackPanel == null) missing.Add("Feedback Panel");
             if (correctAnswerText == null) missing.Add("Correct Answer Text");
             if (feedbackText == null) missing.Add("Feedback Text");
@@ -145,11 +146,46 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
         private void OnOptionClicked(int index)
         {
+            // Valitse vaihtoehto
             controller.ToggleOption(index);
             RefreshOptionVisuals();
+
+            // Jos ei ole valintaa, ‰l‰ tee mit‰‰n
+            if (!controller.HasSelection)
+                return;
+
+            // Arvioi vastaus heti
+            controller.EvaluateAnswer(null);
+
+            var q = controller.LastAnsweredQuestion;
+            bool correct = controller.LastAnswerWasCorrect;
+
+            // N‰yt‰ oikea vastaus vihre‰n‰
+            for (int i = 0; i < options.Count; i++)
+            {
+                if (q.correctIndices.Contains(i))
+                    options[i].Background.color = correctColor;
+            }
+
+            // N‰yt‰ palaute
+            correctAnswerText.text = correct ? q.correctFeedback : q.incorrectFeedback;
+            feedbackText.text = q.rationale ?? "";
+
+            bool hasPatch = !string.IsNullOrEmpty(q.professionalPatch);
+            professionalPatchRow.SetActive(hasPatch);
+            professionalText.text = hasPatch ? q.professionalPatch : "";
+
+            // N‰yt‰ palaute-paneeli
+            feedbackPanel.SetActive(true);
+
+            // Piilota submitButton kokonaan
+            //submitButton.gameObject.SetActive(false);
+
+            // N‰yt‰ nextButton (k‰ytt‰j‰ p‰‰tt‰‰ milloin jatkaa)
+            nextButton.gameObject.SetActive(true);
         }
 
-        private void OnSubmitClicked()
+        /*private void OnSubmitClicked()
         {
             if (!controller.HasSelection) return;
 
@@ -173,12 +209,12 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             submitButton.gameObject.SetActive(false);
             feedbackPanel.SetActive(true);
-        }
+        }*/
 
         private void OnNextClicked()
         {
             feedbackPanel.SetActive(false);
-            submitButton.gameObject.SetActive(true);
+            //submitButton.gameObject.SetActive(true);
 
             if (controller.RoundFinished)
                 ShowRoundComplete();
@@ -206,7 +242,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
             }
 
             RefreshOptionVisuals();
-            submitButton.interactable = false;
+            //submitButton.interactable = false;
         }
 
         private void RefreshOptionVisuals()
@@ -214,7 +250,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
             for (int i = 0; i < options.Count; i++)
                 options[i].Background.color = controller.IsOptionSelected(i) ? selectedOptionColor : normalOptionColor;
 
-            submitButton.interactable = controller.HasSelection;
+            //submitButton.interactable = controller.HasSelection;
         }
 
         private void ShowRoundComplete()
@@ -222,7 +258,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
             questionText.gameObject.SetActive(false);
             progressText.gameObject.SetActive(false);
             foreach (var o in options) o.gameObject.SetActive(false);
-            submitButton.gameObject.SetActive(false);
+            //submitButton.gameObject.SetActive(false);
             feedbackPanel.SetActive(false);
 
             completeText.text = $"Valmis!\n\nOikein: {controller.CorrectCount} / {controller.TotalAnswered}";

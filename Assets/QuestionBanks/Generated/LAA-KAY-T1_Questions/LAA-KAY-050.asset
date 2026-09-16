@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-050
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-050
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miten toimit, jos potilas kertoo pelk\xE4\xE4v\xE4ns\xE4 pist\xE4mist\xE4?"
+  options:
+  - "Pist\xE4t l\xE4\xE4kkeen mahdollisimman nopeasti keskustelematta asiasta."
+  - "Pyyd\xE4t toista potilasta n\xE4ytt\xE4m\xE4\xE4n esimerkki\xE4."
+  - "Kerrot, ettei pist\xE4minen yleens\xE4 satu."
+  - "Kuuntelet potilasta, etenet rauhallisesti ja kerrot, mit\xE4 aiot tehd\xE4."
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Pohdi, mik\xE4 auttaa pelk\xE4\xE4v\xE4\xE4
+    potilasta parhaiten."
+  rationale: "Potilaan pelko otetaan vakavasti. Rauhallinen kohtaaminen ja hyv\xE4
+    ohjaus lis\xE4\xE4v\xE4t turvallisuuden tunnetta."
+  professionalPatch: "\xC4l\xE4 v\xE4h\xE4ttele potilaan pelkoa. Kuuntele potilasta,
+    etene rauhallisesti ja kerro, miten tilanne etenee. Turvallinen ja potilasta
+    kunnioittava ilmapiiri auttaa rakentamaan luottamusta ja vahvistaa potilaan tunnetta
+    siit\xE4, ett\xE4 h\xE4nt\xE4 kuunnellaan ja arvostetaan."

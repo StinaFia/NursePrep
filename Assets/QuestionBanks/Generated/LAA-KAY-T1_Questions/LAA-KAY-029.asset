@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-029
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-029
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miksi vanha l\xE4\xE4kelaastari poistetaan ennen uuden kiinnitt\xE4mist\xE4?"
+  options:
+  - Jotta uusi laastari mahtuisi paremmin.
+  - "Jotta potilas n\xE4kisi uuden laastarin."
+  - Jotta iho saadaan puhtaammaksi.
+  - "Jotta v\xE4ltet\xE4\xE4n ylim\xE4\xE4r\xE4inen l\xE4\xE4kkeen imeytyminen."
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Pohdi, mit\xE4 voisi tapahtua, jos vanha laastari
+    j\xE4isi paikalleen."
+  rationale: "Vanha l\xE4\xE4kelaastari poistetaan ennen uuden kiinnitt\xE4mist\xE4,
+    jotta l\xE4\xE4kett\xE4 ei imeydy samanaikaisesti kahdesta laastarista."
+  professionalPatch: "Tarkista aina, ett\xE4 edellinen l\xE4\xE4kelaastari on poistettu
+    ennen uuden kiinnitt\xE4mist\xE4."

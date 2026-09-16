@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-012
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-012
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miten jauhemainen l\xE4\xE4ke valmistetaan ennen sen ottamista?"
+  options:
+  - Sekoitetaan ohjeen mukaiseen nesteeseen.
+  - "Otetaan sellaisenaan ilman nestett\xE4."
+  - Sekoitetaan aina kuumaan juomaan.
+  - Sekoitetaan mihin tahansa ruokaan.
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Kiinnit\xE4 huomiota siihen, miten jauhemainen
+    l\xE4\xE4ke valmistellaan turvallisesti."
+  rationale: "Jauhemainen l\xE4\xE4ke valmistetaan valmistajan ohjeiden mukaisesti
+    oikeaan nesteeseen."
+  professionalPatch: "Sekoita jauhe ensin pieneen m\xE4\xE4r\xE4\xE4n nestett\xE4
+    tasaiseksi seokseksi ja lis\xE4\xE4 vasta sen j\xE4lkeen loppu neste. N\xE4in
+    v\xE4lt\xE4t paakkujen muodostumisen ja l\xE4\xE4kkeen ottaminen on potilaalle
+    miellytt\xE4v\xE4mp\xE4\xE4."

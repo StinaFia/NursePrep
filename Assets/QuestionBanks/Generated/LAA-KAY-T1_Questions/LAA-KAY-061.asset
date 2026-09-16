@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-061
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-061
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miksi potilaalle annetaan mahdollisuus esitt\xE4\xE4 kysymyksi\xE4
+    l\xE4\xE4kehoidosta?"
+  options:
+  - "Jotta vastaanotto kest\xE4\xE4 pidemp\xE4\xE4n."
+  - "Jotta potilas voi varmistaa ymm\xE4rt\xE4neens\xE4 saamansa ohjeet ja saada
+    vastauksia h\xE4nt\xE4 askarruttaviin asioihin."
+  - "Jotta l\xE4\xE4kkeen vaikutus alkaa nopeammin."
+  - "Jotta l\xE4\xE4kityst\xE4 voidaan muuttaa heti."
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Ei aivan oikein. Mieti, miksi kysymyksille kannattaa antaa aikaa.
+  rationale: "Mahdollisuus kysy\xE4 tukee potilaan ymm\xE4rryst\xE4, sitoutumista
+    hoitoon ja turvallista l\xE4\xE4kehoitoa."
+  professionalPatch: "Kannusta potilasta kysym\xE4\xE4n. Usein pienikin kysymys voi
+    ehk\xE4ist\xE4 my\xF6hempi\xE4 ongelmia."

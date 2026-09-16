@@ -16,11 +16,11 @@ namespace NursingQuiz.UI
     ///
     /// IMPORTANT: a "theme" is identified by aihe+aihekori TOGETHER, not aihe alone -- one aihe
     /// (e.g. "LAA") can have multiple distinct themes under it with different aihekori (e.g.
-    /// "PER" and "TUR"). All theme-identity comparisons below use both fields; using aihe alone
-    /// would incorrectly treat different themes under the same aihe as the same theme.
+    /// "PER" and "TUR"). All theme-identity comparisons below use both fields.
     ///
-    /// No theme is selected by default when this screen opens -- both the theme list and the
-    /// difficulty side start empty/neutral until the player actively picks a theme.
+    /// No theme is selected by default when the theme+difficulty screen opens. Each theme
+    /// button shows its Oppimistavoite directly (not behind a popup), so the player sees every
+    /// theme's objective at a glance before choosing.
     /// </summary>
     public class GameFlowController : MonoBehaviour
     {
@@ -45,7 +45,6 @@ namespace NursingQuiz.UI
         [SerializeField] private ThemeButtonUI themeButtonTemplate;
 
         [Header("Theme + Difficulty Select - Right column (difficulty)")]
-        [SerializeField] private TMP_Text themeObjectiveText;
         [SerializeField] private Button t1Button;
         [SerializeField] private Image t1ButtonBackground;
         [SerializeField] private TMP_Text t1StatusText;
@@ -66,6 +65,11 @@ namespace NursingQuiz.UI
         [Header("Multiple choice")]
         [SerializeField] private MultipleChoiceView quizView;
         [SerializeField] private Button quizBackToMenuButton;
+
+        [Header("Multiple choice - in-game top bar (visible while playing, not just at the end)")]
+        [SerializeField] private Button quizTopBarBackToThemeButton;
+        [SerializeField] private Button quizTopBarBackToMenuButton;
+        [SerializeField] private TMP_Text quizTopBarThemeText;
 
         [Header("Match pairs")]
         [SerializeField] private MatchPairView matchPairView;
@@ -89,6 +93,8 @@ namespace NursingQuiz.UI
             startGameButton.onClick.AddListener(StartGame);
 
             quizBackToMenuButton.onClick.AddListener(ShowMainMenu);
+            quizTopBarBackToThemeButton.onClick.AddListener(ShowThemeAndDifficultySelect);
+            quizTopBarBackToMenuButton.onClick.AddListener(ShowMainMenu);
             matchPairBackToMenuButton.onClick.AddListener(ShowMainMenu);
 
             themeButtonTemplate.gameObject.SetActive(false);
@@ -112,6 +118,7 @@ namespace NursingQuiz.UI
                 var clone = Instantiate(themeButtonTemplate, themeButtonContainer);
                 clone.gameObject.SetActive(true);
                 clone.Label.text = string.IsNullOrEmpty(theme.displayName) ? theme.aihekori : theme.displayName;
+                clone.ObjectiveText.text = theme.oppimistavoite;
                 clone.Aihe = theme.aihe;
                 clone.Aihekori = theme.aihekori;
 
@@ -135,7 +142,6 @@ namespace NursingQuiz.UI
             selectedTier = null;
 
             startGameButton.gameObject.SetActive(false);
-            themeObjectiveText.text = "";
 
             t1Button.interactable = false;
             t2Button.interactable = false;
@@ -156,9 +162,6 @@ namespace NursingQuiz.UI
             selectedAihekori = aihekori;
             selectedTier = null;
             startGameButton.gameObject.SetActive(false);
-
-            var theme = availableThemes.FirstOrDefault(t => t.aihe == aihe && t.aihekori == aihekori);
-            themeObjectiveText.text = theme != null ? theme.oppimistavoite : "";
 
             SetupTierButton(t1Button, t1StatusText, aihe, aihekori, DifficultyTier.T1);
             SetupTierButton(t2Button, t2StatusText, aihe, aihekori, DifficultyTier.T2);
@@ -208,6 +211,12 @@ namespace NursingQuiz.UI
                 var banksForTheme = availableBanks
                     .Where(b => b.aihe == selectedAihe && b.aihekori == selectedAihekori)
                     .ToList();
+
+                var theme = availableThemes.FirstOrDefault(t => t.aihe == selectedAihe && t.aihekori == selectedAihekori);
+                quizTopBarThemeText.text = theme != null
+                    ? (string.IsNullOrEmpty(theme.displayName) ? theme.aihekori : theme.displayName)
+                    : "";
+
                 SetActivePanel(quizScreen);
                 quizView.BeginRound(banksForTheme, selectedAihe, tier, questionsPerRound);
             }

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-026
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-026
+  aihe: LAA
+  aihekori: KAY
+  tier: 0
+  questionText: "Miksi iho tarkistetaan ennen l\xE4\xE4kevoiteen tai geelin levitt\xE4mist\xE4?"
+  options:
+  - "Jotta l\xE4\xE4kett\xE4 voidaan k\xE4ytt\xE4\xE4 enemm\xE4n."
+  - "Jotta voidaan varmistaa, ett\xE4 iho soveltuu l\xE4\xE4kkeen antamiseen."
+  - Jotta voide imeytyisi hitaammin.
+  - Jotta iho saadaan kuivemmaksi.
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, miksi iho tarkistetaan ennen l\xE4\xE4kkeen
+    levitt\xE4mist\xE4."
+  rationale: "Iho tarkistetaan ennen l\xE4\xE4kkeen antamista, jotta mahdolliset
+    haavat, \xE4rsytys tai muut poikkeamat huomioidaan."
+  professionalPatch: "Tarkista iho aina rauhassa ennen l\xE4\xE4kkeen levitt\xE4mist\xE4
+    ja huomioi mahdolliset poikkeamat."
