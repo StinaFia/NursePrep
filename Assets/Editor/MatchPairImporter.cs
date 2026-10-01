@@ -30,11 +30,17 @@ namespace NursingQuiz.EditorTools
     /// The pairs table is found by locating the header row containing both "Vasen sarake"
     /// and "Oikea sarake", then reading every following row with two non-empty cells as one
     /// pair, stopping at a blank row or a row starting with one of the labels above.
+    ///
+    /// IMPORTANT: this importer also creates/updates a ThemeInfo asset for the aihe+aihekori,
+    /// in the SAME Themes folder that QuestionBankImporter uses -- the theme+difficulty select
+    /// screen is shared across both game modes and only shows themes that have a ThemeInfo
+    /// asset, so match-pair content needs one just as much as question banks do.
     /// </summary>
     public static class MatchPairImporter
     {
         private const string SourceFolder = "Assets/MatchPairs/CSV";
         private const string OutputFolder = "Assets/MatchPairs/Generated";
+        private const string ThemesFolder = "Assets/QuestionBanks/Generated/Themes"; // shared with QuestionBankImporter
 
         private static readonly Regex TierPattern = new Regex(@"_t([1-3])_", RegexOptions.IgnoreCase);
         private static readonly char[] CandidateDelimiters = { ',', ';', '\t' };
@@ -118,6 +124,11 @@ namespace NursingQuiz.EditorTools
 
             var labels = ExtractLabels(rows);
 
+            // Create/update the shared ThemeInfo for this aihe+aihekori, same as QuestionBankImporter --
+            // without this, the theme never appears as selectable on the theme+difficulty screen.
+            var objective = labels.TryGetValue("Oppimistavoite", out var obj) ? obj : null;
+            UpsertThemeInfo(aihe, aihekori, objective, fileName, errors);
+
             var pairs = new List<MatchPairEntry>();
             for (int r = headerIndex + 1; r < rows.Count; r++)
             {
@@ -152,13 +163,52 @@ namespace NursingQuiz.EditorTools
             set.tier = tier;
             set.sourceFileName = Path.GetFileName(path);
             set.gameName = labels.TryGetValue("Pelin nimi", out var gn) ? gn : "";
-            set.oppimistavoite = labels.TryGetValue("Oppimistavoite", out var obj) ? obj : "";
+            set.oppimistavoite = objective ?? "";
             set.completionFeedback = labels.TryGetValue("Palaute", out var pf) ? pf : "";
             set.professionalPatch = labels.TryGetValue("Ammattilaisen merkki", out var am) ? am : "";
             set.pairs = pairs;
 
             EditorUtility.SetDirty(set);
             return set;
+        }
+
+        /// <summary>
+        /// Creates or updates the theme-level ThemeInfo asset for this aihe+aihekori, in the
+        /// SAME folder QuestionBankImporter uses -- so a theme that already exists from a
+        /// question bank (or vice versa) isn't duplicated, and match-pair-only themes get a
+        /// ThemeInfo of their own. If the objective conflicts with one already set, the
+        /// existing text is kept and a warning is logged, same policy as QuestionBankImporter.
+        /// </summary>
+        private static void UpsertThemeInfo(string aihe, string aihekori, string objective, string fileName, List<string> errors)
+        {
+            Directory.CreateDirectory(ThemesFolder);
+            var path = $"{ThemesFolder}/{aihe}-{aihekori}.asset";
+            var theme = AssetDatabase.LoadAssetAtPath<ThemeInfo>(path);
+            if (theme == null)
+            {
+                theme = ScriptableObject.CreateInstance<ThemeInfo>();
+                AssetDatabase.CreateAsset(theme, path);
+            }
+
+            theme.aihe = aihe;
+            theme.aihekori = aihekori;
+            if (string.IsNullOrEmpty(theme.displayName))
+                theme.displayName = aihekori;
+
+            if (!string.IsNullOrWhiteSpace(objective))
+            {
+                if (!string.IsNullOrEmpty(theme.oppimistavoite) && theme.oppimistavoite != objective)
+                {
+                    errors.Add($"{fileName}: this file's Oppimistavoite text differs from one already imported " +
+                               $"for theme {aihe}-{aihekori}. Keeping the first version found.");
+                }
+                else
+                {
+                    theme.oppimistavoite = objective;
+                }
+            }
+
+            EditorUtility.SetDirty(theme);
         }
 
         private static bool IsLabeledLine(string cell)
