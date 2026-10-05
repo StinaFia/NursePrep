@@ -22,6 +22,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [Header("Question")]
         [SerializeField] private TMP_Text questionText;
         [SerializeField] private TMP_Text progressText;
+        [SerializeField] private ResultView resultView;
 
         [Header("Answer options (assign in order: A, B, C, D)")]
         [SerializeField] private List<AnswerOptionUI> options = new List<AnswerOptionUI>();
@@ -39,7 +40,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
         [Header("Round complete panel")]
         [SerializeField] private GameObject completePanel;
+        [SerializeField] private TMP_Text topBarThemeText;
         [SerializeField] private TMP_Text completeText;
+        [SerializeField] private Button retryButton;
 
         [Header("Colors")]
         [SerializeField] private Color normalOptionColor = new Color(0.953f, 0.957f, 0.945f); // #F3F4F1
@@ -47,6 +50,11 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [SerializeField] private Color correctColor = new Color(0.812f, 0.910f, 0.827f); // #CFE8D3
 
         private MultipleChoiceController controller;
+
+        private List<QuestionBank> lastBanks;
+        private string lastAihe;
+        private DifficultyTier lastTier;
+        private int lastQuestionCount;
 
         private void Awake()
         {
@@ -66,6 +74,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             //submitButton.onClick.AddListener(OnSubmitClicked);
             nextButton.onClick.AddListener(OnNextClicked);
+            retryButton.onClick.AddListener(OnRetryClicked);
 
             feedbackPanel.SetActive(false);
             completePanel.SetActive(false);
@@ -78,6 +87,11 @@ namespace NursingQuiz.GameModes.MultipleChoice
         /// </summary>
         public void BeginRound(List<QuestionBank> banks, string aihe, DifficultyTier tier, int questionCount = -1)
         {
+            lastBanks = banks;
+            lastAihe = aihe;
+            lastTier = tier;
+            lastQuestionCount = questionCount;
+
             ResetUIForNewRound();
 
             controller.SetAvailableBanks(banks);
@@ -222,6 +236,12 @@ namespace NursingQuiz.GameModes.MultipleChoice
                 RenderCurrentQuestion();
         }
 
+        private void OnRetryClicked()
+        {
+            if (lastBanks == null) return;
+            BeginRound(lastBanks, lastAihe, lastTier, lastQuestionCount);
+        }
+
         private void RenderCurrentQuestion()
         {
             var q = controller.CurrentQuestion;
@@ -261,7 +281,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
             //submitButton.gameObject.SetActive(false);
             feedbackPanel.SetActive(false);
 
-            completeText.text = $"Valmis!\n\nOikein: {controller.CorrectCount} / {controller.TotalAnswered}";
+            //completeText.text = $"Valmis!\n\nOikein: {controller.CorrectCount} / {controller.TotalAnswered}";
+            //completePanel.SetActive(true);
+            resultView.Show(controller.CorrectCount, controller.TotalAnswered, topBarThemeText.text);
             completePanel.SetActive(true);
         }
     }
