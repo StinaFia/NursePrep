@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-038
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-038
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilas painaa 25 kg. L\xE4\xE4kett\xE4 on m\xE4\xE4r\xE4tty 8 \xB5g/kg
+    yht\xE4 annosta kohden. Kuinka suuri annos on milligrammoina?"
+  options:
+  - 0,02 mg
+  - 0,2 mg
+  - 2 mg
+  - 20 mg
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Laske ensin painon mukainen annos mikrogrammoina ja tarkista
+    sen j\xE4lkeen \xB5g\u2013mg-muunnos."
+  rationale: "25 kg \xD7 8 \xB5g/kg = 200 \xB5g. 200 \xB5g = 0,2 mg."
+  professionalPatch: "Pid\xE4 yksikk\xF6 n\xE4kyviss\xE4 my\xF6s v\xE4lituloksessa.
+    Se auttaa huomaamaan, milloin yksikk\xF6muunnos tarvitaan."

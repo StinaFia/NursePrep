@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-006
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-006
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4 0,5 mg. K\xE4ytett\xE4viss\xE4
+    on 250 \xB5g:n tabletteja. Kuinka monta tablettia annat?"
+  options:
+  - 0,5 tablettia
+  - 1 tabletti
+  - 2 tablettia
+  - 20 tablettia
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista mg\u2013\xB5g-muunnos ennen tablettim\xE4\xE4r\xE4n
+    laskemista."
+  rationale: "0,5 mg = 500 \xB5g. 500 \xB5g \xF7 250 \xB5g/tabletti = 2 tablettia."
+  professionalPatch: "Muista: 1 mg = 1 000 \xB5g. Vasta sen j\xE4lkeen laske tarvittava
+    tablettim\xE4\xE4r\xE4."

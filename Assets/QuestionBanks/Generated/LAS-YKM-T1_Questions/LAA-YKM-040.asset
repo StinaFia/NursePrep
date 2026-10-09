@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-040
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-040
+  aihe: LAS
+  aihekori: YKM
+  tier: 0
+  questionText: "Mik\xE4 seuraavista vastaa samaa m\xE4\xE4r\xE4\xE4 kuin 0,0045
+    l?"
+  options:
+  - 0,45 ml
+  - 45 ml
+  - 4,5 ml
+  - 450 ml
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista litrojen ja millilitrojen v\xE4linen muunnos sek\xE4
+    tuloksen suuruusluokka."
+  rationale: "0,0045 l \xD7 1 000 = 4,5 ml."
+  professionalPatch: "Tarkista lopuksi j\xE4rkevyys: 0,0045 litraa on alle yksi sadasosa
+    litrasta."

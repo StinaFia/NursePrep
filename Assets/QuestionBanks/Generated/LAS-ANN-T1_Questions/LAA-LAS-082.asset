@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-082
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-082
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilas juo vuorokauden aikana 600 ml vett\xE4, 400 ml kahvia ja
+    teet\xE4 sek\xE4 500 ml muita juomia. Kuinka paljon potilas saa nestett\xE4 suun
+    kautta yhteens\xE4 vuorokaudessa?"
+  options:
+  - 1 100 ml
+  - 1 300 ml
+  - 1 500 ml
+  - 1 900 ml
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Kysymys koskee kaikkien ilmoitettujen suun kautta saatujen
+    nesteiden kokonaism\xE4\xE4r\xE4\xE4."
+  rationale: 600 ml + 400 ml + 500 ml = 1 500 ml/vrk.
+  professionalPatch: "Kun lasket vuorokauden nestesaantia, kokoa ensin kaikki samaan
+    ajanjaksoon kuuluvat nestem\xE4\xE4r\xE4t."

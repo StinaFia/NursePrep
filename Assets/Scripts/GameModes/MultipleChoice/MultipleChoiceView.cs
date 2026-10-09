@@ -32,6 +32,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
         [Header("Feedback panel")]
         [SerializeField] private GameObject feedbackPanel;
+        [SerializeField] private Image resultIcon;
+        [SerializeField] private Sprite checkSprite;
+        [SerializeField] private Sprite crossSprite;
         [SerializeField] private TMP_Text correctAnswerText;
         [SerializeField] private TMP_Text feedbackText;
         [SerializeField] private GameObject professionalPatchRow;
@@ -55,6 +58,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
         private string lastAihe;
         private DifficultyTier lastTier;
         private int lastQuestionCount;
+        private bool answerLocked;
 
         private void Awake()
         {
@@ -112,6 +116,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
         private void ResetUIForNewRound()
         {
+            answerLocked = false;
             questionText.gameObject.SetActive(true);
             progressText.gameObject.SetActive(true);
             //submitButton.gameObject.SetActive(true);
@@ -160,6 +165,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
         private void OnOptionClicked(int index)
         {
+            if (answerLocked) return;
+
             // Valitse vaihtoehto
             controller.ToggleOption(index);
             RefreshOptionVisuals();
@@ -170,6 +177,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             // Arvioi vastaus heti
             controller.EvaluateAnswer(null);
+            answerLocked = true;
 
             var q = controller.LastAnsweredQuestion;
             bool correct = controller.LastAnswerWasCorrect;
@@ -183,6 +191,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             // Näytä palaute
             correctAnswerText.text = correct ? q.correctFeedback : q.incorrectFeedback;
+            resultIcon.sprite = correct ? checkSprite : crossSprite;
             feedbackText.text = q.rationale ?? "";
 
             bool hasPatch = !string.IsNullOrEmpty(q.professionalPatch);
@@ -244,6 +253,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
         private void RenderCurrentQuestion()
         {
+            answerLocked = false;
+
             var q = controller.CurrentQuestion;
             if (q == null)
             {

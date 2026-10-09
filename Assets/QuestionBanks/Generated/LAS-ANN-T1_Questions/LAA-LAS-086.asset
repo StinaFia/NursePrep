@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-086
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-086
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilas saa vuorokauden aikana nesteit\xE4 yhteens\xE4 1 800 ml
+    ja menett\xE4\xE4 nesteit\xE4 yhteens\xE4 2 100 ml. Mik\xE4 on laskennallinen
+    nestetasapaino?"
+  options:
+  - +300 ml
+  - "\u22123 900 ml"
+  - "\u2212300 ml"
+  - +3 900 ml
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Kun menetykset ovat saantia suuremmat, saadut nesteet \u2212
+    menetetyt nesteet antaa negatiivisen tuloksen."
+  rationale: "1 800 ml \u2212 2 100 ml = \u2212300 ml. Nestetasapaino on siis laskennallisesti
+    negatiivinen 300 ml."
+  professionalPatch: "\xC4l\xE4 j\xE4t\xE4 etumerkki\xE4 pois: +300 ml ja \u2212300
+    ml tarkoittavat laskennallisesti eri tilannetta."

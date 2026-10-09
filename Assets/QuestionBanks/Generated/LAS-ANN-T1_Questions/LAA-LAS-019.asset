@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-019
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-019
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Pullossa on 120 ml nestem\xE4ist\xE4 l\xE4\xE4kett\xE4. Potilas
+    ottaa l\xE4\xE4kett\xE4 10 ml kaksi kertaa vuorokaudessa. Kuinka moneksi kokonaiseksi
+    vuorokaudeksi l\xE4\xE4ke riitt\xE4\xE4?"
+  options:
+  - 3 vuorokaudeksi
+  - 6 vuorokaudeksi
+  - 10 vuorokaudeksi
+  - 12 vuorokaudeksi
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Selvit\xE4 ensin vuorokauden kokonaiskulutus ja jaa pullossa
+    oleva m\xE4\xE4r\xE4 sill\xE4."
+  rationale: "Vuorokaudessa k\xE4ytet\xE4\xE4n 10 ml \xD7 2 = 20 ml. 120 ml \xF7
+    20 ml/vrk = 6 vuorokautta."
+  professionalPatch: "Riitt\xE4vyyslaskussa vertaa k\xE4ytett\xE4viss\xE4 olevaa
+    kokonaism\xE4\xE4r\xE4\xE4 yhden vuorokauden kulutukseen."

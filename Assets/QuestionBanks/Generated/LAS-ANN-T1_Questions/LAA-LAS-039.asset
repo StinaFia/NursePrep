@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-039
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-039
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilas painaa 30 kg. L\xE4\xE4kett\xE4 on m\xE4\xE4r\xE4tty 6 mg/kg
+    yht\xE4 annosta kohden. L\xE4\xE4keliuoksen vahvuus on 30 mg/ml. Kuinka monta
+    millilitraa annat?"
+  options:
+  - 1 ml
+  - 3 ml
+  - 6 ml
+  - 18 ml
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Laske ensin tarvittava l\xE4\xE4keainem\xE4\xE4r\xE4 milligrammoina.
+    Vasta sen j\xE4lkeen selvit\xE4, kuinka monta millilitraa sit\xE4 vastaa."
+  rationale: "Annos on 30 kg \xD7 6 mg/kg = 180 mg. Tarvittava tilavuus on 180 mg
+    \xF7 30 mg/ml = 6 ml."
+  professionalPatch: "Tarkista lopuksi tulos takaisinp\xE4in: 6 ml \xD7 30 mg/ml
+    = 180 mg."

@@ -217,7 +217,11 @@ namespace NursingQuiz.EditorTools
                 q.correctFeedback = Get(row, col, "Palaute oikein");
                 q.incorrectFeedback = Get(row, col, "Palaute väärin");
                 q.rationale = Get(row, col, "Perustelu");
-                q.professionalPatch = col.ContainsKey("Ammattilaisen merkki") ? Get(row, col, "Ammattilaisen merkki") : "";
+                //q.professionalPatch = col.ContainsKey("Ammattilaisen merkki") ? Get(row, col, "Ammattilaisen merkki") : "";
+                string patch = "";
+                if (col.ContainsKey("Ammattilaisen merkki")) patch = Get(row, col, "Ammattilaisen merkki");
+                if (string.IsNullOrWhiteSpace(patch) && col.ContainsKey("Laskuvinkki")) patch = Get(row, col, "Laskuvinkki");
+                q.professionalPatch = patch;
 
                 EditorUtility.SetDirty(q);
                 bank.questions.Add(q);

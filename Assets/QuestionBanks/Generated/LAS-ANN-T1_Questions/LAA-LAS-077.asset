@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-077
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-077
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4 30 mmol/vrk jaettuna
+    kolmeen yht\xE4 suureen annokseen. Liuoksen 5 ml sis\xE4lt\xE4\xE4 10 mmol l\xE4\xE4keainetta.
+    Kuinka monta millilitraa annat yhdell\xE4 antokerralla?"
+  options:
+  - 5 ml
+  - 10 ml
+  - 15 ml
+  - 2 ml
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Huomioi, ett\xE4 m\xE4\xE4r\xE4ys on ilmoitettu koko vuorokaudelle
+    mutta kysymyksess\xE4 pyydet\xE4\xE4n yhden antokerran tilavuutta."
+  rationale: "Yksi annos on 30 mmol \xF7 3 = 10 mmol. Liuoksen 5 ml sis\xE4lt\xE4\xE4
+    10 mmol, joten yhden 10 mmol:n annoksen tilavuus on 5 ml."
+  professionalPatch: "Jos tarvittava l\xE4\xE4keainem\xE4\xE4r\xE4 vastaa suoraan
+    valmisteesta annettua m\xE4\xE4r\xE4\xE4, ylim\xE4\xE4r\xE4isi\xE4 laskuvaiheita
+    ei tarvita."

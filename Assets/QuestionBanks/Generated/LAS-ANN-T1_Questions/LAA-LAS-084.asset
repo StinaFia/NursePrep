@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-084
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-084
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilas eritt\xE4\xE4 vuorokauden aikana virtsaa 1 500 ml. Lis\xE4ksi
+    oksennusta on 200 ml ja dreenieritett\xE4 150 ml. Kuinka paljon teht\xE4v\xE4ss\xE4
+    ilmoitettuja nesteit\xE4 menetet\xE4\xE4n yhteens\xE4?"
+  options:
+  - 1 850 ml
+  - 1 650 ml
+  - 1 350 ml
+  - 1 950 ml
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Huomioi kaikki teht\xE4v\xE4ss\xE4 ilmoitetut nesteiden menetykset."
+  rationale: 1 500 ml + 200 ml + 150 ml = 1 850 ml.
+  professionalPatch: "Menetettyjen nesteiden kokonaism\xE4\xE4r\xE4 lasketaan kokoamalla
+    teht\xE4v\xE4ss\xE4 annetut mitatut menetykset yhteen."

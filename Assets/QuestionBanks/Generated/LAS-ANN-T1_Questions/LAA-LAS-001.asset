@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-001
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-001
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4 500 mg. Yksi tabletti
+    sis\xE4lt\xE4\xE4 500 mg l\xE4\xE4keainetta. Kuinka monta tablettia annat?"
+  options:
+  - 0,5 tablettia
+  - 1 tabletti
+  - 2 tablettia
+  - 5 tablettia
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista m\xE4\xE4r\xE4tty annos ja yhden tabletin vahvuus.
+    Laske sen j\xE4lkeen tarvittava tablettim\xE4\xE4r\xE4 uudelleen."
+  rationale: "500 mg \xF7 500 mg/tabletti = 1 tabletti."
+  professionalPatch: "Kun m\xE4\xE4r\xE4tty annos ja tabletin vahvuus ovat samat,
+    tarvitaan yksi tabletti."

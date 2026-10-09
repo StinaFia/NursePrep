@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-027
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-027
+  aihe: LAS
+  aihekori: YKM
+  tier: 0
+  questionText: "Kumpi m\xE4\xE4r\xE4 on pienempi: 75 ml vai 0,1 l?"
+  options:
+  - 0,1 l
+  - 75 ml
+  - "M\xE4\xE4r\xE4t ovat yht\xE4 suuret"
+  - "Ei voida verrata eri yksik\xF6it\xE4"
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Muunna litrat millilitroiksi tai millilitrat litroiksi ennen
+    vertailua.
+  rationale: "0,1 l = 100 ml. Siksi 75 ml on pienempi m\xE4\xE4r\xE4."
+  professionalPatch: "Vertailuun riitt\xE4\xE4, ett\xE4 muutat molemmat m\xE4\xE4r\xE4t
+    samaan yksikk\xF6\xF6n."

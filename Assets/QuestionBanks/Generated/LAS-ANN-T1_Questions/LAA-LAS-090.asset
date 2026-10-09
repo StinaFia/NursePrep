@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-090
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-090
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilas juo vuorokauden aikana 8 dl vett\xE4 ja 450 ml muita juomia.
+    Lis\xE4ksi h\xE4n saa letkuravitsemuksen mukana 500 ml nestett\xE4 ja suonensis\xE4isesti
+    650 ml nestett\xE4. Virtsaa erittyy 1 900 ml, oksennusta 150 ml ja dreenieritett\xE4
+    200 ml. Mik\xE4 on laskennallinen nestetasapaino?"
+  options:
+  - +150 ml
+  - "\u2212100 ml"
+  - +100 ml
+  - "\u2212150 ml"
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista yksik\xF6t sek\xE4 se, oletko huomioinut kaikki saadut
+    ja menetetyt nesteet oikeissa ryhmiss\xE4."
+  rationale: "8 dl = 800 ml. Saadut nesteet ovat 800 ml + 450 ml + 500 ml + 650 ml
+    = 2 400 ml. Menetetyt nesteet ovat 1 900 ml + 150 ml + 200 ml = 2 250 ml. Nestetasapaino
+    on 2 400 ml \u2212 2 250 ml = +150 ml."
+  professionalPatch: "Laajassa nestetasapainolaskussa etene j\xE4rjestyksess\xE4:
+    yksik\xF6t \u2192 saanti yhteens\xE4 \u2192 menetykset yhteens\xE4 \u2192 saanti
+    \u2212 menetykset."

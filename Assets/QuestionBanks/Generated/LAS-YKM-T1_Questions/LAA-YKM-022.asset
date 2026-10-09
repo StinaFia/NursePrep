@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-022
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-022
+  aihe: LAS
+  aihekori: YKM
+  tier: 0
+  questionText: Muunna 250 ml senttilitroiksi.
+  options:
+  - 2,5 cl
+  - 250 cl
+  - 25 cl
+  - 0,25 cl
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista millilitrojen ja senttilitrojen v\xE4linen muunnos."
+  rationale: "250 ml \xF7 10 = 25 cl."
+  professionalPatch: "Millilitroista senttilitroiksi muunnettaessa jaetaan 10:ll\xE4."

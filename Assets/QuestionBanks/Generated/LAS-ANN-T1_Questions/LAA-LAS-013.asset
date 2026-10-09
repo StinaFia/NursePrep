@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-013
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-013
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4 125 mg. Nestem\xE4isen
+    l\xE4\xE4kkeen vahvuus on 50 mg/ml. Kuinka monta millilitraa annat?"
+  options:
+  - 1,25 ml
+  - 2 ml
+  - 2,5 ml
+  - 5 ml
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Laske m\xE4\xE4r\xE4tty l\xE4\xE4keainem\xE4\xE4r\xE4 suhteessa
+    yhden millilitran sis\xE4lt\xE4m\xE4\xE4n l\xE4\xE4keainem\xE4\xE4r\xE4\xE4n."
+  rationale: "125 mg \xF7 50 mg/ml = 2,5 ml."
+  professionalPatch: "Desimaalinen tulos voi olla t\xE4ysin oikea. Tarkista lasku
+    ennen kuin muutat tai py\xF6rist\xE4t vastausta."

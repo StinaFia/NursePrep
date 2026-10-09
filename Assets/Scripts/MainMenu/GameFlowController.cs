@@ -23,7 +23,15 @@ namespace NursingQuiz.UI
     /// theme's objective at a glance before choosing.
     /// </summary>
     public class GameFlowController : MonoBehaviour
+
     {
+        [Header("Category select")]
+        [SerializeField] private List<CategoryInfo> categories = new List<CategoryInfo>();
+        [SerializeField] private GameObject categorySelectPanel;
+        [SerializeField] private Transform categoryButtonContainer;
+        [SerializeField] private ThemeButtonUI categoryButtonTemplate;
+        [SerializeField] private Button categoryBackButton;
+
         [Header("Content (drag every imported asset here)")]
         [SerializeField] private List<ThemeInfo> availableThemes = new List<ThemeInfo>();
         [SerializeField] private List<QuestionBank> availableBanks = new List<QuestionBank>();
@@ -77,16 +85,24 @@ namespace NursingQuiz.UI
 
         private string selectedAihe;
         private string selectedAihekori;
+        private string selectedCategory;
         private DifficultyTier? selectedTier;
         private GameModeType selectedMode;
         private readonly List<ThemeButtonUI> spawnedThemeButtons = new List<ThemeButtonUI>();
 
         private void Awake()
         {
-            multipleChoiceModeButton.onClick.AddListener(() => { selectedMode = GameModeType.MultipleChoice; ShowThemeAndDifficultySelect(); });
-            matchPairsModeButton.onClick.AddListener(() => { selectedMode = GameModeType.MatchPairs; ShowThemeAndDifficultySelect(); });
+            //multipleChoiceModeButton.onClick.AddListener(() => { selectedMode = GameModeType.MultipleChoice; ShowThemeAndDifficultySelect(); });
+            multipleChoiceModeButton.onClick.AddListener(() => { selectedMode = GameModeType.MultipleChoice; ShowCategorySelect(); });
+            //matchPairsModeButton.onClick.AddListener(() => { selectedMode = GameModeType.MatchPairs; ShowThemeAndDifficultySelect(); });
 
-            selectBackButton.onClick.AddListener(ShowMainMenu);
+            categoryBackButton.onClick.AddListener(ShowMainMenu);
+
+            //selectBackButton.onClick.AddListener(ShowMainMenu);
+            selectBackButton.onClick.AddListener(ShowCategorySelect);
+
+            categoryButtonTemplate.gameObject.SetActive(false);
+
             t1Button.onClick.AddListener(() => SelectTier(DifficultyTier.T1));
             t2Button.onClick.AddListener(() => SelectTier(DifficultyTier.T2));
             t3Button.onClick.AddListener(() => SelectTier(DifficultyTier.T3));
@@ -113,7 +129,7 @@ namespace NursingQuiz.UI
             }
             spawnedThemeButtons.Clear();
 
-            foreach (var theme in availableThemes)
+            foreach (var theme in availableThemes.Where(t => t.aihe == selectedCategory))
             {
                 var clone = Instantiate(themeButtonTemplate, themeButtonContainer);
                 clone.gameObject.SetActive(true);
@@ -154,6 +170,33 @@ namespace NursingQuiz.UI
 
             foreach (var themeButton in spawnedThemeButtons)
                 themeButton.Background.color = normalColor;
+        }
+
+        private void ShowCategorySelect()
+        {
+            foreach (Transform child in categoryButtonContainer)
+            {
+                if (child == categoryButtonTemplate.transform) continue;
+                Destroy(child.gameObject);
+            }
+
+            foreach (var aihe in availableThemes.Select(t => t.aihe).Distinct())
+            {
+                var info = categories.FirstOrDefault(c => c.aihe == aihe);
+                var clone = Instantiate(categoryButtonTemplate, categoryButtonContainer);
+                clone.gameObject.SetActive(true);
+                clone.Label.text = info != null && !string.IsNullOrEmpty(info.displayName) ? info.displayName : aihe;
+                clone.ObjectiveText.text = info != null ? info.description : "";
+
+                var captured = aihe;
+                clone.Button.onClick.AddListener(() =>
+                {
+                    selectedCategory = captured;
+                    ShowThemeAndDifficultySelect();
+                });
+            }
+
+            SetActivePanel(categorySelectPanel);
         }
 
         private void SelectTheme(string aihe, string aihekori)
@@ -233,6 +276,7 @@ namespace NursingQuiz.UI
         private void SetActivePanel(GameObject panelToShow)
         {
             mainMenuPanel.SetActive(panelToShow == mainMenuPanel);
+            categorySelectPanel.SetActive(panelToShow == categorySelectPanel);
             themeAndDifficultyPanel.SetActive(panelToShow == themeAndDifficultyPanel);
             quizScreen.SetActive(panelToShow == quizScreen);
             matchPairScreen.SetActive(panelToShow == matchPairScreen);

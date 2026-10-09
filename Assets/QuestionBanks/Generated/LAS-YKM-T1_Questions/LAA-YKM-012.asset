@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-012
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-012
+  aihe: LAS
+  aihekori: YKM
+  tier: 0
+  questionText: "Muunna 75 \xB5g milligrammoiksi."
+  options:
+  - 7,5 mg
+  - 0,75 mg
+  - 0,0075 mg
+  - 0,075 mg
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Tarkista erityisesti desimaalipilkun paikka.
+  rationale: "75 \xB5g \xF7 1 000 = 0,075 mg."
+  professionalPatch: "Voit kirjoittaa muunnoksen ensin muodossa 75 \xF7 1 000."

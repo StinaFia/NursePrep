@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-026
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-026
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "L\xE4\xE4keliuoksen pitoisuus on 1 %. Mik\xE4 on liuoksen pitoisuus
+    muodossa mg/ml?"
+  options:
+  - 100 mg/ml
+  - 1 mg/ml
+  - 10 mg/ml
+  - 1 000 mg/ml
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Muunna ensin 1 g milligrammoiksi ja jaa l\xE4\xE4keainem\xE4\xE4r\xE4
+    sen j\xE4lkeen 100 millilitralla."
+  rationale: "1 % tarkoittaa 1 g/100 ml. 1 g = 1 000 mg. 1 000 mg \xF7 100 ml = 10
+    mg/ml."
+  professionalPatch: "Kun tied\xE4t, kuinka paljon l\xE4\xE4keainetta on 100 ml:ssa,
+    voit laskea yhden millilitran sis\xE4lt\xE4m\xE4n m\xE4\xE4r\xE4n jakamalla sadalla."

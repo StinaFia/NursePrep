@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-043
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-043
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "L\xE4\xE4kepullossa on 150 ml l\xE4\xE4kett\xE4. Potilas ottaa l\xE4\xE4kett\xE4
+    7,5 ml kaksi kertaa vuorokaudessa. Kuinka moneksi vuorokaudeksi pullo riitt\xE4\xE4?"
+  options:
+  - 10 vrk
+  - 20 vrk
+  - 15 vrk
+  - 5 vrk
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Huomioi, ett\xE4 7,5 ml on yhden antokerran m\xE4\xE4r\xE4
+    ja l\xE4\xE4kett\xE4 otetaan kaksi kertaa vuorokaudessa."
+  rationale: "Vuorokaudessa kuluu 7,5 ml \xD7 2 = 15 ml. Pullossa on 150 ml, joten
+    150 ml \xF7 15 ml/vrk = 10 vrk."
+  professionalPatch: "Nestem\xE4isen l\xE4\xE4kkeen riitt\xE4vyys lasketaan samalla
+    periaatteella kuin tablettien: kokonaism\xE4\xE4r\xE4 \xF7 vuorokausikulutus."

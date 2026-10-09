@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-007
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-007
+  aihe: LAS
+  aihekori: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4 250 mg kolme kertaa
+    vuorokaudessa. Yksi tabletti sis\xE4lt\xE4\xE4 250 mg l\xE4\xE4keainetta. Kuinka
+    monta tablettia potilas saa yhdell\xE4 antokerralla?"
+  options:
+  - 1 tabletti
+  - 2 tablettia
+  - 3 tablettia
+  - 0,5 tablettia
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista, mit\xE4 teht\xE4v\xE4ss\xE4 kysyt\xE4\xE4n. \xC4l\xE4
+    laske vuorokauden kaikkia antokertoja yhteen, jos kysyt\xE4\xE4n yhden antokerran
+    m\xE4\xE4r\xE4\xE4."
+  rationale: "Yhdell\xE4 antokerralla m\xE4\xE4r\xE4tty annos on 250 mg. 250 mg \xF7
+    250 mg/tabletti = 1 tabletti. Kolme antokertaa vuorokaudessa ei muuta yhden antokerran
+    annosta."
+  professionalPatch: Erota toisistaan kerta-annos ja vuorokausiannos.
