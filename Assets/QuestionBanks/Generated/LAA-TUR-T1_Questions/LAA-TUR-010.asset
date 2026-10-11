@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-TUR-010
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-TUR-010
-  aihe: LAA
-  aihekori: TUR
+  category: LAA
+  theme: TUR
   tier: 0
   questionText: Voiko kaikkia tabletteja murskata tai liuottaa?
   options:

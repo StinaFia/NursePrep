@@ -22,8 +22,8 @@ namespace NursingQuiz.UI
         /// <summary>
         /// Set at spawn time by GameFlowController -- which theme this button represents.
         /// </summary>
-        [HideInInspector] public string Aihe;
+        [HideInInspector] public string Category;
 
-        [HideInInspector] public string Aihekori;
+        [HideInInspector] public string Theme;
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a736ef29d12d474aaadc284ea9b80e9, type: 3}
   m_Name: LAA-TUR-T1
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionBank
-  aihe: LAA
-  aihekori: TUR
+  category: LAA
+  theme: TUR
   tier: 0
   sourceFileName: LAA-TUR-laakehoito_t1_tietovisa_turvallinen laakehoito.csv
   questions:

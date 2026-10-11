@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-TUR-009
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-TUR-009
-  aihe: LAA
-  aihekori: TUR
+  category: LAA
+  theme: TUR
   tier: 0
   questionText: "Mik\xE4 on turvallisin toimintatapa, jos l\xE4\xE4kem\xE4\xE4r\xE4ys
     on ep\xE4selv\xE4?"

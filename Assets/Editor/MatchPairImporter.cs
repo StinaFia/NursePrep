@@ -18,7 +18,7 @@ namespace NursingQuiz.EditorTools
     /// Output: Assets/MatchPairs/Generated/
     ///
     /// FILENAME CONVENTION (same as question banks):
-    ///   AIHE-AIHEKORI-anything_tN_anything.csv
+    ///   CATEGORY-THEME-anything_tN_anything.csv
     ///
     /// FILE CONTENT: labeled lines can appear anywhere in the file (before or after the
     /// pairs table), one per line/row -- matching the source Word document's structure:
@@ -31,7 +31,7 @@ namespace NursingQuiz.EditorTools
     /// and "Oikea sarake", then reading every following row with two non-empty cells as one
     /// pair, stopping at a blank row or a row starting with one of the labels above.
     ///
-    /// IMPORTANT: this importer also creates/updates a ThemeInfo asset for the aihe+aihekori,
+    /// IMPORTANT: this importer also creates/updates a ThemeInfo asset for the category+theme,
     /// in the SAME Themes folder that QuestionBankImporter uses -- the theme+difficulty select
     /// screen is shared across both game modes and only shows themes that have a ThemeInfo
     /// asset, so match-pair content needs one just as much as question banks do.
@@ -102,9 +102,9 @@ namespace NursingQuiz.EditorTools
         {
             var fileName = Path.GetFileNameWithoutExtension(path);
 
-            if (!TryParseFileName(fileName, out var aihe, out var aihekori, out var tier))
+            if (!TryParseFileName(fileName, out var category, out var theme, out var tier))
             {
-                errors.Add($"{fileName}: could not parse AIHE-AIHEKORI prefix or _tN_ tier marker from filename. Skipped entire file.");
+                errors.Add($"{fileName}: could not parse CATEGORY-THEME prefix or _tN_ tier marker from filename. Skipped entire file.");
                 return null;
             }
 
@@ -124,10 +124,10 @@ namespace NursingQuiz.EditorTools
 
             var labels = ExtractLabels(rows);
 
-            // Create/update the shared ThemeInfo for this aihe+aihekori, same as QuestionBankImporter --
+            // Create/update the shared ThemeInfo for this category+theme, same as QuestionBankImporter --
             // without this, the theme never appears as selectable on the theme+difficulty screen.
             var objective = labels.TryGetValue("Oppimistavoite", out var obj) ? obj : null;
-            UpsertThemeInfo(aihe, aihekori, objective, fileName, errors);
+            UpsertThemeInfo(category, theme, objective, fileName, errors);
 
             var pairs = new List<MatchPairEntry>();
             for (int r = headerIndex + 1; r < rows.Count; r++)
@@ -150,7 +150,7 @@ namespace NursingQuiz.EditorTools
                 return null;
             }
 
-            var assetPath = $"{OutputFolder}/{aihe}-{aihekori}-{tier}.asset";
+            var assetPath = $"{OutputFolder}/{category}-{theme}-{tier}.asset";
             var set = AssetDatabase.LoadAssetAtPath<MatchPairSet>(assetPath);
             if (set == null)
             {
@@ -158,8 +158,8 @@ namespace NursingQuiz.EditorTools
                 AssetDatabase.CreateAsset(set, assetPath);
             }
 
-            set.aihe = aihe;
-            set.aihekori = aihekori;
+            set.category = category;
+            set.theme = theme;
             set.tier = tier;
             set.sourceFileName = Path.GetFileName(path);
             set.gameName = labels.TryGetValue("Pelin nimi", out var gn) ? gn : "";
@@ -173,42 +173,42 @@ namespace NursingQuiz.EditorTools
         }
 
         /// <summary>
-        /// Creates or updates the theme-level ThemeInfo asset for this aihe+aihekori, in the
+        /// Creates or updates the theme-level ThemeInfo asset for this category+theme, in the
         /// SAME folder QuestionBankImporter uses -- so a theme that already exists from a
         /// question bank (or vice versa) isn't duplicated, and match-pair-only themes get a
         /// ThemeInfo of their own. If the objective conflicts with one already set, the
         /// existing text is kept and a warning is logged, same policy as QuestionBankImporter.
         /// </summary>
-        private static void UpsertThemeInfo(string aihe, string aihekori, string objective, string fileName, List<string> errors)
+        private static void UpsertThemeInfo(string category, string theme, string objective, string fileName, List<string> errors)
         {
             Directory.CreateDirectory(ThemesFolder);
-            var path = $"{ThemesFolder}/{aihe}-{aihekori}.asset";
-            var theme = AssetDatabase.LoadAssetAtPath<ThemeInfo>(path);
-            if (theme == null)
+            var path = $"{ThemesFolder}/{category}-{theme}.asset";
+            var themeInfo = AssetDatabase.LoadAssetAtPath<ThemeInfo>(path);
+            if (themeInfo == null)
             {
-                theme = ScriptableObject.CreateInstance<ThemeInfo>();
-                AssetDatabase.CreateAsset(theme, path);
+                themeInfo = ScriptableObject.CreateInstance<ThemeInfo>();
+                AssetDatabase.CreateAsset(themeInfo, path);
             }
 
-            theme.aihe = aihe;
-            theme.aihekori = aihekori;
-            if (string.IsNullOrEmpty(theme.displayName))
-                theme.displayName = aihekori;
+            themeInfo.category = category;
+            themeInfo.theme = theme;
+            if (string.IsNullOrEmpty(themeInfo.displayName))
+                themeInfo.displayName = theme;
 
             if (!string.IsNullOrWhiteSpace(objective))
             {
-                if (!string.IsNullOrEmpty(theme.oppimistavoite) && theme.oppimistavoite != objective)
+                if (!string.IsNullOrEmpty(themeInfo.oppimistavoite) && themeInfo.oppimistavoite != objective)
                 {
                     errors.Add($"{fileName}: this file's Oppimistavoite text differs from one already imported " +
-                               $"for theme {aihe}-{aihekori}. Keeping the first version found.");
+                               $"for theme {category}-{theme}. Keeping the first version found.");
                 }
                 else
                 {
-                    theme.oppimistavoite = objective;
+                    themeInfo.oppimistavoite = objective;
                 }
             }
 
-            EditorUtility.SetDirty(theme);
+            EditorUtility.SetDirty(themeInfo);
         }
 
         private static bool IsLabeledLine(string cell)
@@ -238,16 +238,16 @@ namespace NursingQuiz.EditorTools
             return result;
         }
 
-        private static bool TryParseFileName(string fileName, out string aihe, out string aihekori, out DifficultyTier tier)
+        private static bool TryParseFileName(string fileName, out string category, out string theme, out DifficultyTier tier)
         {
-            aihe = aihekori = null;
+            category = theme = null;
             tier = DifficultyTier.T1;
 
             var firstSegment = fileName.Split('_')[0];
             var parts = firstSegment.Split('-');
             if (parts.Length < 2) return false;
-            aihe = parts[0];
-            aihekori = parts[1];
+            category = parts[0];
+            theme = parts[1];
 
             var match = TierPattern.Match("_" + fileName + "_");
             if (!match.Success) return false;

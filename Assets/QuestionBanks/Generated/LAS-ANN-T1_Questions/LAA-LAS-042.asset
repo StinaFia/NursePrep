@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-042
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-042
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "L\xE4\xE4kepakkauksessa on 60 tablettia. Potilas ottaa 2 tablettia
     aamulla ja 1 tabletin illalla. Kuinka moneksi vuorokaudeksi pakkaus riitt\xE4\xE4?"

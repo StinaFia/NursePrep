@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-021
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-021
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "L\xE4\xE4keliuoksen 5 ml sis\xE4lt\xE4\xE4 100 mg l\xE4\xE4keainetta.
     Mik\xE4 on liuoksen pitoisuus muodossa mg/ml?"

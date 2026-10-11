@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0efc970b14c2cca4daeb097aecffac11, type: 3}
   m_Name: LAA-KAY
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.ThemeInfo
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   displayName: "K\xE4yt\xE4nn\xF6n toiminta"
   oppimistavoite: "Opiskelija ymm\xE4rt\xE4\xE4 turvallisen l\xE4\xE4kehoidon keskeiset
     periaatteet. H\xE4n osaa toimia turvallisesti ennen l\xE4\xE4kkeen valmistelua,

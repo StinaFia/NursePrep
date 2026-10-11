@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-092
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-092
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Potilaalle annetaan l\xE4\xE4kett\xE4 240 mg kolme kertaa vuorokaudessa.
     Nestem\xE4isen l\xE4\xE4kkeen vahvuus on 80 mg/ml. Kuinka monta millilitraa l\xE4\xE4kett\xE4

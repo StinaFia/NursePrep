@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-TUR-004
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-TUR-004
-  aihe: LAA
-  aihekori: TUR
+  category: LAA
+  theme: TUR
   tier: 0
   questionText: "Miksi l\xE4\xE4kepakkaukseen kannattaa merkit\xE4 avaamisp\xE4iv\xE4m\xE4\xE4r\xE4?"
   options:

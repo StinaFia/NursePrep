@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-030
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-030
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Potilaalle on m\xE4\xE4r\xE4tty 0,3 g l\xE4\xE4kett\xE4. K\xE4ytett\xE4viss\xE4
     olevan l\xE4\xE4keliuoksen pitoisuus on 2 %. Kuinka monta millilitraa annat?"

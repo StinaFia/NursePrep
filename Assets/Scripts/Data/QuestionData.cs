@@ -13,8 +13,8 @@ namespace NursingQuiz.Data
     {
         [Header("Identity")]
         public string tunniste;   // e.g. LAA-PER-001
-        public string aihe;       // e.g. LAA
-        public string aihekori;   // e.g. PER
+        public string category;       // e.g. LAA
+        public string theme;   // e.g. PER
         public DifficultyTier tier;
 
         [Header("Content")]

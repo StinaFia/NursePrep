@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-KAY-062
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-KAY-062
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   tier: 0
   questionText: "Miten voidaan varmistaa, ett\xE4 potilas on ymm\xE4rt\xE4nyt saamansa
     l\xE4\xE4kehoito-ohjeet?"

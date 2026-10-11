@@ -20,9 +20,9 @@ namespace NursingQuiz.EditorTools
     /// -------------------------------------------------------------------------------------------------
     /// FILENAME FORMAT:
     /// -------------------------------------------------------------------------------------------------
-    ///   AIHE-AIHEKORI-anything_tN_anything.csv
+    ///   CATEGORY-THEME-anything_tN_anything.csv
     ///   e.g. LAA-PER-laakehoito_t1_tietovisa_perustiedot.csv
-    ///   -> aihe = LAA, aihekori = PER, tier = T1
+    ///   -> category = LAA, theme = PER, tier = T1
     ///
     /// -------------------------------------------------------------------------------------------------
     /// CSV COLUMNS:
@@ -121,7 +121,7 @@ namespace NursingQuiz.EditorTools
         /// Imports a single CSV file into a QuestionBank asset.
         /// 
         /// Responsibilities:
-        /// - Parse filename metadata (aihe, aihekori, tier)
+        /// - Parse filename metadata (category, theme, tier)
         /// - Read and validate CSV structure (header row, required columns)
         /// - Create/update ThemeInfo
         /// - Create/update QuestionBank
@@ -132,9 +132,9 @@ namespace NursingQuiz.EditorTools
         {
             var fileName = Path.GetFileNameWithoutExtension(path);
 
-            if (!TryParseFileName(fileName, out var aihe, out var aihekori, out var tier))
+            if (!TryParseFileName(fileName, out var category, out var theme, out var tier))
             {
-                errors.Add($"{fileName}: could not parse AIHE-AIHEKORI prefix or _tN_ tier marker from filename. Skipped entire file.");
+                errors.Add($"{fileName}: could not parse category-theme prefix or _tN_ tier marker from filename. Skipped entire file.");
                 return null;
             }
 
@@ -168,9 +168,9 @@ namespace NursingQuiz.EditorTools
             }
 
             var objective = ExtractObjective(rows, headerIndex);
-            UpsertThemeInfo(aihe, aihekori, objective, fileName, errors);
+            UpsertThemeInfo(category, theme, objective, fileName, errors);
 
-            var bankAssetPath = $"{OutputFolder}/{aihe}-{aihekori}-{tier}.asset";
+            var bankAssetPath = $"{OutputFolder}/{category}-{theme}-{tier}.asset";
             var bank = AssetDatabase.LoadAssetAtPath<QuestionBank>(bankAssetPath);
             if (bank == null)
             {
@@ -178,13 +178,13 @@ namespace NursingQuiz.EditorTools
                 AssetDatabase.CreateAsset(bank, bankAssetPath);
             }
 
-            bank.aihe = aihe;
-            bank.aihekori = aihekori;
+            bank.category = category;
+            bank.theme = theme;
             bank.tier = tier;
             bank.sourceFileName = Path.GetFileName(path);
             bank.questions.Clear();
 
-            var questionsFolder = $"{OutputFolder}/{aihe}-{aihekori}-{tier}_Questions";
+            var questionsFolder = $"{OutputFolder}/{category}-{theme}-{tier}_Questions";
             Directory.CreateDirectory(questionsFolder);
 
             for (int r = headerIndex + 1; r < rows.Count; r++)
@@ -235,8 +235,8 @@ namespace NursingQuiz.EditorTools
                 }
 
                 question.tunniste = tunniste;
-                question.aihe = aihe;
-                question.aihekori = aihekori;
+                question.category = category;
+                question.theme = theme;
                 question.tier = tier;
                 question.questionText = Get(row, columnMap, "Kysymys");
                 question.options = options;
@@ -280,60 +280,60 @@ namespace NursingQuiz.EditorTools
         }
 
         /// <summary>
-        /// Creates or updates a ThemeInfo asset for the given aihe-aihekori combination.
+        /// Creates or updates a ThemeInfo asset for the given category-theme combination.
         /// </summary>
-        private static void UpsertThemeInfo(string aihe, string aihekori, string objective, string fileName, List<string> errors)
+        private static void UpsertThemeInfo(string category, string theme, string objective, string fileName, List<string> errors)
         {
             Directory.CreateDirectory(ThemesFolder);
-            var path = $"{ThemesFolder}/{aihe}-{aihekori}.asset";
-            var theme = AssetDatabase.LoadAssetAtPath<ThemeInfo>(path);
-            if (theme == null)
+            var path = $"{ThemesFolder}/{category}-{theme}.asset";
+            var themeInfo = AssetDatabase.LoadAssetAtPath<ThemeInfo>(path);
+            if (themeInfo == null)
             {
-                theme = ScriptableObject.CreateInstance<ThemeInfo>();
-                AssetDatabase.CreateAsset(theme, path);
+                themeInfo = ScriptableObject.CreateInstance<ThemeInfo>();
+                AssetDatabase.CreateAsset(themeInfo, path);
             }
 
-            theme.aihe = aihe;
-            theme.aihekori = aihekori;
-            if (string.IsNullOrEmpty(theme.displayName))
-                theme.displayName = aihekori;
+            themeInfo.category = category;
+            themeInfo.theme = theme;
+            if (string.IsNullOrEmpty(themeInfo.displayName))
+                themeInfo.displayName = theme;
 
             if (!string.IsNullOrWhiteSpace(objective))
             {
-                if (!string.IsNullOrEmpty(theme.oppimistavoite) && theme.oppimistavoite != objective)
+                if (!string.IsNullOrEmpty(themeInfo.oppimistavoite) && themeInfo.oppimistavoite != objective)
                 {
                     errors.Add($"{fileName}: this file's Oppimistavoite text differs from one already imported " +
-                               $"for theme {aihe}-{aihekori}. Keeping the first version found -- align the wording " +
+                               $"for theme {category}-{theme}. Keeping the first version found -- align the wording " +
                                "across the T1/T2/T3 files for this theme if that wasn't intentional.");
                 }
                 else
                 {
-                    theme.oppimistavoite = objective;
+                    themeInfo.oppimistavoite = objective;
                 }
             }
 
-            EditorUtility.SetDirty(theme);
+            EditorUtility.SetDirty(themeInfo);
         }
 
         /// <summary>
-        /// Extracts aihe, aihekori and difficulty tier from a CSV filename.
+        /// Extracts category, theme and difficulty tier from a CSV filename.
         ///
         /// Expected format:
-        /// AIHE-AIHEKORI-xxxx_tN_xxxx.csv
+        /// CATEGORY-THEME-xxxx_tN_xxxx.csv
         ///
         /// Example:
         /// LAA-PER-laakehoito_t1_perustiedot.csv
         /// </summary>
-        private static bool TryParseFileName(string fileName, out string aihe, out string aihekori, out DifficultyTier tier)
+        private static bool TryParseFileName(string fileName, out string category, out string theme, out DifficultyTier tier)
         {
-            aihe = aihekori = null;
+            category = theme = null;
             tier = DifficultyTier.T1;
 
             var firstSegment = fileName.Split('_')[0];
             var parts = firstSegment.Split('-');
             if (parts.Length < 2) return false;
-            aihe = parts[0];
-            aihekori = parts[1];
+            category = parts[0];
+            theme = parts[1];
 
             var match = TierPattern.Match("_" + fileName + "_");
             if (!match.Success) return false;

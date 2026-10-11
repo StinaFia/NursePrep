@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-YKM-025
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-YKM-025
-  aihe: LAS
-  aihekori: YKM
+  category: LAS
+  theme: YKM
   tier: 0
   questionText: "Kumpi m\xE4\xE4r\xE4 on suurempi: 0,5 g vai 450 mg?"
   options:

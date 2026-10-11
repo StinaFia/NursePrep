@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-057
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-057
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Liuoksen 10 ml sis\xE4lt\xE4\xE4 20 mmol l\xE4\xE4keainetta. Potilaalle
     on m\xE4\xE4r\xE4tty 6 mmol. Kuinka monta millilitraa liuosta annat?"

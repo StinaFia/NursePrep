@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-TUR-007
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-TUR-007
-  aihe: LAA
-  aihekori: TUR
+  category: LAA
+  theme: TUR
   tier: 0
   questionText: "Miksi huumausainel\xE4\xE4kkeiden k\xE4ytt\xF6\xE4 seurataan erityisen
     tarkasti?"

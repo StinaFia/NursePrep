@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-027
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-027
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "L\xE4\xE4keliuoksen pitoisuus on 2 %. Kuinka paljon l\xE4\xE4keainetta
     on 5 ml:ssa liuosta?"

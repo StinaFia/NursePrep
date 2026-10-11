@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0efc970b14c2cca4daeb097aecffac11, type: 3}
   m_Name: LAS-YKM
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.ThemeInfo
-  aihe: LAS
-  aihekori: YKM
+  category: LAS
+  theme: YKM
   displayName: "Yksikk\xF6muunnokset"
   oppimistavoite: "Opiskelija osaa tehd\xE4 l\xE4\xE4kelaskennassa tarvittavia yksikk\xF6muunnoksia
     ja k\xE4ytt\xE4\xE4 yksik\xF6it\xE4 oikein."

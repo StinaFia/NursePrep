@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-056
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-056
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: Liuoksen vahvuus on 1,5 mmol/ml. Liuosta annetaan 4 ml. Kuinka monta
     mmol potilas saa?

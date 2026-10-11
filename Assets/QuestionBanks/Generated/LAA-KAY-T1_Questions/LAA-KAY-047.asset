@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-KAY-047
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-KAY-047
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   tier: 0
   questionText: "Mit\xE4 tehd\xE4\xE4n k\xE4ytetylle neulalle heti pist\xE4misen
     j\xE4lkeen?"

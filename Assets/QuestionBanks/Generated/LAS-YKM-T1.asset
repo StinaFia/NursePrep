@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a736ef29d12d474aaadc284ea9b80e9, type: 3}
   m_Name: LAS-YKM-T1
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionBank
-  aihe: LAS
-  aihekori: YKM
+  category: LAS
+  theme: YKM
   tier: 0
   sourceFileName: "LAS-YKM_t1_tietovisa_l\xE4\xE4kelaskut-yksikk\xF6muunnokset.csv"
   questions:

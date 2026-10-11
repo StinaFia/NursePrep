@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-PER-006
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-PER-006
-  aihe: LAA
-  aihekori: PER
+  category: LAA
+  theme: PER
   tier: 0
   questionText: "Mit\xE4 lyhenne i.m. tarkoittaa?"
   options:

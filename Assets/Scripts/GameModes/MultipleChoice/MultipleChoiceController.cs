@@ -8,7 +8,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
 {
     /// <summary>
     /// Drives one multiple-choice play session: loads QuestionBanks matching the chosen
-    /// aihe + tier, samples a subset, and steps through questions one at a time.
+    /// category + tier, samples a subset, and steps through questions one at a time.
     ///
     /// This class only holds game logic/state -- UI wiring (buttons, feedback panel) belongs
     /// in a separate view script that listens to this controller. Not built yet; this is the
@@ -46,7 +46,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
         public override void StartRound()
         {
             var pool = availableBanks
-                .Where(b => b.aihe == currentAihe && b.tier == currentTier)
+                .Where(b => b.category == currentAihe && b.tier == currentTier)
                 .SelectMany(b => b.questions)
                 .ToList();
 

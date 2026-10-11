@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-KAY-051
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-KAY-051
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   tier: 0
   questionText: "Miksi potilaalle annetaan mahdollisuus kysy\xE4 ennen pist\xE4mist\xE4?"
   options:

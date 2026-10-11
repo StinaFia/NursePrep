@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-090
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-090
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Potilas juo vuorokauden aikana 8 dl vett\xE4 ja 450 ml muita juomia.
     Lis\xE4ksi h\xE4n saa letkuravitsemuksen mukana 500 ml nestett\xE4 ja suonensis\xE4isesti

@@ -24,8 +24,8 @@ namespace NursingQuiz.Data
     public class MatchPairSet : ScriptableObject
     {
         [Header("Identity")]
-        public string aihe;
-        public string aihekori;
+        public string category;
+        public string theme;
         public DifficultyTier tier;
         public string sourceFileName;
 

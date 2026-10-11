@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-TUR-003
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-TUR-003
-  aihe: LAA
-  aihekori: TUR
+  category: LAA
+  theme: TUR
   tier: 0
   questionText: "Miksi l\xE4\xE4kkeet tulee s\xE4ilytt\xE4\xE4 valmistajan ohjeiden
     mukaisesti?"

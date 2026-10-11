@@ -8,7 +8,7 @@ namespace NursingQuiz.GameModes.MatchPairs
 {
     /// <summary>
     /// Drives one "Yhdistä oikein" round: picks the MatchPairSet matching the chosen
-    /// aihe+tier, shuffles the left and right columns independently (so they don't line up
+    /// category+tier, shuffles the left and right columns independently (so they don't line up
     /// trivially), and tracks tap-tap selection + matching state.
     ///
     /// Left/right columns are addressed by "slot" (0..PairCount-1, the on-screen position),
@@ -52,7 +52,7 @@ namespace NursingQuiz.GameModes.MatchPairs
 
         public override void StartRound()
         {
-            currentSet = availableSets.FirstOrDefault(s => s.aihe == currentAihe && s.tier == currentTier);
+            currentSet = availableSets.FirstOrDefault(s => s.category == currentAihe && s.tier == currentTier);
             if (currentSet == null || currentSet.pairs.Count == 0)
             {
                 Debug.LogError($"No match-pair set found for aihe={currentAihe}, tier={currentTier}. " +

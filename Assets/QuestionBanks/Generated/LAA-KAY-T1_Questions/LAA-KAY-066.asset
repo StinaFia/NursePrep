@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-KAY-066
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-KAY-066
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   tier: 0
   questionText: "Miksi potilasta kannustetaan osallistumaan omaan l\xE4\xE4kehoitoonsa?"
   options:

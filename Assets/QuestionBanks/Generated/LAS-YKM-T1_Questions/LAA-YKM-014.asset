@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-YKM-014
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-YKM-014
-  aihe: LAS
-  aihekori: YKM
+  category: LAS
+  theme: YKM
   tier: 0
   questionText: Muunna 500 ng mikrogrammoiksi.
   options:

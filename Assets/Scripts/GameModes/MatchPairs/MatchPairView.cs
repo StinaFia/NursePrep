@@ -75,9 +75,9 @@ namespace NursingQuiz.GameModes.MatchPairs
         {
             controller.SetAvailableSets(sets);
 
-            if (!sets.Any(s => s.aihe == aihe && s.tier == tier))
+            if (!sets.Any(s => s.category == aihe && s.tier == tier))
             {
-                var available = string.Join(", ", sets.Select(s => $"{s.aihe}/{s.tier}"));
+                var available = string.Join(", ", sets.Select(s => $"{s.category}/{s.tier}"));
                 Debug.LogError($"MatchPairView: no set matches aihe='{aihe}', tier={tier}. Available: [{available}].");
                 return;
             }

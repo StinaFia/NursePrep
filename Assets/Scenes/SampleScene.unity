@@ -4896,8 +4896,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 631.0815, y: -215}
-  m_SizeDelta: {x: 1262.163, y: 0}
+  m_AnchoredPosition: {x: 639.40015, y: -215}
+  m_SizeDelta: {x: 1278.8003, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534430656
 MonoBehaviour:
@@ -7695,8 +7695,8 @@ MonoBehaviour:
   Label: {fileID: 790691789}
   Background: {fileID: 1020980226}
   ObjectiveText: {fileID: 1205813751}
-  Aihe: 
-  Aihekori: 
+  Category: 
+  Theme: 
 --- !u!224 &1020980225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11623,10 +11623,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.UI.GameFlowController
   categories:
-  - aihe: LAA
+  - category: LAA
     displayName: "L\xE4\xE4kehoito"
     description: 
-  - aihe: LAS
+  - category: LAS
     displayName: "L\xE4\xE4kelaskut"
     description: 
   categoryList: {fileID: 1439761254}
@@ -12751,8 +12751,8 @@ MonoBehaviour:
   Label: {fileID: 1196032343}
   Background: {fileID: 1620439413}
   ObjectiveText: {fileID: 50071585}
-  Aihe: 
-  Aihekori: 
+  Category: 
+  Theme: 
 --- !u!114 &1620439412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14226,8 +14226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 681.0815, y: -709.99335}
-  m_SizeDelta: {x: 1262.163, y: 0}
+  m_AnchoredPosition: {x: 689.40015, y: -709.99335}
+  m_SizeDelta: {x: 1278.8003, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782545731
 MonoBehaviour:

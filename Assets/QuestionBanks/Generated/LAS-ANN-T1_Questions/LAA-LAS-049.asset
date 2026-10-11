@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-049
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-049
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Potilas ottaa nestem\xE4ist\xE4 l\xE4\xE4kett\xE4 5 ml kolme kertaa
     vuorokaudessa. Pullossa on 200 ml l\xE4\xE4kett\xE4. Kuinka monta kokonaista

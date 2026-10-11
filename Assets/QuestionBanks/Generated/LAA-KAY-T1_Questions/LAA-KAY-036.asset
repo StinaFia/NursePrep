@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-KAY-036
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-KAY-036
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   tier: 0
   questionText: "Miksi l\xE4\xE4kkeen ottamisen yhteydess\xE4 hengitet\xE4\xE4n sis\xE4\xE4n
     laitteen ohjeen mukaisesti?"

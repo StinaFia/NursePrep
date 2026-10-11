@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-KAY-035
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-KAY-035
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   tier: 0
   questionText: "Miksi uloshengitys tehd\xE4\xE4n ennen inhalaatiol\xE4\xE4kkeen
     ottamista?"

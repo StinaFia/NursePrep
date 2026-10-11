@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: "LAA-LAS-100 \U0001F3C1"
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: "LAA-LAS-100 \U0001F3C1"
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Potilas painaa 36 kg. L\xE4\xE4kett\xE4 on m\xE4\xE4r\xE4tty 25
     mg/kg/vrk jaettuna kolmeen yht\xE4 suureen annokseen. Nestem\xE4isen l\xE4\xE4kkeen

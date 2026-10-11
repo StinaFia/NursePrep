@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-048
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-048
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "L\xE4\xE4kepullossa on 100 ml l\xE4\xE4kett\xE4. Yksi annos on 4
     ml. Kuinka monta kokonaista annosta pullosta saadaan?"

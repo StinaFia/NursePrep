@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-095
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-095
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Potilaalle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4 18 mmol/vrk jaettuna
     kolmeen yht\xE4 suureen annokseen. Liuoksen 4 ml sis\xE4lt\xE4\xE4 8 mmol l\xE4\xE4keainetta.

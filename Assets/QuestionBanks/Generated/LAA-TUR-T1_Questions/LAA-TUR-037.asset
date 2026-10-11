@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-TUR-037
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-TUR-037
-  aihe: LAA
-  aihekori: TUR
+  category: LAA
+  theme: TUR
   tier: 0
   questionText: "Mik\xE4 on turvallisin toimintatapa, jos huomaat l\xE4\xE4kkeen
     olevan erilainen kuin odotit?"

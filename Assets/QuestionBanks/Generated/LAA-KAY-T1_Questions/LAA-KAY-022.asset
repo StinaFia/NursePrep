@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-KAY-022
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-KAY-022
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   tier: 0
   questionText: "Miksi potilaan yksityisyydest\xE4 huolehditaan erityisen tarkasti
     intiimialueelle annettavia l\xE4\xE4kkeit\xE4 annettaessa?"

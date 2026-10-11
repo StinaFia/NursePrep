@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-KAY-009
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-KAY-009
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   tier: 0
   questionText: Miten poretabletti valmistellaan ennen sen ottamista?
   options:

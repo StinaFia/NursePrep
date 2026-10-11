@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-081
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-081
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Potilas juo aamupalalla 200 ml kahvia, 150 ml mehua ja 100 ml vett\xE4.
     Kuinka paljon nestett\xE4 potilas saa aamupalan aikana yhteens\xE4?"

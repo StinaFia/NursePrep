@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-KAY-044
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-KAY-044
-  aihe: LAA
-  aihekori: KAY
+  category: LAA
+  theme: KAY
   tier: 0
   questionText: "Miksi pistopaikka tarkistetaan ennen l\xE4\xE4kkeen pist\xE4mist\xE4?"
   options:

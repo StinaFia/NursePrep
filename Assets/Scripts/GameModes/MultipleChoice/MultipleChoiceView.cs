@@ -100,9 +100,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             controller.SetAvailableBanks(banks);
 
-            if (!banks.Any(b => b.aihe == aihe && b.tier == tier))
+            if (!banks.Any(b => b.category == aihe && b.tier == tier))
             {
-                var available = string.Join(", ", banks.Select(b => $"{b.aihe}/{b.tier}"));
+                var available = string.Join(", ", banks.Select(b => $"{b.category}/{b.tier}"));
                 Debug.LogError($"MultipleChoiceView: no bank matches aihe='{aihe}', tier={tier}. " +
                                 $"Available: [{available}].");
                 return;

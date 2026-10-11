@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-067
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-067
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Potilas saa l\xE4\xE4kett\xE4 15 tippaa kolme kertaa vuorokaudessa.
     Valmisteen annostelijalla 1 ml = 20 tippaa. Kuinka monta tippaa potilas saa yhteens\xE4

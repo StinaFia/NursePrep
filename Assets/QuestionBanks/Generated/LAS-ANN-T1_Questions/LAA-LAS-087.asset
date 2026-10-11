@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-LAS-087
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-LAS-087
-  aihe: LAS
-  aihekori: ANN
+  category: LAS
+  theme: ANN
   tier: 0
   questionText: "Potilas saa vuorokauden aikana nesteit\xE4 2 750 ml. Nesteit\xE4
     menetet\xE4\xE4n virtsana 1 900 ml ja dreenieritteen\xE4 250 ml. Mik\xE4 on laskennallinen
