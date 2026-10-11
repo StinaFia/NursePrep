@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 28266989}
   - component: {fileID: 28266993}
   m_Layer: 5
-  m_Name: Option (2)
+  m_Name: AnswerOptionC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 50071586}
   - component: {fileID: 50071585}
   m_Layer: 5
-  m_Name: ObjectiveText
+  m_Name: ThemeObjectiveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 62040899}
   - component: {fileID: 62040898}
   m_Layer: 5
-  m_Name: StarsRow
+  m_Name: ScoreStarsRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1669,10 +1669,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1501474942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 833.0925, y: -14.910871}
+  m_SizeDelta: {x: 1552.185, y: 29.821741}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192199259
 MonoBehaviour:
@@ -1809,7 +1809,7 @@ GameObject:
   - component: {fileID: 210013647}
   - component: {fileID: 210013646}
   m_Layer: 5
-  m_Name: ProfessionalIcon
+  m_Name: ProfessionalTipIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1905,7 +1905,7 @@ GameObject:
   - component: {fileID: 213781514}
   - component: {fileID: 213781515}
   m_Layer: 5
-  m_Name: ProfessionalText
+  m_Name: ProfessionalTipText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2064,7 +2064,7 @@ GameObject:
   - component: {fileID: 236781085}
   - component: {fileID: 236781084}
   m_Layer: 5
-  m_Name: CompleteText
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2222,7 +2222,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1134324655}
   - {fileID: 1551009473}
   - {fileID: 22354049}
   - {fileID: 1976221921}
@@ -2505,7 +2504,7 @@ GameObject:
   - component: {fileID: 323348558}
   - component: {fileID: 323348557}
   m_Layer: 5
-  m_Name: MatchPairs
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3174,7 +3173,7 @@ GameObject:
   - component: {fileID: 404559097}
   - component: {fileID: 404559099}
   m_Layer: 5
-  m_Name: Root
+  m_Name: QuizContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3302,7 +3301,7 @@ GameObject:
   - component: {fileID: 425818983}
   - component: {fileID: 425818986}
   m_Layer: 5
-  m_Name: BackToMenuButton
+  m_Name: QuizBackToMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3767,7 +3766,7 @@ MonoBehaviour:
   defaultQuestionCount: 10
   questionText: {fileID: 1545846053}
   progressText: {fileID: 768652114}
-  resultView: {fileID: 1043068329}
+  resultCard: {fileID: 1043068329}
   options:
   - {fileID: 1700033377}
   - {fileID: 466449097}
@@ -3779,12 +3778,12 @@ MonoBehaviour:
   crossSprite: {fileID: 21300000, guid: c1b6214f078487642a745935d41caeaa, type: 3}
   correctAnswerText: {fileID: 430390382}
   feedbackText: {fileID: 1698420656}
-  professionalPatchRow: {fileID: 534430654}
-  professionalText: {fileID: 213781514}
+  professionalTipRow: {fileID: 534430654}
+  professionalTipText: {fileID: 213781514}
   nextButton: {fileID: 2072942434}
-  completePanel: {fileID: 568043382}
+  resultPanel: {fileID: 568043382}
   topBarThemeText: {fileID: 910249752}
-  completeText: {fileID: 236781084}
+  scoreText: {fileID: 236781084}
   retryButton: {fileID: 1419884950}
   normalOptionColor: {r: 0.9529412, g: 0.95686275, b: 0.94509804, a: 0.54901963}
   selectedOptionColor: {r: 1, g: 0.8363855, b: 0.80817604, a: 0.7607843}
@@ -3816,7 +3815,7 @@ GameObject:
   - component: {fileID: 442619689}
   - component: {fileID: 442619691}
   m_Layer: 5
-  m_Name: CategoryBackButton
+  m_Name: CategoryBackToMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4123,7 +4122,7 @@ GameObject:
   - component: {fileID: 466449097}
   - component: {fileID: 466449101}
   m_Layer: 5
-  m_Name: Option (1)
+  m_Name: AnswerOptionB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4349,7 +4348,7 @@ GameObject:
   - component: {fileID: 475515618}
   - component: {fileID: 475515619}
   m_Layer: 5
-  m_Name: OptionsContainer
+  m_Name: AnswerOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4873,7 +4872,7 @@ GameObject:
   - component: {fileID: 534430658}
   - component: {fileID: 534430660}
   m_Layer: 5
-  m_Name: ProfessionalPatchRow
+  m_Name: ProfessionalTipRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5010,7 +5009,7 @@ GameObject:
   - component: {fileID: 539073411}
   - component: {fileID: 539073410}
   m_Layer: 5
-  m_Name: RightColumnTitle
+  m_Name: DifficultySelectionTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5150,7 +5149,7 @@ GameObject:
   - component: {fileID: 546179170}
   - component: {fileID: 546179174}
   m_Layer: 5
-  m_Name: Option (3)
+  m_Name: AnswerOptionD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5314,7 +5313,7 @@ GameObject:
   - component: {fileID: 568043387}
   - component: {fileID: 568043386}
   m_Layer: 5
-  m_Name: CompletePanel
+  m_Name: ResultPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5816,7 +5815,7 @@ GameObject:
   - component: {fileID: 693056779}
   - component: {fileID: 693056781}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ThemeList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5882,7 +5881,7 @@ GameObject:
   - component: {fileID: 707157140}
   - component: {fileID: 707157143}
   m_Layer: 5
-  m_Name: BackToThemeButton
+  m_Name: QuizTopBarBackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6341,7 +6340,7 @@ GameObject:
   - component: {fileID: 790691789}
   - component: {fileID: 790691787}
   m_Layer: 5
-  m_Name: Theme
+  m_Name: CategoryTitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6520,10 +6519,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 53810722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -60}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &791240657
 MonoBehaviour:
@@ -6657,10 +6656,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 53810722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -10}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &807394201
 MonoBehaviour:
@@ -7140,7 +7139,7 @@ GameObject:
   - component: {fileID: 911592072}
   - component: {fileID: 911592071}
   m_Layer: 5
-  m_Name: ResultText
+  m_Name: ResultFeedbackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7890,7 +7889,7 @@ GameObject:
   - component: {fileID: 1043068328}
   - component: {fileID: 1043068329}
   m_Layer: 5
-  m_Name: Card
+  m_Name: ResultCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7999,7 +7998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.GameModes.MultipleChoice.ResultView
   scoreText: {fileID: 236781084}
-  resultText: {fileID: 911592071}
+  resultFeedbackText: {fileID: 911592071}
   themeText: {fileID: 2100172202}
   stars:
   - {fileID: 1065225741}
@@ -8102,7 +8101,7 @@ GameObject:
   - component: {fileID: 1061409270}
   - component: {fileID: 1061409269}
   m_Layer: 5
-  m_Name: LeftColumnTitle
+  m_Name: ThemeSelectionTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8509,7 +8508,7 @@ GameObject:
   - component: {fileID: 1124573040}
   - component: {fileID: 1124573043}
   m_Layer: 5
-  m_Name: ThemeBackButton
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8757,166 +8756,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124574800}
   m_CullTransparentMesh: 1
---- !u!1 &1134324654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1134324655}
-  - component: {fileID: 1134324658}
-  - component: {fileID: 1134324657}
-  - component: {fileID: 1134324656}
-  m_Layer: 5
-  m_Name: NursePrep
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1134324655
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134324654}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 239779773}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 806.8699, y: -164.3707}
-  m_SizeDelta: {x: 1596.0994, y: 328.7414}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1134324656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134324654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: 150
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
---- !u!114 &1134324657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134324654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'NursePrep
-
-'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4283185695
-  m_fontColor: {r: 0.12156863, g: 0.22745098, b: 0.29803923, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_characterHorizontalScale: 1
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1134324658
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134324654}
-  m_CullTransparentMesh: 1
 --- !u!1 &1191264229
 GameObject:
   m_ObjectHideFlags: 0
@@ -8950,10 +8789,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1501474942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 21, y: -14.910871}
+  m_SizeDelta: {x: 42, y: 29.821741}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1191264231
 MonoBehaviour:
@@ -9163,7 +9002,7 @@ GameObject:
   - component: {fileID: 1196032343}
   - component: {fileID: 1196032345}
   m_Layer: 5
-  m_Name: Theme
+  m_Name: ThemeTitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9418,7 +9257,7 @@ GameObject:
   - component: {fileID: 1205813752}
   - component: {fileID: 1205813751}
   m_Layer: 5
-  m_Name: ObjectiveText
+  m_Name: CategoryObjectiveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9557,7 +9396,7 @@ GameObject:
   - component: {fileID: 1238522999}
   - component: {fileID: 1238522998}
   m_Layer: 5
-  m_Name: BackToMainMenu
+  m_Name: QuizTopBarBackToMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10942,7 +10781,7 @@ GameObject:
   - component: {fileID: 1439761254}
   - component: {fileID: 1439761256}
   m_Layer: 5
-  m_Name: Content
+  m_Name: CategoryList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11409,7 +11248,7 @@ GameObject:
   - component: {fileID: 1485513287}
   - component: {fileID: 1485513286}
   m_Layer: 5
-  m_Name: MemoryGame
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11790,10 +11629,9 @@ MonoBehaviour:
   - aihe: LAS
     displayName: "L\xE4\xE4kelaskut"
     description: 
-  categorySelectPanel: {fileID: 1847487362}
-  categoryButtonContainer: {fileID: 1439761254}
+  categoryList: {fileID: 1439761254}
   categoryButtonTemplate: {fileID: 1020980224}
-  categoryBackButton: {fileID: 442619689}
+  categoryBackToMenuButton: {fileID: 442619689}
   availableThemes:
   - {fileID: 11400000, guid: 6ae21585b993e3d47a66f56a8de85e6a, type: 2}
   - {fileID: 11400000, guid: 60bf8e0b53d381b4ab1f799d35299a4c, type: 2}
@@ -11809,12 +11647,13 @@ MonoBehaviour:
   availableMatchPairSets: []
   questionsPerRound: 10
   mainMenuPanel: {fileID: 239779772}
+  categorySelectPanel: {fileID: 1847487362}
   themeAndDifficultyPanel: {fileID: 1456223138}
   quizScreen: {fileID: 1421764813}
   matchPairScreen: {fileID: 2104943272}
   multipleChoiceModeButton: {fileID: 1551009470}
   matchPairsModeButton: {fileID: 22354050}
-  themeButtonContainer: {fileID: 693056779}
+  themeList: {fileID: 693056779}
   themeButtonTemplate: {fileID: 1620439411}
   t1Button: {fileID: 888911481}
   t1ButtonBackground: {fileID: 888911482}
@@ -11826,7 +11665,7 @@ MonoBehaviour:
   t3ButtonBackground: {fileID: 1724973262}
   t3StatusText: {fileID: 337945168}
   startGameButton: {fileID: 123654223}
-  selectBackButton: {fileID: 1124573040}
+  backButton: {fileID: 1124573040}
   normalColor: {r: 0.953, g: 0.957, b: 0.945, a: 0.7058824}
   selectedColor: {r: 0.4117647, g: 0.57254905, b: 0.5921569, a: 0.5803922}
   quizView: {fileID: 431822821}
@@ -12118,7 +11957,7 @@ GameObject:
   - component: {fileID: 1536483518}
   - component: {fileID: 1536483521}
   m_Layer: 5
-  m_Name: Title
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12603,10 +12442,10 @@ RectTransform:
   - {fileID: 1940750486}
   m_Father: {fileID: 53810722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -100}
+  m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567910200
 MonoBehaviour:
@@ -12720,7 +12559,7 @@ GameObject:
   - component: {fileID: 1594163348}
   - component: {fileID: 1594163349}
   m_Layer: 5
-  m_Name: ButtonsRow
+  m_Name: ActionButtonsRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13089,10 +12928,10 @@ RectTransform:
   - {fileID: 62556739}
   m_Father: {fileID: 1567910199}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 15, y: 0}
+  m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623882361
 MonoBehaviour:
@@ -13151,7 +12990,7 @@ GameObject:
   - component: {fileID: 1625875420}
   - component: {fileID: 1625875421}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ButtonContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13653,7 +13492,7 @@ GameObject:
   - component: {fileID: 1700033377}
   - component: {fileID: 1700033378}
   m_Layer: 5
-  m_Name: Option
+  m_Name: AnswerOptionA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14129,7 +13968,7 @@ GameObject:
   - component: {fileID: 1769200212}
   - component: {fileID: 1769200211}
   m_Layer: 5
-  m_Name: MultipleChoice
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15122,10 +14961,10 @@ RectTransform:
   - {fileID: 1809591801}
   m_Father: {fileID: 1567910199}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 85, y: 0}
+  m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940750487
 MonoBehaviour:
@@ -15718,7 +15557,7 @@ GameObject:
   - component: {fileID: 2087966180}
   - component: {fileID: 2087966179}
   m_Layer: 5
-  m_Name: RootMargin
+  m_Name: QuizLayout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15944,7 +15783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2104943273
 RectTransform:
   m_ObjectHideFlags: 0

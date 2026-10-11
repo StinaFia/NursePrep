@@ -11,26 +11,23 @@ using NursingQuiz.GameModes.MatchPairs;
 namespace NursingQuiz.UI
 {
     /// <summary>
-    /// Owns screen navigation: Main Menu -> combined Theme + Difficulty Select -> a game screen
-    /// (multiple choice or match pairs).
+    /// Controls application flow and screen navigation: 
+    /// Main Menu -> combined Theme + Difficulty Select -> a game screen (multiple choice or match pairs).
     ///
-    /// IMPORTANT: a "theme" is identified by aihe+aihekori TOGETHER, not aihe alone -- one aihe
-    /// (e.g. "LAA") can have multiple distinct themes under it with different aihekori (e.g.
-    /// "PER" and "TUR"). All theme-identity comparisons below use both fields.
+    /// Theme identity is defined by the combination of:
+    /// - aihe
+    /// - aihekori
     ///
-    /// No theme is selected by default when the theme+difficulty screen opens. Each theme
-    /// button shows its Oppimistavoite directly (not behind a popup), so the player sees every
-    /// theme's objective at a glance before choosing.
+    /// Aihe alone is not unique.
     /// </summary>
     public class GameFlowController : MonoBehaviour
 
     {
-        [Header("Category select")]
+        [Header("Category select buttons")]
         [SerializeField] private List<CategoryInfo> categories = new List<CategoryInfo>();
-        [SerializeField] private GameObject categorySelectPanel;
-        [SerializeField] private Transform categoryButtonContainer;
+        [SerializeField] private Transform categoryList;
         [SerializeField] private ThemeButtonUI categoryButtonTemplate;
-        [SerializeField] private Button categoryBackButton;
+        [SerializeField] private Button categoryBackToMenuButton;
 
         [Header("Content (drag every imported asset here)")]
         [SerializeField] private List<ThemeInfo> availableThemes = new List<ThemeInfo>();
@@ -40,6 +37,7 @@ namespace NursingQuiz.UI
 
         [Header("Panels")]
         [SerializeField] private GameObject mainMenuPanel;
+        [SerializeField] private GameObject categorySelectPanel;
         [SerializeField] private GameObject themeAndDifficultyPanel;
         [SerializeField] private GameObject quizScreen;
         [SerializeField] private GameObject matchPairScreen;
@@ -49,7 +47,7 @@ namespace NursingQuiz.UI
         [SerializeField] private Button matchPairsModeButton;
 
         [Header("Theme + Difficulty Select - Left column (themes)")]
-        [SerializeField] private Transform themeButtonContainer;
+        [SerializeField] private Transform themeList;
         [SerializeField] private ThemeButtonUI themeButtonTemplate;
 
         [Header("Theme + Difficulty Select - Right column (difficulty)")]
@@ -64,7 +62,7 @@ namespace NursingQuiz.UI
         [SerializeField] private TMP_Text t3StatusText;
 
         [SerializeField] private Button startGameButton;
-        [SerializeField] private Button selectBackButton;
+        [SerializeField] private Button backButton;
 
         [Header("Highlight colors")]
         [SerializeField] private Color normalColor = new Color(0.953f, 0.957f, 0.945f); // #F3F4F1
@@ -85,21 +83,17 @@ namespace NursingQuiz.UI
 
         private string selectedAihe;
         private string selectedAihekori;
-        private string selectedCategory;
+    
         private DifficultyTier? selectedTier;
         private GameModeType selectedMode;
         private readonly List<ThemeButtonUI> spawnedThemeButtons = new List<ThemeButtonUI>();
 
+        // Register all UI button callbacks once at startup.
         private void Awake()
         {
-            //multipleChoiceModeButton.onClick.AddListener(() => { selectedMode = GameModeType.MultipleChoice; ShowThemeAndDifficultySelect(); });
             multipleChoiceModeButton.onClick.AddListener(() => { selectedMode = GameModeType.MultipleChoice; ShowCategorySelect(); });
-            //matchPairsModeButton.onClick.AddListener(() => { selectedMode = GameModeType.MatchPairs; ShowThemeAndDifficultySelect(); });
-
-            categoryBackButton.onClick.AddListener(ShowMainMenu);
-
-            //selectBackButton.onClick.AddListener(ShowMainMenu);
-            selectBackButton.onClick.AddListener(ShowCategorySelect);
+            categoryBackToMenuButton.onClick.AddListener(ShowMainMenu);
+            backButton.onClick.AddListener(ShowCategorySelect);
 
             categoryButtonTemplate.gameObject.SetActive(false);
 
@@ -120,18 +114,21 @@ namespace NursingQuiz.UI
 
         private void ShowMainMenu() => SetActivePanel(mainMenuPanel);
 
+        /// <summary>
+        /// Rebuilds the theme list for the currently selected category and resets the difficulty selection state.
+        /// </summary>
         private void ShowThemeAndDifficultySelect()
         {
-            foreach (Transform child in themeButtonContainer)
+            foreach (Transform child in themeList)
             {
                 if (child == themeButtonTemplate.transform) continue;
                 Destroy(child.gameObject);
             }
             spawnedThemeButtons.Clear();
 
-            foreach (var theme in availableThemes.Where(t => t.aihe == selectedCategory))
+            foreach (var theme in availableThemes.Where(t => t.aihe == selectedAihe))
             {
-                var clone = Instantiate(themeButtonTemplate, themeButtonContainer);
+                var clone = Instantiate(themeButtonTemplate, themeList);
                 clone.gameObject.SetActive(true);
                 clone.Label.text = string.IsNullOrEmpty(theme.displayName) ? theme.aihekori : theme.displayName;
                 clone.ObjectiveText.text = theme.oppimistavoite;
@@ -150,7 +147,9 @@ namespace NursingQuiz.UI
             ResetDifficultySide();
         }
 
-        /// <summary>Clears the right column back to "nothing chosen yet" -- called on entry and whenever no theme is selected.</summary>
+        /// <summary>
+        /// Clears the right column back to "nothing chosen yet" -- called on entry and whenever no theme is selected.
+        /// </summary>
         private void ResetDifficultySide()
         {
             selectedAihe = null;
@@ -172,9 +171,12 @@ namespace NursingQuiz.UI
                 themeButton.Background.color = normalColor;
         }
 
+        /// <summary>
+        /// Builds category buttons dynamically from available themes and category metadata.
+        /// </summary>
         private void ShowCategorySelect()
         {
-            foreach (Transform child in categoryButtonContainer)
+            foreach (Transform child in categoryList)
             {
                 if (child == categoryButtonTemplate.transform) continue;
                 Destroy(child.gameObject);
@@ -183,7 +185,7 @@ namespace NursingQuiz.UI
             foreach (var aihe in availableThemes.Select(t => t.aihe).Distinct())
             {
                 var info = categories.FirstOrDefault(c => c.aihe == aihe);
-                var clone = Instantiate(categoryButtonTemplate, categoryButtonContainer);
+                var clone = Instantiate(categoryButtonTemplate, categoryList);
                 clone.gameObject.SetActive(true);
                 clone.Label.text = info != null && !string.IsNullOrEmpty(info.displayName) ? info.displayName : aihe;
                 clone.ObjectiveText.text = info != null ? info.description : "";
@@ -191,7 +193,7 @@ namespace NursingQuiz.UI
                 var captured = aihe;
                 clone.Button.onClick.AddListener(() =>
                 {
-                    selectedCategory = captured;
+                    selectedAihe = captured;
                     ShowThemeAndDifficultySelect();
                 });
             }
@@ -199,6 +201,9 @@ namespace NursingQuiz.UI
             SetActivePanel(categorySelectPanel);
         }
 
+        /// <summary>
+        /// Selects a theme and resets the current difficulty selection and refreshes tier availability highlights.
+        /// </summary>
         private void SelectTheme(string aihe, string aihekori)
         {
             selectedAihe = aihe;
@@ -217,8 +222,7 @@ namespace NursingQuiz.UI
         }
 
         /// <summary>
-        /// Enables/disables a tier button and shows a short availability status. Filters by
-        /// aihe+aihekori together -- see the class-level note on why aihe alone isn't enough.
+        /// Updates availability state for a single tier button based on whether there are any questions/pairs for the selected theme and tier.
         /// </summary>
         private void SetupTierButton(Button button, TMP_Text statusText, string aihe, string aihekori, DifficultyTier tier)
         {
@@ -244,6 +248,9 @@ namespace NursingQuiz.UI
             t3ButtonBackground.color = selectedTier == DifficultyTier.T3 ? selectedColor : normalColor;
         }
 
+        /// <summary>
+        /// Starts the currently selected game mode using the selected theme and difficulty tier.
+        /// </summary>
         private void StartGame()
         {
             if (selectedTier == null) return;
@@ -273,6 +280,9 @@ namespace NursingQuiz.UI
             }
         }
 
+        /// <summary>
+        /// Shows one panel and hides all other top level screens.
+        /// </summary>
         private void SetActivePanel(GameObject panelToShow)
         {
             mainMenuPanel.SetActive(panelToShow == mainMenuPanel);

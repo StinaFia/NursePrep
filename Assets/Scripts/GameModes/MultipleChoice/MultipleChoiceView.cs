@@ -22,7 +22,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [Header("Question")]
         [SerializeField] private TMP_Text questionText;
         [SerializeField] private TMP_Text progressText;
-        [SerializeField] private ResultView resultView;
+        [SerializeField] private ResultView resultCard;
 
         [Header("Answer options (assign in order: A, B, C, D)")]
         [SerializeField] private List<AnswerOptionUI> options = new List<AnswerOptionUI>();
@@ -37,14 +37,14 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [SerializeField] private Sprite crossSprite;
         [SerializeField] private TMP_Text correctAnswerText;
         [SerializeField] private TMP_Text feedbackText;
-        [SerializeField] private GameObject professionalPatchRow;
-        [SerializeField] private TMP_Text professionalText;
+        [SerializeField] private GameObject professionalTipRow;
+        [SerializeField] private TMP_Text professionalTipText;
         [SerializeField] private Button nextButton;
 
         [Header("Round complete panel")]
-        [SerializeField] private GameObject completePanel;
+        [SerializeField] private GameObject resultPanel;
         [SerializeField] private TMP_Text topBarThemeText;
-        [SerializeField] private TMP_Text completeText;
+        [SerializeField] private TMP_Text scoreText;
         [SerializeField] private Button retryButton;
 
         [Header("Colors")]
@@ -81,7 +81,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
             retryButton.onClick.AddListener(OnRetryClicked);
 
             feedbackPanel.SetActive(false);
-            completePanel.SetActive(false);
+            resultPanel.SetActive(false);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
             //submitButton.gameObject.SetActive(true);
             foreach (var o in options) o.gameObject.SetActive(true);
             feedbackPanel.SetActive(false);
-            completePanel.SetActive(false);
+            resultPanel.SetActive(false);
         }
 
         private bool ValidateReferences()
@@ -148,11 +148,11 @@ namespace NursingQuiz.GameModes.MultipleChoice
             if (feedbackPanel == null) missing.Add("Feedback Panel");
             if (correctAnswerText == null) missing.Add("Correct Answer Text");
             if (feedbackText == null) missing.Add("Feedback Text");
-            if (professionalPatchRow == null) missing.Add("Professional Patch Row");
-            if (professionalText == null) missing.Add("Professional Text");
+            if (professionalTipRow == null) missing.Add("Professional Tip Row");
+            if (professionalTipText == null) missing.Add("Professional Tip Text");
             if (nextButton == null) missing.Add("Next Button");
-            if (completePanel == null) missing.Add("Complete Panel");
-            if (completeText == null) missing.Add("Complete Text");
+            if (resultPanel == null) missing.Add("Result Panel");
+            if (scoreText == null) missing.Add("Score Text");
 
             if (missing.Count > 0)
             {
@@ -195,8 +195,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
             feedbackText.text = q.rationale ?? "";
 
             bool hasPatch = !string.IsNullOrEmpty(q.professionalPatch);
-            professionalPatchRow.SetActive(hasPatch);
-            professionalText.text = hasPatch ? q.professionalPatch : "";
+            professionalTipRow.SetActive(hasPatch);
+            professionalTipText.text = hasPatch ? q.professionalPatch : "";
 
             // Näytä palaute-paneeli
             feedbackPanel.SetActive(true);
@@ -294,8 +294,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             //completeText.text = $"Valmis!\n\nOikein: {controller.CorrectCount} / {controller.TotalAnswered}";
             //completePanel.SetActive(true);
-            resultView.Show(controller.CorrectCount, controller.TotalAnswered, topBarThemeText.text);
-            completePanel.SetActive(true);
+            resultCard.Show(controller.CorrectCount, controller.TotalAnswered, topBarThemeText.text);
+            resultPanel.SetActive(true);
         }
     }
 }

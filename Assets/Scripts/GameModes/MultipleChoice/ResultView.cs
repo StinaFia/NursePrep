@@ -7,7 +7,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
     public class ResultView : MonoBehaviour
     {
         [SerializeField] private TMP_Text scoreText;
-        [SerializeField] private TMP_Text resultText;
+        [SerializeField] private TMP_Text resultFeedbackText;
         [SerializeField] private TMP_Text themeText;
         [SerializeField] private Image[] stars;
         [SerializeField] private Color gold = new Color(0.88f, 0.65f, 0.23f);
@@ -35,11 +35,11 @@ namespace NursingQuiz.GameModes.MultipleChoice
             float ratio = (float)correct / total;
 
             if (ratio >= 0.9f)
-                resultText.text = "Erinomainen suoritus! Osaat tämän aiheen hyvin";
+                resultFeedbackText.text = "Erinomainen suoritus! Osaat tämän aiheen hyvin";
             else if (ratio >= 0.6f)
-                resultText.text = "Hyvä suoritus. Hallitset jo perusteita, mutta harjoittelu vahvistaa osaamista";
+                resultFeedbackText.text = "Hyvä suoritus. Hallitset jo perusteita, mutta harjoittelu vahvistaa osaamista";
             else
-                resultText.text = "Hyvä alku, kertaa aihe vielä ja kokeile uudelleen";
+                resultFeedbackText.text = "Hyvä alku, kertaa aihe vielä ja kokeile uudelleen";
         }
     }
 }
