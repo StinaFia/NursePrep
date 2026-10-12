@@ -1,12 +1,16 @@
 namespace NursingQuiz.Core
 {
     /// <summary>
-    /// Which playable game mode the player picked on the main menu. Used by GameFlowController
-    /// to route the shared theme+difficulty selection screen to the correct game screen/view.
+    /// Available game modes.
+    ///
+    /// Used by GameFlowController to route the player to the correct gameplay screen.
     /// </summary>
     public enum GameModeType
     {
         MultipleChoice,
         MatchPairs
     }
+
 }
+
+ 

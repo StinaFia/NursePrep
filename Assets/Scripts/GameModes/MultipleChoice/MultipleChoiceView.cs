@@ -9,10 +9,17 @@ using NursingQuiz.Data;
 namespace NursingQuiz.GameModes.MultipleChoice
 {
     /// <summary>
-    /// Binds a hand-built Unity UI to MultipleChoiceController. Build the actual screen in the
-    /// Editor (Canvas, buttons, text, feedback panel) and drag each piece onto the matching
-    /// field below -- this script has no UI-construction code, only wiring and game-flow logic.
+    /// Connects the MultipleChoiceController to the Unity UI
+    /// 
+    /// This class is responsible for:
+    /// - rendering the current question and answer options
+    /// - handling player input (clicking an answer, submitting, moving to next question)
+    /// - displating feedback and round results
+    /// 
+    /// This screen currently supports single-choice questions (T1)
+    /// ans is designed to be extended to support multiple-choice questions (T2&T3) in the future.
     /// </summary>
+
     [RequireComponent(typeof(MultipleChoiceController))]
     public class MultipleChoiceView : MonoBehaviour
     {
@@ -76,6 +83,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
                 options[i].Button.onClick.AddListener(() => OnOptionClicked(captured));
             }
 
+            // Reserved for upcoming T2/T3 support where answers are evaluated only after submitting.
             //submitButton.onClick.AddListener(OnSubmitClicked);
             nextButton.onClick.AddListener(OnNextClicked);
             retryButton.onClick.AddListener(OnRetryClicked);
@@ -85,9 +93,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
         }
 
         /// <summary>
-        /// Starts a round for the given theme/tier, using whichever bank in the supplied list
-        /// matches. Called by GameFlowController once the player has picked both a theme and
-        /// a difficulty.
+        /// Starts a new round using the selected theme and difficulty.
+        /// Called by GameFlowController after the player has completed the theme and difficulty selection flow.
         /// </summary>
         public void BeginRound(List<QuestionBank> banks, string aihe, DifficultyTier tier, int questionCount = -1)
         {
@@ -114,6 +121,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
             RenderCurrentQuestion();
         }
 
+        /// <summary>
+        /// Restores the quiz UI to its initial state before a new round begins.
+        /// </summary>
         private void ResetUIForNewRound()
         {
             answerLocked = false;
@@ -125,6 +135,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
             resultPanel.SetActive(false);
         }
 
+        /// <summary>
+        /// Verifies that all required Inspector references have been assigned before the gameplay starts.
+        /// </summary>
         private bool ValidateReferences()
         {
             var missing = new List<string>();
@@ -163,33 +176,49 @@ namespace NursingQuiz.GameModes.MultipleChoice
             return true;
         }
 
+        /// <summary>
+        /// Handles answer option selection.
+        ///
+        /// Current implementation is optimized for T1:
+        /// selecting an answer immediately evaluates it.
+        ///
+        /// Future T2/T3 support should move the evaluation step behind an explicit Submit button.
+        /// </summary>
+        /// 
+
+        // TODO:
+        // For T2/T3 multiple-selection gameplay,
+        // move EvaluateAnswer() into a dedicated Submit button handler.
         private void OnOptionClicked(int index)
         {
             if (answerLocked) return;
 
-            // Valitse vaihtoehto
+            // Select or deselect the clicked answer option.
             controller.ToggleOption(index);
             RefreshOptionVisuals();
 
-            // Jos ei ole valintaa, ‰l‰ tee mit‰‰n
+            // Do nothing if no option is currently selected.
+
             if (!controller.HasSelection)
                 return;
 
-            // Arvioi vastaus heti
+            // T1 behaviour:
+            // evaluate the answer immediately after selection.
+            // Future T2/T3 support should move this into a Submit button.
             controller.EvaluateAnswer(null);
             answerLocked = true;
 
             var q = controller.LastAnsweredQuestion;
             bool correct = controller.LastAnswerWasCorrect;
 
-            // N‰yt‰ oikea vastaus vihre‰n‰
+            // Highlight all correct answer options.
             for (int i = 0; i < options.Count; i++)
             {
                 if (q.correctIndices.Contains(i))
                     options[i].Background.color = correctColor;
             }
 
-            // N‰yt‰ palaute
+            // Display feedback and rationale.
             correctAnswerText.text = correct ? q.correctFeedback : q.incorrectFeedback;
             resultIcon.sprite = correct ? checkSprite : crossSprite;
             feedbackText.text = q.rationale ?? "";
@@ -198,15 +227,15 @@ namespace NursingQuiz.GameModes.MultipleChoice
             professionalTipRow.SetActive(hasPatch);
             professionalTipText.text = hasPatch ? q.professionalPatch : "";
 
-            // N‰yt‰ palaute-paneeli
             feedbackPanel.SetActive(true);
 
-            // Piilota submitButton kokonaan
+            // Submit button reserved for future T2/T3 support.
             //submitButton.gameObject.SetActive(false);
 
-            // N‰yt‰ nextButton (k‰ytt‰j‰ p‰‰tt‰‰ milloin jatkaa)
+            // Show nextButton (user decides when to continue)
             nextButton.gameObject.SetActive(true);
         }
+
 
         /*private void OnSubmitClicked()
         {
@@ -234,6 +263,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
             feedbackPanel.SetActive(true);
         }*/
 
+        /// <summary>
+        /// Advances to the next question or shows the round results if the round has ended.
+        /// </summary>
         private void OnNextClicked()
         {
             feedbackPanel.SetActive(false);
@@ -245,12 +277,18 @@ namespace NursingQuiz.GameModes.MultipleChoice
                 RenderCurrentQuestion();
         }
 
+        /// <summary>
+        /// Starts a new round using the same parameters as the previously completed round.
+        /// </summary>
         private void OnRetryClicked()
         {
             if (lastBanks == null) return;
             BeginRound(lastBanks, lastAihe, lastTier, lastQuestionCount);
         }
 
+        /// <summary>
+        /// Updates all question UI elements to display the current question provided by the controller.
+        /// </summary>
         private void RenderCurrentQuestion()
         {
             answerLocked = false;
@@ -276,6 +314,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
             //submitButton.interactable = false;
         }
 
+        /// <summary>
+        /// Updates answer option highlighting based on the controller's current selection state.
+        /// </summary>
         private void RefreshOptionVisuals()
         {
             for (int i = 0; i < options.Count; i++)
@@ -284,6 +325,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
             //submitButton.interactable = controller.HasSelection;
         }
 
+        /// <summary>
+        /// Hides quiz content and displays the round completion screen.
+        /// </summary>
         private void ShowRoundComplete()
         {
             questionText.gameObject.SetActive(false);

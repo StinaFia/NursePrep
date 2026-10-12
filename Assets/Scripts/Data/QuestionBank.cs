@@ -13,8 +13,15 @@ namespace NursingQuiz.Data
         public string category;
         public string theme;
         public DifficultyTier tier;
+
+        /// <summary>
+        /// Original CSV filename used to create this QuestionBank asset.
+        /// </summary>
         public string sourceFileName;
 
+        /// <summary>
+        /// Questions available in this bank.
+        /// </summary>
         public List<QuestionData> questions = new List<QuestionData>();
     }
 }

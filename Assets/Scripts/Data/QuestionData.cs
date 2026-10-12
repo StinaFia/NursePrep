@@ -6,20 +6,37 @@ using NursingQuiz.Core;
 namespace NursingQuiz.Data
 {
     /// <summary>
-    /// A single multiple-choice question. Instances are created/updated by QuestionBankImporter --
-    /// do not edit these assets by hand. Edit the source CSV and re-run the importer instead.
+    /// Represents a single multiple-choice question.
+    ///
+    /// QuestionData assets are generated and updated by QuestionBankImporter from CSV source files.
+    /// Changes should be made in the source CSV and imported again rather than editing assets manually.
     /// </summary>
     public class QuestionData : ScriptableObject
     {
         [Header("Identity")]
-        public string tunniste;   // e.g. LAA-PER-001
-        public string category;       // e.g. LAA
-        public string theme;   // e.g. PER
+        /// <summary>
+        /// Unique question identifier.
+        /// Example: LAA-PER-001
+        /// </summary>
+        public string tunniste;
+        /// <summary>
+        /// Category identifier.
+        /// Example: LAA or LAS.
+        /// </summary>
+        public string category;
+        /// <summary>
+        /// Theme identifier within the category.
+        /// Example: PER, TUR or YKM.
+        /// </summary>
+        public string theme; 
         public DifficultyTier tier;
 
         [Header("Content")]
         [TextArea(2, 5)] public string questionText;
-        public List<string> options = new List<string>(); // A, B, C, D in order
+        /// <summary>
+        /// Answer option texts in display order (A-D).
+        /// </summary>
+        public List<string> options = new List<string>(); 
 
         [Tooltip("0-based indices into 'options' that are correct. Empty list = no correct answer (T3 only).")]
         public List<int> correctIndices = new List<int>();
@@ -31,13 +48,16 @@ namespace NursingQuiz.Data
         [TextArea(1, 4)] public string professionalPatch;
 
         /// <summary>
-        /// Whether the answer UI should allow selecting more than one option.
-        /// This is tier-based, not based on how many answers actually happen to be correct --
-        /// T2/T3 must always present as multi-select, otherwise a single-select UI would give
-        /// away the correct-answer count before the student answers.
+        /// Determines whether the UI should allow selecting multiple answer options.
+        ///
+        /// This is based on difficulty tier rather than the number of correct answers to avoid revealing
+        /// answer count information to the player.
         /// </summary>
         public bool AllowsMultiSelect => tier != DifficultyTier.T1;
 
+        /// <summary>
+        /// Compares the player's selection against the set of correct answer indices.
+        /// </summary>
         public bool IsAnswerCorrect(IEnumerable<int> selectedIndices)
         {
             var selected = new HashSet<int>(selectedIndices);

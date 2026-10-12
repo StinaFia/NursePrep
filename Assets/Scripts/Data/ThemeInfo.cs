@@ -3,18 +3,17 @@ using UnityEngine;
 namespace NursingQuiz.Data
 {
     /// <summary>
-    /// Theme-level info -- one per category+theme combination, independent of difficulty tier.
-    /// Holds only what's genuinely shared across tiers (currently just the display name).
-    /// The learning objective (Oppimistavoite) lives on QuestionBank instead, since it's
-    /// written per-tier and can legitimately differ between T1/T2/T3 for the same theme.
+    /// Stores information shared by all difficulty tiers of a single category + theme combination.
     ///
-    /// displayName is only set by the importer if it's still empty, so you can safely rename
-    /// it in the Inspector for a nicer player-facing label without it being overwritten on
-    /// the next import.
+    /// Used by the theme selection screen to display the theme name and learning objective.
+    ///
+    /// The importer creates or updates one ThemeInfo asset per category-theme combination.
     /// </summary>
     public class ThemeInfo : ScriptableObject
     {
+        // Category identifier (for example LAA or LAS).
         public string category;
+        // Theme identifier within the category (for example PER, TUR or YKM).
         public string theme;
 
         [Tooltip("Player-facing name for this theme. Only auto-filled if empty -- edit freely.")]

@@ -52,10 +52,10 @@ namespace NursingQuiz.GameModes.MatchPairs
 
         public override void StartRound()
         {
-            currentSet = availableSets.FirstOrDefault(s => s.category == currentAihe && s.tier == currentTier);
+            currentSet = availableSets.FirstOrDefault(s => s.category == currentCategory && s.tier == currentTier);
             if (currentSet == null || currentSet.pairs.Count == 0)
             {
-                Debug.LogError($"No match-pair set found for aihe={currentAihe}, tier={currentTier}. " +
+                Debug.LogError($"No match-pair set found for aihe={currentCategory}, tier={currentTier}. " +
                                 "Check that the set was imported and is assigned in the inspector.");
                 leftOrder = new List<int>();
                 rightOrder = new List<int>();
