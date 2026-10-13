@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-029
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-029
+  category: LAA
+  theme: TUR
+  tier: 0
+  questionText: "Miksi l\xE4\xE4kkeen vaikutuksen arviointi kuuluu osaksi turvallista
+    l\xE4\xE4kehoitoa?"
+  options:
+  - "Jotta voidaan arvioida, saavutettiinko l\xE4\xE4kkeell\xE4 tavoiteltu vaikutus"
+  - Kirjaaminen nopeutuu
+  - Potilas voidaan kotiuttaa nopeammin
+  - Vaikutusta ei tarvitse arvioida
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Turvallinen l\xE4\xE4kehoito sis\xE4lt\xE4\xE4 my\xF6s annetun
+    l\xE4\xE4kkeen vaikutuksen arvioinnin."
+  rationale: "L\xE4\xE4kkeen vaikutuksen arviointi kertoo, onko l\xE4\xE4kehoito
+    onnistunut ja tarvitseeko sit\xE4 muuttaa."
+  professionalPatch: "Hyv\xE4 hoitaja arvioi aina my\xF6s l\xE4\xE4kehoidon onnistumista,
+    ei pelk\xE4st\xE4\xE4n sen toteutumista."

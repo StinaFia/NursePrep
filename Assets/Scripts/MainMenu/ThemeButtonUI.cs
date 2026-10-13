@@ -5,20 +5,25 @@ using UnityEngine.UI;
 namespace NursingQuiz.UI
 {
     /// <summary>
-    /// Attached to the theme-button template under the combined theme+difficulty panel.
-    /// GameFlowController clones one of these per ThemeInfo asset it's given, so new themes
-    /// appear automatically just by dragging their asset into GameFlowController's Available
-    /// Themes list -- no new buttons need to be hand-built as content grows.
+    /// UI component attached to the theme button template used in the Theme and Difficulty Panel.
+    /// 
+    /// GameFlowController creates instances of this button dynamically for each available ThemeInfo asset
+    /// and populates its text fields and selection data.
     /// </summary>
     public class ThemeButtonUI : MonoBehaviour
     {
         public Button Button;
         public TMP_Text Label;
-
-        [Tooltip("Background image used to visually highlight the currently selected theme.")]
         public Image Background;
 
-        /// <summary>Set at spawn time by GameFlowController -- which theme this button represents.</summary>
-        [HideInInspector] public string Aihe;
+        [Tooltip("Displays the learning objective (Oppimistavoite) for this theme")]
+        public TMP_Text ObjectiveText;
+
+        /// <summary>
+        /// Set at spawn time by GameFlowController -- which theme this button represents.
+        /// </summary>
+        [HideInInspector] public string Category;
+
+        [HideInInspector] public string Theme;
     }
 }

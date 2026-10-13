@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-015
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-015
+  category: LAS
+  theme: YKM
+  tier: 0
+  questionText: "Muunna 0,025 \xB5g nanogrammoiksi."
+  options:
+  - 0,25 ng
+  - 2,5 ng
+  - 250 ng
+  - 25 ng
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Tarkista desimaalipilkun paikka mikrogrammojen ja nanogrammojen
+    muunnoksessa.
+  rationale: "0,025 \xB5g \xD7 1 000 = 25 ng."
+  professionalPatch: "Hyvin pieni l\xE4ht\xF6luku ei tarkoita, ett\xE4 my\xF6s pienemp\xE4\xE4n
+    yksikk\xF6\xF6n muunnettu lukuarvo olisi pienempi."

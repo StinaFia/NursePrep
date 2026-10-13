@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-057
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-057
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Liuoksen 10 ml sis\xE4lt\xE4\xE4 20 mmol l\xE4\xE4keainetta. Potilaalle
+    on m\xE4\xE4r\xE4tty 6 mmol. Kuinka monta millilitraa liuosta annat?"
+  options:
+  - 1 ml
+  - 2 ml
+  - 6 ml
+  - 3 ml
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Teht\xE4v\xE4ss\xE4 tarvitaan kaksi vaihetta: selvit\xE4 ensin
+    vahvuus mmol/ml ja vasta sen j\xE4lkeen annettava tilavuus."
+  rationale: "Liuoksen vahvuus on 20 mmol \xF7 10 ml = 2 mmol/ml. Tarvittava tilavuus
+    on 6 mmol \xF7 2 mmol/ml = 3 ml."
+  professionalPatch: "Jos vahvuus annetaan muodossa mmol/x ml, voit ensin selvitt\xE4\xE4
+    yhden millilitran sis\xE4lt\xE4m\xE4n mmol-m\xE4\xE4r\xE4n."

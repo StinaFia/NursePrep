@@ -1,22 +1,34 @@
 namespace NursingQuiz.Core
 {
     /// <summary>
-    /// Shared contract for every game mode (multiple choice, memory card, find the pairs, ...).
-    /// The game shell (menu -> mode select -> difficulty select -> game -> results) talks to
-    /// modes only through this interface, so new modes can be added later without touching the shell.
+    /// Common interface implemented by all game modes.
+    ///
+    /// GameFlowController interacts with game modes through this interface, allowing new modes to
+    /// be added without changing the overall game flow.
     /// </summary>
     public interface IGameMode
     {
-        /// <summary>Prepare the mode with a chosen topic and difficulty. Called once before play starts.</summary>
-        void Setup(string aihe, DifficultyTier tier, int questionCount);
+        /// <summary>
+        /// Initializes the game mode using the selected category, difficulty tier and question count.
+        /// Called once before the round begins.
+        /// </summary>
+        void Setup(string category, DifficultyTier tier, int questionCount);
 
-        /// <summary>Start (or restart) a round/session.</summary>
+        /// <summary>
+        /// Starts a new round or restarts the current round.
+        /// </summary>
         void StartRound();
 
-        /// <summary>Called by the mode's own UI when the player submits an answer for the current item.</summary>
+        /// <summary>
+        /// Evaluates a submitted answer.
+        ///
+        /// Different game modes may use different answer types, so the answer is provided as an object.
+        /// </summary>
         void EvaluateAnswer(object answer);
 
-        /// <summary>Called when the round ends (all items answered, or player quits).</summary>
+        /// <summary>
+        /// Ends the current session and performs anyrequired cleanup or result processing.
+        /// </summary>        
         void EndSession();
     }
 }

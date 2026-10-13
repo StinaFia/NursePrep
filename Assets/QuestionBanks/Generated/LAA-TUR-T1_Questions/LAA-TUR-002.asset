@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-002
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-002
+  category: LAA
+  theme: TUR
+  tier: 0
+  questionText: "Miksi l\xE4\xE4kehuoneen l\xE4mp\xF6tilaa seurataan s\xE4\xE4nn\xF6llisesti?"
+  options:
+  - "Jotta l\xE4\xE4kkeet s\xE4ilyv\xE4t valmistajan ohjeiden mukaisesti"
+  - "Huone olisi miellytt\xE4v\xE4 ty\xF6ntekij\xE4lle"
+  - "Sill\xE4 seurataan rakennuksen l\xE4mmityst\xE4"
+  - "L\xE4mp\xF6tilalla ei ole merkityst\xE4"
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Muista, ett\xE4 my\xF6s l\xE4\xE4kehuoneen olosuhteet vaikuttavat
+    l\xE4\xE4kkeiden s\xE4ilyvyyteen."
+  rationale: "Oikea l\xE4mp\xF6tila auttaa s\xE4ilytt\xE4m\xE4\xE4n l\xE4\xE4kkeiden
+    laadun ja k\xE4ytt\xF6kelpoisuuden."
+  professionalPatch: "L\xE4\xE4kkeet s\xE4ilyv\xE4t turvallisina vain oikeissa s\xE4ilytysolosuhteissa."

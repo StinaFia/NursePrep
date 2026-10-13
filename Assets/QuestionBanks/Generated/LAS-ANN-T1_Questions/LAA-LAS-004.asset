@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-004
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-004
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4 750 mg. K\xE4ytett\xE4viss\xE4
+    on 500 mg:n tabletteja, jotka voidaan jakaa yht\xE4 suuriin puolikkaisiin. Kuinka
+    monta tablettia annat?"
+  options:
+  - 1,5 tablettia
+  - 0,75 tablettia
+  - 2 tablettia
+  - 2,5 tablettia
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista ensin yhden kokonaisen ja puolikkaan tabletin sis\xE4lt\xE4m\xE4t
+    l\xE4\xE4keainem\xE4\xE4r\xE4t."
+  rationale: "750 mg \xF7 500 mg/tabletti = 1,5 tablettia. Yksi kokonainen tabletti
+    sis\xE4lt\xE4\xE4 500 mg ja puolikas 250 mg, yhteens\xE4 750 mg."
+  professionalPatch: "Voit tarkistaa vastauksen kertomalla 1,5 \xD7 500 mg = 750
+    mg."

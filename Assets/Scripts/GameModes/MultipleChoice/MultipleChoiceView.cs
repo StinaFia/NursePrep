@@ -9,12 +9,17 @@ using NursingQuiz.Data;
 namespace NursingQuiz.GameModes.MultipleChoice
 {
     /// <summary>
-    /// Binds a hand-built Unity UI to MultipleChoiceController. Build the actual screen in the
-    /// Editor (Canvas, buttons, text, feedback panel) and drag each piece onto the matching
-    /// field below -- this script has no UI-construction code, only wiring and game-flow logic.
-    ///
-    /// See the README for the recommended hierarchy to build before wiring this up.
+    /// Connects the MultipleChoiceController to the Unity UI
+    /// 
+    /// This class is responsible for:
+    /// - rendering the current question and answer options
+    /// - handling player input (clicking an answer, submitting, moving to next question)
+    /// - displating feedback and round results
+    /// 
+    /// This screen currently supports single-choice questions (T1)
+    /// ans is designed to be extended to support multiple-choice questions (T2&T3) in the future.
     /// </summary>
+
     [RequireComponent(typeof(MultipleChoiceController))]
     public class MultipleChoiceView : MonoBehaviour
     {
@@ -24,23 +29,30 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [Header("Question")]
         [SerializeField] private TMP_Text questionText;
         [SerializeField] private TMP_Text progressText;
+        [SerializeField] private ResultView resultCard;
 
         [Header("Answer options (assign in order: A, B, C, D)")]
         [SerializeField] private List<AnswerOptionUI> options = new List<AnswerOptionUI>();
 
-        [Header("Submit")]
-        [SerializeField] private Button submitButton;
+        //[Header("Submit")]
+        //[SerializeField] private Button submitButton;
 
         [Header("Feedback panel")]
         [SerializeField] private GameObject feedbackPanel;
+        [SerializeField] private Image resultIcon;
+        [SerializeField] private Sprite checkSprite;
+        [SerializeField] private Sprite crossSprite;
         [SerializeField] private TMP_Text correctAnswerText;
         [SerializeField] private TMP_Text feedbackText;
-        [SerializeField] private TMP_Text professionalText;
+        [SerializeField] private GameObject professionalTipRow;
+        [SerializeField] private TMP_Text professionalTipText;
         [SerializeField] private Button nextButton;
 
         [Header("Round complete panel")]
-        [SerializeField] private GameObject completePanel;
-        [SerializeField] private TMP_Text completeText;
+        [SerializeField] private GameObject resultPanel;
+        [SerializeField] private TMP_Text topBarThemeText;
+        [SerializeField] private TMP_Text scoreText;
+        [SerializeField] private Button retryButton;
 
         [Header("Colors")]
         [SerializeField] private Color normalOptionColor = new Color(0.953f, 0.957f, 0.945f); // #F3F4F1
@@ -48,6 +60,12 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [SerializeField] private Color correctColor = new Color(0.812f, 0.910f, 0.827f); // #CFE8D3
 
         private MultipleChoiceController controller;
+
+        private List<QuestionBank> lastBanks;
+        private string lastAihe;
+        private DifficultyTier lastTier;
+        private int lastQuestionCount;
+        private bool answerLocked;
 
         private void Awake()
         {
@@ -64,28 +82,34 @@ namespace NursingQuiz.GameModes.MultipleChoice
                 int captured = i;
                 options[i].Button.onClick.AddListener(() => OnOptionClicked(captured));
             }
-            submitButton.onClick.AddListener(OnSubmitClicked);
+
+            // Reserved for upcoming T2/T3 support where answers are evaluated only after submitting.
+            //submitButton.onClick.AddListener(OnSubmitClicked);
             nextButton.onClick.AddListener(OnNextClicked);
+            retryButton.onClick.AddListener(OnRetryClicked);
 
             feedbackPanel.SetActive(false);
-            completePanel.SetActive(false);
+            resultPanel.SetActive(false);
         }
 
         /// <summary>
-        /// Starts a round for the given theme/tier, using whichever bank in the supplied list
-        /// matches. Called by GameFlowController once the player has picked both a theme and
-        /// a difficulty -- this is the real entry point now, not Awake/Start, since the same
-        /// view needs to be reusable across multiple rounds without the player restarting the game.
+        /// Starts a new round using the selected theme and difficulty.
+        /// Called by GameFlowController after the player has completed the theme and difficulty selection flow.
         /// </summary>
         public void BeginRound(List<QuestionBank> banks, string aihe, DifficultyTier tier, int questionCount = -1)
         {
+            lastBanks = banks;
+            lastAihe = aihe;
+            lastTier = tier;
+            lastQuestionCount = questionCount;
+
             ResetUIForNewRound();
 
             controller.SetAvailableBanks(banks);
 
-            if (!banks.Any(b => b.aihe == aihe && b.tier == tier))
+            if (!banks.Any(b => b.category == aihe && b.tier == tier))
             {
-                var available = string.Join(", ", banks.Select(b => $"{b.aihe}/{b.tier}"));
+                var available = string.Join(", ", banks.Select(b => $"{b.category}/{b.tier}"));
                 Debug.LogError($"MultipleChoiceView: no bank matches aihe='{aihe}', tier={tier}. " +
                                 $"Available: [{available}].");
                 return;
@@ -98,24 +122,21 @@ namespace NursingQuiz.GameModes.MultipleChoice
         }
 
         /// <summary>
-        /// Re-activates everything ShowRoundComplete() hid last time, so a second (or third...)
-        /// round works correctly instead of leaving the question UI permanently hidden after
-        /// the first round ends. Without this, going Menu -> Play again would show a blank screen.
+        /// Restores the quiz UI to its initial state before a new round begins.
         /// </summary>
         private void ResetUIForNewRound()
         {
+            answerLocked = false;
             questionText.gameObject.SetActive(true);
             progressText.gameObject.SetActive(true);
-            submitButton.gameObject.SetActive(true);
+            //submitButton.gameObject.SetActive(true);
             foreach (var o in options) o.gameObject.SetActive(true);
             feedbackPanel.SetActive(false);
-            completePanel.SetActive(false);
+            resultPanel.SetActive(false);
         }
 
         /// <summary>
-        /// Checks every field is wired before touching it -- a missing Inspector reference
-        /// otherwise surfaces as a NullReferenceException with no indication of which field
-        /// was forgotten, which is a frustrating way to debug a hand-built hierarchy.
+        /// Verifies that all required Inspector references have been assigned before the gameplay starts.
         /// </summary>
         private bool ValidateReferences()
         {
@@ -136,14 +157,15 @@ namespace NursingQuiz.GameModes.MultipleChoice
                     }
                 }
             }
-            if (submitButton == null) missing.Add("Submit Button");
+            //if (submitButton == null) missing.Add("Submit Button");
             if (feedbackPanel == null) missing.Add("Feedback Panel");
             if (correctAnswerText == null) missing.Add("Correct Answer Text");
             if (feedbackText == null) missing.Add("Feedback Text");
-            if (professionalText == null) missing.Add("Professional Text");
+            if (professionalTipRow == null) missing.Add("Professional Tip Row");
+            if (professionalTipText == null) missing.Add("Professional Tip Text");
             if (nextButton == null) missing.Add("Next Button");
-            if (completePanel == null) missing.Add("Complete Panel");
-            if (completeText == null) missing.Add("Complete Text");
+            if (resultPanel == null) missing.Add("Result Panel");
+            if (scoreText == null) missing.Add("Score Text");
 
             if (missing.Count > 0)
             {
@@ -154,13 +176,68 @@ namespace NursingQuiz.GameModes.MultipleChoice
             return true;
         }
 
+        /// <summary>
+        /// Handles answer option selection.
+        ///
+        /// Current implementation is optimized for T1:
+        /// selecting an answer immediately evaluates it.
+        ///
+        /// Future T2/T3 support should move the evaluation step behind an explicit Submit button.
+        /// </summary>
+        /// 
+
+        // TODO:
+        // For T2/T3 multiple-selection gameplay,
+        // move EvaluateAnswer() into a dedicated Submit button handler.
         private void OnOptionClicked(int index)
         {
+            if (answerLocked) return;
+
+            // Select or deselect the clicked answer option.
             controller.ToggleOption(index);
             RefreshOptionVisuals();
+
+            // Do nothing if no option is currently selected.
+
+            if (!controller.HasSelection)
+                return;
+
+            // T1 behaviour:
+            // evaluate the answer immediately after selection.
+            // Future T2/T3 support should move this into a Submit button.
+            controller.EvaluateAnswer(null);
+            answerLocked = true;
+
+            var q = controller.LastAnsweredQuestion;
+            bool correct = controller.LastAnswerWasCorrect;
+
+            // Highlight all correct answer options.
+            for (int i = 0; i < options.Count; i++)
+            {
+                if (q.correctIndices.Contains(i))
+                    options[i].Background.color = correctColor;
+            }
+
+            // Display feedback and rationale.
+            correctAnswerText.text = correct ? q.correctFeedback : q.incorrectFeedback;
+            resultIcon.sprite = correct ? checkSprite : crossSprite;
+            feedbackText.text = q.rationale ?? "";
+
+            bool hasPatch = !string.IsNullOrEmpty(q.professionalPatch);
+            professionalTipRow.SetActive(hasPatch);
+            professionalTipText.text = hasPatch ? q.professionalPatch : "";
+
+            feedbackPanel.SetActive(true);
+
+            // Submit button reserved for future T2/T3 support.
+            //submitButton.gameObject.SetActive(false);
+
+            // Show nextButton (user decides when to continue)
+            nextButton.gameObject.SetActive(true);
         }
 
-        private void OnSubmitClicked()
+
+        /*private void OnSubmitClicked()
         {
             if (!controller.HasSelection) return;
 
@@ -177,16 +254,22 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             correctAnswerText.text = correct ? q.correctFeedback : q.incorrectFeedback;
             feedbackText.text = q.rationale ?? "";
-            professionalText.text = string.IsNullOrEmpty(q.professionalPatch) ? "" : q.professionalPatch;
+
+            bool hasPatch = !string.IsNullOrEmpty(q.professionalPatch);
+            professionalPatchRow.SetActive(hasPatch);
+            professionalText.text = hasPatch ? q.professionalPatch : "";
 
             submitButton.gameObject.SetActive(false);
             feedbackPanel.SetActive(true);
-        }
+        }*/
 
+        /// <summary>
+        /// Advances to the next question or shows the round results if the round has ended.
+        /// </summary>
         private void OnNextClicked()
         {
             feedbackPanel.SetActive(false);
-            submitButton.gameObject.SetActive(true);
+            //submitButton.gameObject.SetActive(true);
 
             if (controller.RoundFinished)
                 ShowRoundComplete();
@@ -194,8 +277,22 @@ namespace NursingQuiz.GameModes.MultipleChoice
                 RenderCurrentQuestion();
         }
 
+        /// <summary>
+        /// Starts a new round using the same parameters as the previously completed round.
+        /// </summary>
+        private void OnRetryClicked()
+        {
+            if (lastBanks == null) return;
+            BeginRound(lastBanks, lastAihe, lastTier, lastQuestionCount);
+        }
+
+        /// <summary>
+        /// Updates all question UI elements to display the current question provided by the controller.
+        /// </summary>
         private void RenderCurrentQuestion()
         {
+            answerLocked = false;
+
             var q = controller.CurrentQuestion;
             if (q == null)
             {
@@ -214,27 +311,35 @@ namespace NursingQuiz.GameModes.MultipleChoice
             }
 
             RefreshOptionVisuals();
-            submitButton.interactable = false;
+            //submitButton.interactable = false;
         }
 
+        /// <summary>
+        /// Updates answer option highlighting based on the controller's current selection state.
+        /// </summary>
         private void RefreshOptionVisuals()
         {
             for (int i = 0; i < options.Count; i++)
                 options[i].Background.color = controller.IsOptionSelected(i) ? selectedOptionColor : normalOptionColor;
 
-            submitButton.interactable = controller.HasSelection;
+            //submitButton.interactable = controller.HasSelection;
         }
 
+        /// <summary>
+        /// Hides quiz content and displays the round completion screen.
+        /// </summary>
         private void ShowRoundComplete()
         {
             questionText.gameObject.SetActive(false);
             progressText.gameObject.SetActive(false);
             foreach (var o in options) o.gameObject.SetActive(false);
-            submitButton.gameObject.SetActive(false);
+            //submitButton.gameObject.SetActive(false);
             feedbackPanel.SetActive(false);
 
-            completeText.text = $"Valmis!\n\nOikein: {controller.CorrectCount} / {controller.TotalAnswered}";
-            completePanel.SetActive(true);
+            //completeText.text = $"Valmis!\n\nOikein: {controller.CorrectCount} / {controller.TotalAnswered}";
+            //completePanel.SetActive(true);
+            resultCard.Show(controller.CorrectCount, controller.TotalAnswered, topBarThemeText.text);
+            resultPanel.SetActive(true);
         }
     }
 }

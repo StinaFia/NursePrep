@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ceb6e812597b349bb38a6390308ab1, type: 3}
+  m_Name: LAA-ANT-T1
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.MatchPairSet
+  aihe: LAA
+  aihekori: ANT
+  tier: 0
+  sourceFileName: LAA-ANT-laakehoito_t1_yhdistely_antoreitit.csv
+  gameName: "L\xE4\xE4kkeiden antoreitit - Lyhenne - Suomenkielinen antoreitti"
+  oppimistavoite: "Opiskelija yhdist\xE4\xE4 yleisimm\xE4t l\xE4\xE4kkeiden antoreittien
+    lyhenteet niit\xE4 vastaaviin suomenkielisiin nimityksiin."
+  pairs:
+  - left: p.o.
+    right: Suun kautta
+  - left: s.l.
+    right: Kielen alle
+  - left: bukk.
+    right: Posken limakalvolle
+  - left: s.c.
+    right: Ihon alle
+  - left: i.m.
+    right: Lihakseen
+  - left: i.v.
+    right: Laskimoon
+  - left: p.r.
+    right: "Per\xE4suoleen"
+  - left: vag.
+    right: "Em\xE4ttimeen"
+  - left: inh.
+    right: Inhalaationa
+  - left: o.d.
+    right: "Silm\xE4\xE4n"
+  - left: o.t.
+    right: Korvaan
+  - left: n.
+    right: "Nen\xE4\xE4n"
+  - left: top.
+    right: Iholle
+  completionFeedback: "Hienoa! Tunnistit l\xE4\xE4kkeiden antoreittien lyhenteet
+    oikein. Lyhenteiden tunteminen helpottaa l\xE4\xE4kem\xE4\xE4r\xE4ysten tulkintaa
+    ja turvallista l\xE4\xE4kehoitoa."
+  professionalPatch: "L\xE4\xE4kehoidossa k\xE4ytet\xE4\xE4n runsaasti lyhenteit\xE4.
+    Jos olet ep\xE4varma niiden merkityksest\xE4  varmista asia aina luotettavasta
+    l\xE4hteest\xE4. Ep\xE4selv\xE4\xE4 l\xE4\xE4kem\xE4\xE4r\xE4yst\xE4 ei tule
+    koskaan tulkita arvaamalla."

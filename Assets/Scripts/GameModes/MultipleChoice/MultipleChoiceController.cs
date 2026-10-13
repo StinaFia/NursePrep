@@ -8,11 +8,15 @@ namespace NursingQuiz.GameModes.MultipleChoice
 {
     /// <summary>
     /// Drives one multiple-choice play session: loads QuestionBanks matching the chosen
-    /// aihe + tier, samples a subset, and steps through questions one at a time.
+    /// category + tier, samples a subset, and steps through questions one at a time.
     ///
-    /// This class only holds game logic/state -- UI wiring (buttons, feedback panel) belongs
-    /// in a separate view script that listens to this controller. Not built yet; this is the
-    /// next step after confirming the import pipeline works.
+    /// Responsibilities:
+    /// - selecting questions from matching QuestionBanks
+    /// - tracking player progress and score
+    /// - evaluating submitted answers
+    /// - advancing through the round
+    ///
+    /// UI rendering and player interaction are handled separately by MultipleChoiceView.
     /// </summary>
     public class MultipleChoiceController : GameModeBase
     {
@@ -21,8 +25,14 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
         private List<QuestionData> roundQuestions;
         private int currentIndex;
+        // Stores currently selected answer indices.
+        // Supports both single-select and multi-select gameplay.
         private readonly HashSet<int> currentSelection = new HashSet<int>();
 
+        /// <summary>
+        /// Currently active question.
+        /// Returns null when the round has finished.
+        /// </summary>
         public QuestionData CurrentQuestion =>
             (roundQuestions != null && currentIndex < roundQuestions.Count) ? roundQuestions[currentIndex] : null;
 
@@ -46,13 +56,13 @@ namespace NursingQuiz.GameModes.MultipleChoice
         public override void StartRound()
         {
             var pool = availableBanks
-                .Where(b => b.aihe == currentAihe && b.tier == currentTier)
+                .Where(b => b.category == currentCategory && b.tier == currentTier)
                 .SelectMany(b => b.questions)
                 .ToList();
 
             if (pool.Count == 0)
             {
-                Debug.LogError($"No questions found for aihe={currentAihe}, tier={currentTier}. " +
+                Debug.LogError($"No questions found for category={currentCategory}, tier={currentTier}. " +
                                 "Check that the bank was imported and is assigned in the inspector.");
                 roundQuestions = new List<QuestionData>();
                 return;
@@ -82,7 +92,14 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
         public bool IsOptionSelected(int optionIndex) => currentSelection.Contains(optionIndex);
 
-        /// <summary>Call from UI when the player submits their current selection.</summary>
+        // NOTE:
+        // The controller already supports multi-select answers.
+        // MultipleChoiceView currently evaluates answers immediately after a selection (T1 behaviour). Future T2/T3 support
+        // should trigger EvaluateAnswer() via a Submit button instead.
+
+        /// <summary>
+        /// Evaluates the current selection, updates score counters and advances to the next question.
+        /// </summary>
         public override void EvaluateAnswer(object answer)
         {
             var q = CurrentQuestion;
@@ -102,6 +119,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
                 EndSession();
         }
 
+        /// <summary>
+        /// Fisher-Yates shuffle used to randomize question order before a round starts.
+        /// </summary>
         private static List<T> Shuffle<T>(List<T> list)
         {
             var copy = new List<T>(list);

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: "LAA-LAS-100 \U0001F3C1"
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: "LAA-LAS-100 \U0001F3C1"
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilas painaa 36 kg. L\xE4\xE4kett\xE4 on m\xE4\xE4r\xE4tty 25
+    mg/kg/vrk jaettuna kolmeen yht\xE4 suureen annokseen. Nestem\xE4isen l\xE4\xE4kkeen
+    vahvuus on 150 mg/5 ml. L\xE4\xE4kett\xE4 on pullossa 100 ml. Kuinka monta millilitraa
+    annat yhdell\xE4 antokerralla?"
+  options:
+  - 5 ml
+  - 10 ml
+  - 12 ml
+  - 30 ml
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "J\xE4senn\xE4 teht\xE4v\xE4 osiin ja valitse kysymyksen kannalta
+    tarvittavat tiedot. Selvit\xE4 l\xE4\xE4keainem\xE4\xE4r\xE4 ennen annettavaa
+    tilavuutta."
+  rationale: "Vuorokausiannos on 36 kg \xD7 25 mg/kg/vrk = 900 mg/vrk. Yksi annos
+    on 900 mg \xF7 3 = 300 mg. Vahvuus 150 mg/5 ml vastaa 30 mg/ml. Tarvittava tilavuus
+    on 300 mg \xF7 30 mg/ml = 10 ml. Pullon 100 ml:n kokonaism\xE4\xE4r\xE4\xE4 ei
+    tarvita yhden antokerran laskemiseen."
+  professionalPatch: "Vaikeakin l\xE4\xE4kelasku muuttuu hallittavaksi, kun ratkaiset
+    yhden asian kerrallaan ja tarkistat jokaisen v\xE4lituloksen yksik\xF6n."

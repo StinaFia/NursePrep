@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-029
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-029
+  category: LAS
+  theme: YKM
+  tier: 0
+  questionText: "Mik\xE4 seuraavista m\xE4\xE4rist\xE4 on suurin?"
+  options:
+  - 0,9 g
+  - 950 mg
+  - 90 mg
+  - 0,095 g
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Muunna kaikki m\xE4\xE4r\xE4t samaan yksikk\xF6\xF6n ennen
+    vertailua."
+  rationale: "Milligrammoina m\xE4\xE4r\xE4t ovat 900 mg, 950 mg, 90 mg ja 95 mg.
+    Suurin on 950 mg."
+  professionalPatch: "Kun vaihtoehtoja on useita, yhteinen yksikk\xF6 tekee vertailusta
+    helpompaa."

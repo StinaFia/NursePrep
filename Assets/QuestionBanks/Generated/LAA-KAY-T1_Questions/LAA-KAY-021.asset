@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-021
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-021
+  category: LAA
+  theme: KAY
+  tier: 0
+  questionText: "Miksi potilaalle kerrotaan etuk\xE4teen, mit\xE4 intiimialueelle
+    annettavan l\xE4\xE4kkeen aikana tapahtuu?"
+  options:
+  - "Jotta l\xE4\xE4kkeen vaikutus nopeutuisi."
+  - "Jotta potilas voi valmistautua tilanteeseen ja tiet\xE4\xE4, mit\xE4 tapahtuu."
+  - "Jotta l\xE4\xE4kett\xE4 tarvitaan v\xE4hemm\xE4n."
+  - "Jotta toimenpide kest\xE4\xE4 kauemmin."
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti asiaa potilaan n\xE4k\xF6kulmasta."
+  rationale: "Selke\xE4 ohjaus lis\xE4\xE4 turvallisuuden tunnetta ja v\xE4hent\xE4\xE4
+    j\xE4nnityst\xE4."
+  professionalPatch: "Hyv\xE4 ennakko-ohjaus on t\xE4rke\xE4 osa potilaan arvostavaa
+    kohtaamista."

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-065
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-065
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty 0,5 ml l\xE4\xE4kett\xE4. Valmisteen
+    annostelijalla 1 ml = 25 tippaa. Kuinka monta tippaa annat?"
+  options:
+  - 10 tippaa
+  - 12,5 tippaa
+  - 25 tippaa
+  - 50 tippaa
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "K\xE4yt\xE4 laskussa juuri t\xE4m\xE4n teht\xE4v\xE4n tippakerrointa
+    ja m\xE4\xE4r\xE4tty\xE4 tilavuutta."
+  rationale: "0,5 ml \xD7 25 tippaa/ml = 12,5 tippaa."
+  professionalPatch: "Laskennallinen tulos voi joskus olla murto-osa tipasta. K\xE4yt\xE4nn\xF6n
+    annosteltavuus ja mahdollinen py\xF6rist\xE4minen arvioidaan valmisteen ja annosteluv\xE4lineen
+    ohjeiden perusteella."

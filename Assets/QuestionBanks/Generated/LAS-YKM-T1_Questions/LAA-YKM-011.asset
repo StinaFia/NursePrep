@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-011
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-011
+  category: LAS
+  theme: YKM
+  tier: 0
+  questionText: Muunna 0,5 mg mikrogrammoiksi.
+  options:
+  - "500 \xB5g"
+  - "50 \xB5g"
+  - "5 000 \xB5g"
+  - "0,5 \xB5g"
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Tarkista desimaaliluku ja milligrammojen muuntaminen mikrogrammoiksi.
+  rationale: "0,5 mg \xD7 1 000 = 500 \xB5g."
+  professionalPatch: "Arvioi my\xF6s tuloksen suuruus: pienemp\xE4\xE4n yksikk\xF6\xF6n
+    muunnettaessa lukuarvon pit\xE4\xE4 kasvaa."

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-047
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-047
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilas saa l\xE4\xE4kett\xE4 750 mg kaksi kertaa vuorokaudessa
+    nelj\xE4n vuorokauden ajan. Kuinka paljon l\xE4\xE4keainetta h\xE4n saa koko
+    hoitojakson aikana grammoina?"
+  options:
+  - 6 g
+  - 3 g
+  - 0,6 g
+  - 60 g
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Laske ensin kaikkien nelj\xE4n vuorokauden l\xE4\xE4keainem\xE4\xE4r\xE4
+    ja tee mg\u2013g-muunnos vasta sen j\xE4lkeen."
+  rationale: "Vuorokausiannos on 750 mg \xD7 2 = 1 500 mg. Nelj\xE4n vuorokauden
+    aikana m\xE4\xE4r\xE4 on 1 500 mg \xD7 4 = 6 000 mg. 6 000 mg = 6 g."
+  professionalPatch: "Tee yksikk\xF6muunnos hallitussa kohdassa ja kirjoita uusi
+    yksikk\xF6 n\xE4kyviin."

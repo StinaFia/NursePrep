@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-039
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-039
+  category: LAA
+  theme: TUR
+  tier: 0
+  questionText: "Miksi l\xE4\xE4kehoidossa on t\xE4rke\xE4\xE4 kertoa my\xF6s l\xE4helt\xE4
+    piti -tilanteista?"
+  options:
+  - "Niist\xE4 voidaan oppia ja ehk\xE4ist\xE4 vastaavia tilanteita tulevaisuudessa"
+  - "Niit\xE4 seurataan vain tilastointia varten"
+  - "Ne hidastavat ty\xF6skentely\xE4"
+  - "Niist\xE4 ei tarvitse kertoa, jos potilaalle ei aiheutunut haittaa"
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "My\xF6s tilanteista, joissa vahinkoa ei syntynyt, voidaan oppia
+    paljon."
+  rationale: "L\xE4helt\xE4 piti -tilanteiden k\xE4sittely auttaa kehitt\xE4m\xE4\xE4n
+    toimintaa ja ehk\xE4isem\xE4\xE4n uusia virheit\xE4."
+  professionalPatch: "Turvallinen ty\xF6yhteis\xF6 oppii my\xF6s niist\xE4 tilanteista,
+    joissa virhe huomattiin ajoissa."

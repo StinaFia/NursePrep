@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-048
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-048
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "L\xE4\xE4kepullossa on 100 ml l\xE4\xE4kett\xE4. Yksi annos on 4
+    ml. Kuinka monta kokonaista annosta pullosta saadaan?"
+  options:
+  - 20 annosta
+  - 25 annosta
+  - 40 annosta
+  - 400 annosta
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "T\xE4ss\xE4 ei kysyt\xE4, kuinka moneksi vuorokaudeksi l\xE4\xE4ke
+    riitt\xE4\xE4, vaan kuinka monta annosta pullossa on."
+  rationale: "100 ml \xF7 4 ml/annos = 25 annosta."
+  professionalPatch: "Lue tarkasti, kysyt\xE4\xE4nk\xF6 annosten vai hoitop\xE4ivien
+    m\xE4\xE4r\xE4\xE4. Ne eiv\xE4t tarkoita samaa asiaa."

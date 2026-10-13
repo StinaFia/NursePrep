@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a736ef29d12d474aaadc284ea9b80e9, type: 3}
   m_Name: LAA-PER-T1
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionBank
-  aihe: LAA
-  aihekori: PER
+  category: LAA
+  theme: PER
   tier: 0
   sourceFileName: LAA-PER-laakehoito_t1_tietovisa_perustiedot.csv
-  oppimistavoite: "Opiskelija tunnistaa l\xE4\xE4kkeiden antoreittien keskeiset k\xE4sitteet,
-    lyhenteet ja l\xE4\xE4kemuodot sek\xE4 hallitsee l\xE4\xE4kehoidon perustietoja."
   questions:
   - {fileID: 11400000, guid: 08aa6ac3444f54842ae0c17bb7b0018c, type: 2}
   - {fileID: 11400000, guid: 9363d1d088f03504796d982aa3b1a5b2, type: 2}

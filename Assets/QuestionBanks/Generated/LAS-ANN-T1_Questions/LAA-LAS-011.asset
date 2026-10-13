@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-011
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-011
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4 200 mg. Nestem\xE4isen
+    l\xE4\xE4kkeen vahvuus on 100 mg/ml. Kuinka monta millilitraa annat?"
+  options:
+  - 1 ml
+  - 2 ml
+  - 5 ml
+  - 20 ml
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista m\xE4\xE4r\xE4tty l\xE4\xE4keainem\xE4\xE4r\xE4 ja
+    l\xE4\xE4kkeen vahvuus. Laske niiden perusteella tarvittava tilavuus uudelleen."
+  rationale: "200 mg \xF7 100 mg/ml = 2 ml."
+  professionalPatch: "Tarkista vastauksesi kertomalla annettava tilavuus l\xE4\xE4kkeen
+    vahvuudella: 2 ml \xD7 100 mg/ml = 200 mg."

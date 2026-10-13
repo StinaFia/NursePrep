@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-056
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-056
+  category: LAA
+  theme: KAY
+  tier: 0
+  questionText: "Tuleeko my\xF6s antamatta j\xE4\xE4nyt l\xE4\xE4ke kirjata?"
+  options:
+  - "Ei tarvitse, jos l\xE4\xE4ke j\xE4i vahingossa antamatta."
+  - "Kyll\xE4, my\xF6s antamatta j\xE4\xE4nyt l\xE4\xE4ke kirjataan organisaation
+    ohjeiden mukaisesti."
+  - "Vain silloin, jos l\xE4\xE4ke oli pistett\xE4v\xE4."
+  - "Vain tarvittaessa annettavat l\xE4\xE4kkeet kirjataan."
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, miksi my\xF6s toteutumatta j\xE4\xE4nyt
+    l\xE4\xE4kehoito on t\xE4rke\xE4 tieto."
+  rationale: "My\xF6s antamatta j\xE4\xE4nyt l\xE4\xE4ke on t\xE4rke\xE4 kirjata,
+    jotta l\xE4\xE4kehoidon toteutuminen voidaan arvioida oikein."
+  professionalPatch: "Antamatta j\xE4\xE4neen l\xE4\xE4kkeen syy on t\xE4rke\xE4
+    kirjata organisaation ohjeiden mukaisesti."

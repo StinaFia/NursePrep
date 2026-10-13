@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-076
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-076
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilas saa l\xE4\xE4kett\xE4 3 000 KY kaksi kertaa vuorokaudessa.
+    L\xE4\xE4kkeen vahvuus on 2 000 KY/ml. Kuinka monta millilitraa l\xE4\xE4kett\xE4
+    tarvitaan yhteens\xE4 vuorokaudessa?"
+  options:
+  - 1,5 ml
+  - 2 ml
+  - 3 ml
+  - 6 ml
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Selvit\xE4 yhden annoksen tilavuus ja huomioi sen j\xE4lkeen
+    vuorokauden annosten lukum\xE4\xE4r\xE4."
+  rationale: "Yhteen annokseen tarvitaan 3 000 KY \xF7 2 000 KY/ml = 1,5 ml. Vuorokaudessa
+    annoksia on kaksi, joten 1,5 ml \xD7 2 = 3 ml/vrk."
+  professionalPatch: "Tarkista lopuksi, vastaako saamasi tulos kysytty\xE4 ajanjaksoa:
+    annosta vai koko vuorokautta."

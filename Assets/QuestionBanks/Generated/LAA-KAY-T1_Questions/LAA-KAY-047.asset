@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-047
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-047
+  category: LAA
+  theme: KAY
+  tier: 0
+  questionText: "Mit\xE4 tehd\xE4\xE4n k\xE4ytetylle neulalle heti pist\xE4misen
+    j\xE4lkeen?"
+  options:
+  - Laitetaan neula takaisin neulasuojaan.
+  - "J\xE4tet\xE4\xE4n neula hetkeksi ty\xF6p\xF6yd\xE4lle."
+  - "Irrotetaan neula ruiskusta k\xE4sin."
+  - "Laitetaan neula v\xE4litt\xF6m\xE4sti sille tarkoitettuun riskij\xE4teastiaan."
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, mik\xE4 on turvallisin tapa k\xE4sitell\xE4
+    k\xE4ytetty\xE4 neulaa."
+  rationale: "K\xE4ytetty neula h\xE4vitet\xE4\xE4n v\xE4litt\xF6m\xE4sti neuloille
+    tarkoitettuun riskij\xE4teastiaan neulanpistotapaturmien ehk\xE4isemiseksi."
+  professionalPatch: "Riskij\xE4teastia kannattaa sijoittaa mahdollisimman l\xE4helle
+    ty\xF6skentelypistett\xE4, jotta k\xE4ytetty neula voidaan h\xE4vitt\xE4\xE4
+    heti."

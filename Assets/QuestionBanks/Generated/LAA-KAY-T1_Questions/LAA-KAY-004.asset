@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-004
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-004
+  category: LAA
+  theme: KAY
+  tier: 0
+  questionText: "Miksi hyv\xE4 potilasasento on t\xE4rke\xE4 l\xE4\xE4kkeen antamisen
+    aikana?"
+  options:
+  - "Se helpottaa turvallista l\xE4\xE4kkeen antamista ja lis\xE4\xE4 potilaan mukavuutta."
+  - "L\xE4\xE4kett\xE4 tarvitaan v\xE4hemm\xE4n."
+  - "Potilas p\xE4\xE4see nopeammin kotiin."
+  - "Hoitaja s\xE4\xE4st\xE4\xE4 ty\xF6v\xE4lineit\xE4."
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti sek\xE4 potilaan ett\xE4 hoitajan n\xE4k\xF6kulmaa."
+  rationale: "Hyv\xE4 asento helpottaa sek\xE4 l\xE4\xE4kkeen antamista ett\xE4 potilaan
+    oloa toimenpiteen aikana."
+  professionalPatch: "Kysy tarvittaessa potilaalta, millainen asento tuntuu h\xE4nest\xE4
+    mahdollisimman hyv\xE4lt\xE4 ja turvalliselta."

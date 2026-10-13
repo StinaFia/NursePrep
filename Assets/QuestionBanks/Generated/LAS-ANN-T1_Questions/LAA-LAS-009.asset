@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-009
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-009
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilas ottaa l\xE4\xE4kett\xE4 1 tabletin kaksi kertaa vuorokaudessa.
+    Pakkauksessa on 30 tablettia. Kuinka moneksi kokonaiseksi vuorokaudeksi l\xE4\xE4kkeet
+    riitt\xE4v\xE4t?"
+  options:
+  - 10 vuorokaudeksi
+  - 15 vuorokaudeksi
+  - 30 vuorokaudeksi
+  - 60 vuorokaudeksi
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Laske ensin vuorokaudessa k\xE4ytett\xE4vien tablettien m\xE4\xE4r\xE4
+    ja jaa pakkauksen tablettim\xE4\xE4r\xE4 sill\xE4."
+  rationale: "Potilas k\xE4ytt\xE4\xE4 1 \xD7 2 = 2 tablettia vuorokaudessa. 30 tablettia
+    \xF7 2 tablettia/vrk = 15 vuorokautta."
+  professionalPatch: "L\xE4\xE4kkeen riitt\xE4vyytt\xE4 laskettaessa tarvitset kokonaism\xE4\xE4r\xE4n
+    ja yhden vuorokauden kulutuksen."

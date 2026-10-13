@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-049
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-049
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilas ottaa nestem\xE4ist\xE4 l\xE4\xE4kett\xE4 5 ml kolme kertaa
+    vuorokaudessa. Pullossa on 200 ml l\xE4\xE4kett\xE4. Kuinka monta kokonaista
+    hoitovuorokautta yhdest\xE4 pullosta saadaan?"
+  options:
+  - 10 vrk
+  - 15 vrk
+  - 13 vrk
+  - 40 vrk
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista ensin vuorokausikulutus ja huomioi, ett\xE4 kysymyksess\xE4
+    pyydet\xE4\xE4n kokonaisten hoitovuorokausien m\xE4\xE4r\xE4\xE4."
+  rationale: "Vuorokaudessa l\xE4\xE4kett\xE4 kuluu 5 ml \xD7 3 = 15 ml. 200 ml \xF7
+    15 ml/vrk = 13,33\u2026 vrk. L\xE4\xE4kett\xE4 riitt\xE4\xE4 siis 13 kokonaiseen
+    hoitovuorokauteen. T\xE4m\xE4n j\xE4lkeen l\xE4\xE4kett\xE4 j\xE4\xE4 5 ml, mik\xE4
+    ei riit\xE4 seuraavan vuorokauden kaikkiin annoksiin."
+  professionalPatch: "Kun tulos ei ole kokonainen vuorokausi, tarkista teht\xE4v\xE4nannosta,
+    kysyt\xE4\xE4nk\xF6 kokonaisia hoitovuorokausia vai jotakin muuta."

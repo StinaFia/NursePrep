@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-050
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-050
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilas saa l\xE4\xE4kett\xE4 250 mg kolme kertaa vuorokaudessa
+    kahdeksan vuorokauden ajan. K\xE4ytett\xE4viss\xE4 on 125 mg:n tabletteja. Kuinka
+    monta tablettia koko hoitojaksoon tarvitaan?"
+  options:
+  - 24 tablettia
+  - 36 tablettia
+  - 72 tablettia
+  - 48 tablettia
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Etene vaiheittain: yhden annoksen tabletit \u2192 vuorokauden
+    tabletit \u2192 koko hoitojakson tabletit."
+  rationale: "Yhteen 250 mg:n annokseen tarvitaan 250 mg \xF7 125 mg/tabletti = 2
+    tablettia. Vuorokaudessa tarvitaan 2 \xD7 3 = 6 tablettia. Kahdeksan vuorokauden
+    aikana tarvitaan 6 \xD7 8 = 48 tablettia."
+  professionalPatch: "Pitk\xE4nkin teht\xE4v\xE4n voi pilkkoa pieniksi laskuiksi.
+    Tarkista jokaisen vaiheen j\xE4lkeen, mit\xE4 saamasi luku tarkoittaa."

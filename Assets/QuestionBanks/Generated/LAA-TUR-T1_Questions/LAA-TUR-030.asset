@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-030
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-030
+  category: LAA
+  theme: TUR
+  tier: 0
+  questionText: "Miksi l\xE4\xE4kkeen antamista ei saa kirjata ennen kuin l\xE4\xE4ke
+    on todella annettu potilaalle?"
+  options:
+  - "Ennakkokirjaaminen s\xE4\xE4st\xE4\xE4 aikaa"
+  - "N\xE4in toimitaan vain y\xF6vuorossa"
+  - "Koska kirjauksen tulee vastata toteutunutta l\xE4\xE4kehoitoa"
+  - "Sill\xE4 ei ole merkityst\xE4"
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Kirjauksen tulee aina kuvata todellista tapahtumaa.
+  rationale: "Potilasasiakirjoihin kirjataan vain toteutunut l\xE4\xE4kehoito. Ennakkokirjaaminen
+    voi vaarantaa potilasturvallisuuden."
+  professionalPatch: "Kirjaa se, mit\xE4 todella tapahtui \u2013 ei sit\xE4, mit\xE4
+    oli tarkoitus tapahtua."

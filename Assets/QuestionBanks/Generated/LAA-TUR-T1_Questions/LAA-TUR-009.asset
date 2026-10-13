@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-009
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-009
+  category: LAA
+  theme: TUR
+  tier: 0
+  questionText: "Mik\xE4 on turvallisin toimintatapa, jos l\xE4\xE4kem\xE4\xE4r\xE4ys
+    on ep\xE4selv\xE4?"
+  options:
+  - "Selvitt\xE4\xE4 asia ennen l\xE4\xE4kkeen valmistelua"
+  - "Kysy\xE4 potilaalta, mik\xE4 annos yleens\xE4 on ollut"
+  - "Arvata todenn\xE4k\xF6isin annos"
+  - "Antaa l\xE4\xE4ke my\xF6hemmin ilman selvityst\xE4"
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ep\xE4selviss\xE4 tilanteissa l\xE4\xE4kett\xE4 ei valmistella
+    tai anneta ennen asian varmistamista."
+  rationale: "Ep\xE4selv\xE4 l\xE4\xE4kem\xE4\xE4r\xE4ys tulee aina selvitt\xE4\xE4
+    ennen l\xE4\xE4kkeen valmistelua tai antamista."
+  professionalPatch: Kysyminen ja asian varmistaminen ovat osa turvallista ammattitaitoa.

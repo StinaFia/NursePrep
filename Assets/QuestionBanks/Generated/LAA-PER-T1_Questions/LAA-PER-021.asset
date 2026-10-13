@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LAA-PER-021
   m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
   tunniste: LAA-PER-021
-  aihe: LAA
-  aihekori: PER
+  category: LAA
+  theme: PER
   tier: 0
   questionText: "Mik\xE4 kuvaa antoreitti\xE4?"
   options:

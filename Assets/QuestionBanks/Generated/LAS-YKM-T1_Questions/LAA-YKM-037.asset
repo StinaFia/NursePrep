@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-037
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-037
+  category: LAS
+  theme: YKM
+  tier: 0
+  questionText: Muunna 0,0008 g nanogrammoiksi.
+  options:
+  - 8 000 ng
+  - 80 000 ng
+  - 800 000 ng
+  - 800 ng
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "T\xE4ss\xE4 muunnos kulkee usean massayksik\xF6n kautta. Tarkista
+    jokainen vaihe."
+  rationale: "0,0008 g = 0,8 mg = 800 \xB5g = 800 000 ng."
+  professionalPatch: "Tee pitk\xE4 muunnos vaiheittain: g \u2192 mg \u2192 \xB5g
+    \u2192 ng."

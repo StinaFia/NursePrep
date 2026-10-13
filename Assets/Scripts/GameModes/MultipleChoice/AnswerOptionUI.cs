@@ -5,13 +5,9 @@ using UnityEngine.UI;
 namespace NursingQuiz.GameModes.MultipleChoice
 {
     /// <summary>
-    /// Attach this to each answer-option GameObject (the one with the Button component).
-    /// Bundles its Button, background Image, and label Text so MultipleChoiceView can
-    /// control them directly instead of relying on GetComponentInChildren calls, which
-    /// break silently if the hierarchy under the button changes shape.
+    /// References the UI elements used by a single answer option.
     ///
-    /// All three fields are on the SAME GameObject/its children -- just drag them in from
-    /// the Inspector once you've built the button.
+    /// MultipleChoiceView uses this component to update the option text, selection state and visual styling.
     /// </summary>
     public class AnswerOptionUI : MonoBehaviour
     {

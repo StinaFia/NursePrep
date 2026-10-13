@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-063
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-063
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilaalle annetaan 1,5 ml l\xE4\xE4kett\xE4. Valmisteen annostelijalla
+    1 ml = 20 tippaa. Kuinka monta tippaa annat?"
+  options:
+  - 15 tippaa
+  - 20 tippaa
+  - 40 tippaa
+  - 30 tippaa
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Desimaalinen millilitram\xE4\xE4r\xE4 ei muuta laskuperiaatetta.
+    K\xE4yt\xE4 teht\xE4v\xE4ss\xE4 annettua tippakerrointa."
+  rationale: "1,5 ml \xD7 20 tippaa/ml = 30 tippaa."
+  professionalPatch: "Tarkista tuloksen j\xE4rkevyys: jos 1 ml on 20 tippaa, 1,5
+    ml:n t\xE4ytyy olla enemm\xE4n kuin 20 tippaa."

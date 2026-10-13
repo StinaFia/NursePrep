@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-052
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-052
+  category: LAA
+  theme: KAY
+  tier: 0
+  questionText: "Miksi pist\xE4misen j\xE4lkeen varmistetaan, ett\xE4 potilaan vointi
+    on hyv\xE4 ennen tilanteen p\xE4\xE4tt\xE4mist\xE4?"
+  options:
+  - "Jotta voidaan varmistaa, ett\xE4 potilas voi hyvin l\xE4\xE4kkeen annon j\xE4lkeen."
+  - Jotta pistopaikka ehtii kuivua.
+  - "Jotta kirjaaminen voidaan tehd\xE4 my\xF6hemmin."
+  - Jotta seuraavan potilaan valmistelu voidaan aloittaa.
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, miksi potilasta seurataan viel\xE4
+    pist\xE4misen j\xE4lkeenkin."
+  rationale: "Potilaan vointi tarkistetaan l\xE4\xE4kkeen annon j\xE4lkeen, jotta
+    mahdolliset poikkeavat reaktiot havaitaan ajoissa."
+  professionalPatch: "Varmista ennen poistumista, ett\xE4 potilas voi hyvin eik\xE4
+    tarvitse lis\xE4apua."

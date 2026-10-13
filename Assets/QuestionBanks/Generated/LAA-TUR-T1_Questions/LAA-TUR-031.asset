@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-031
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-031
+  category: LAA
+  theme: TUR
+  tier: 0
+  questionText: "Miksi k\xE4ytt\xE4m\xE4tt\xE4 j\xE4\xE4neit\xE4 l\xE4\xE4kkeit\xE4
+    ei saa h\xE4vitt\xE4\xE4 tavallisen sekaj\xE4tteen mukana?"
+  options:
+  - "Koska l\xE4\xE4kkeet voivat aiheuttaa haittaa ihmisille ja ymp\xE4rist\xF6lle"
+  - "Koska roskapussi t\xE4yttyy nopeammin"
+  - "Koska l\xE4\xE4kej\xE4tteet haisevat"
+  - "Koska sekaj\xE4tett\xE4 ei tyhjennet\xE4 riitt\xE4v\xE4n usein"
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Muista, ett\xE4 l\xE4\xE4kkeet ovat erityisj\xE4tett\xE4 ja
+    ne tulee h\xE4vitt\xE4\xE4 turvallisesti."
+  rationale: "K\xE4ytt\xE4m\xE4tt\xE4 j\xE4\xE4neet l\xE4\xE4kkeet voivat aiheuttaa
+    haittaa ihmisille ja ymp\xE4rist\xF6lle, joten ne tulee h\xE4vitt\xE4\xE4 asianmukaisesti."
+  professionalPatch: "Turvallinen l\xE4\xE4kehoito jatkuu my\xF6s l\xE4\xE4kkeen
+    k\xE4yt\xF6n j\xE4lkeen."

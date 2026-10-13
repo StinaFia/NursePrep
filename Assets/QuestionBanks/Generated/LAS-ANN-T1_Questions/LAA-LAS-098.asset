@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-098
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-098
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilas painaa 50 kg. H\xE4nelle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4
+    6 mg/kg yht\xE4 annosta kohden. L\xE4\xE4kkeen vahvuus on 100 mg/5 ml. L\xE4\xE4kett\xE4
+    annetaan kaksi kertaa vuorokaudessa. Pullossa on 200 ml l\xE4\xE4kett\xE4. Kuinka
+    monta millilitraa annat yhdell\xE4 antokerralla?"
+  options:
+  - 10 ml
+  - 15 ml
+  - 20 ml
+  - 30 ml
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Valitse laskuun vain kysytyn asian ratkaisemiseksi tarvittavat
+    tiedot.
+  rationale: "Yksi painoperusteinen annos on 50 kg \xD7 6 mg/kg = 300 mg. L\xE4\xE4kkeen
+    vahvuus 100 mg/5 ml vastaa 20 mg/ml. Tarvittava tilavuus on 300 mg \xF7 20 mg/ml
+    = 15 ml. Antokertojen m\xE4\xE4r\xE4 ja pullon tilavuus eiv\xE4t vaikuta yhden
+    antokerran tilavuuteen."
+  professionalPatch: "Realistisessa l\xE4\xE4kem\xE4\xE4r\xE4yksess\xE4 voi olla
+    paljon tietoa. Aloita aina kysymyksest\xE4: mit\xE4 minun pit\xE4\xE4 selvitt\xE4\xE4?"

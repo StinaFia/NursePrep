@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-028
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-028
+  category: LAS
+  theme: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty 50 mg l\xE4\xE4kett\xE4. L\xE4\xE4keliuoksen
+    pitoisuus on 1 %. Kuinka monta millilitraa annat?"
+  options:
+  - 0,5 ml
+  - 5 ml
+  - 10 ml
+  - 50 ml
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Muunna prosenttipitoisuus ensin muotoon mg/ml ja laske vasta
+    sen j\xE4lkeen tarvittava tilavuus."
+  rationale: "1 % = 1 g/100 ml = 1 000 mg/100 ml = 10 mg/ml. Tarvittava tilavuus
+    on 50 mg \xF7 10 mg/ml = 5 ml."
+  professionalPatch: "Kun teht\xE4v\xE4ss\xE4 kysyt\xE4\xE4n annettavaa tilavuutta,
+    selvit\xE4 ensin kuinka monta milligrammaa l\xE4\xE4keainetta yhdess\xE4 millilitrassa
+    on."

@@ -6,73 +6,106 @@ using UnityEngine.UI;
 using NursingQuiz.Core;
 using NursingQuiz.Data;
 using NursingQuiz.GameModes.MultipleChoice;
+using NursingQuiz.GameModes.MatchPairs;
 
 namespace NursingQuiz.UI
 {
     /// <summary>
-    /// Owns screen navigation: Main Menu -> combined Theme + Difficulty Select -> Quiz.
-    /// Holds all imported content (themes + question banks) and hands the relevant slice
-    /// to MultipleChoiceView once the player has made both choices.
+    /// Controls application flow and screen navigation: 
+    /// Main Menu -> combined Theme + Difficulty Select -> a game screen (multiple choice or match pairs).
     ///
-    /// Theme and difficulty are on ONE screen (theme list left, difficulty right) --
-    /// clicking a theme updates the difficulty side in place rather than navigating to a
-    /// new screen. The first available theme is auto-selected on entry so the difficulty
-    /// side is never empty.
+    /// Theme identity is defined by the combination of:
+    /// - category
+    /// - theme
     ///
-    /// Theme buttons are generated at runtime from Available Themes -- adding a new theme
-    /// later is just dragging its ThemeInfo and QuestionBank assets into the lists below,
-    /// no new UI to build.
+    /// Category alone is not unique.
     /// </summary>
     public class GameFlowController : MonoBehaviour
+
     {
+        [Header("Category names")]
+        [SerializeField] private List<CategoryInfo> categories = new List<CategoryInfo>();
+        [SerializeField] private Transform categoryList;
+        [SerializeField] private ThemeButtonUI categoryButtonTemplate;
+        [SerializeField] private Button categoryBackToMenuButton;
+
         [Header("Content (drag every imported asset here)")]
         [SerializeField] private List<ThemeInfo> availableThemes = new List<ThemeInfo>();
         [SerializeField] private List<QuestionBank> availableBanks = new List<QuestionBank>();
+        [SerializeField] private List<MatchPairSet> availableMatchPairSets = new List<MatchPairSet>();
         [SerializeField] private int questionsPerRound = 5;
 
         [Header("Panels")]
         [SerializeField] private GameObject mainMenuPanel;
+        [SerializeField] private GameObject categorySelectPanel;
         [SerializeField] private GameObject themeAndDifficultyPanel;
         [SerializeField] private GameObject quizScreen;
+        [SerializeField] private GameObject matchPairScreen;
 
         [Header("Main Menu")]
         [SerializeField] private Button multipleChoiceModeButton;
+        [SerializeField] private Button matchPairsModeButton;
 
         [Header("Theme + Difficulty Select - Left column (themes)")]
-        [SerializeField] private Transform themeButtonContainer;
+        [SerializeField] private Transform themeList;
         [SerializeField] private ThemeButtonUI themeButtonTemplate;
 
         [Header("Theme + Difficulty Select - Right column (difficulty)")]
         [SerializeField] private Button t1Button;
-        [SerializeField] private TMP_Text t1ObjectiveText;
+        [SerializeField] private Image t1ButtonBackground;
+        [SerializeField] private TMP_Text t1StatusText;
         [SerializeField] private Button t2Button;
-        [SerializeField] private TMP_Text t2ObjectiveText;
+        [SerializeField] private Image t2ButtonBackground;
+        [SerializeField] private TMP_Text t2StatusText;
         [SerializeField] private Button t3Button;
-        [SerializeField] private TMP_Text t3ObjectiveText;
+        [SerializeField] private Image t3ButtonBackground;
+        [SerializeField] private TMP_Text t3StatusText;
 
-        [SerializeField] private Button selectBackButton;
+        [SerializeField] private Button startGameButton;
+        [SerializeField] private Button backButton; 
 
-        [Header("Theme highlight colors")]
-        [SerializeField] private Color themeNormalColor = new Color(0.953f, 0.957f, 0.945f); // #F3F4F1
-        [SerializeField] private Color themeSelectedColor = new Color(0.812f, 0.890f, 0.941f); // #CFE3F0
+        [Header("Highlight colors")]
+        [SerializeField] private Color normalColor = new Color(0.953f, 0.957f, 0.945f); // #F3F4F1
+        [SerializeField] private Color selectedColor = new Color(0.812f, 0.890f, 0.941f); // #CFE3F0
 
-        [Header("Quiz")]
+        [Header("Multiple choice")]
         [SerializeField] private MultipleChoiceView quizView;
+        [SerializeField] private Button quizBackToMenuButton;
 
-        [Header("Results (the quiz screen's own complete panel needs one extra button)")]
-        [SerializeField] private Button backToMenuButton;
+        [Header("Multiple choice - in-game top bar (visible while playing, not just at the end)")]
+        [SerializeField] private Button quizTopBarBackToThemeButton;
+        [SerializeField] private Button quizTopBarBackToMenuButton;
+        [SerializeField] private TMP_Text quizTopBarThemeText;
 
-        private string selectedAihe;
+        [Header("Match pairs")]
+        [SerializeField] private MatchPairView matchPairView;
+        [SerializeField] private Button matchPairBackToMenuButton;
+
+        private string selectedCategory;
+        private string selectedTheme;
+    
+        private DifficultyTier? selectedTier;
+        private GameModeType selectedMode;
         private readonly List<ThemeButtonUI> spawnedThemeButtons = new List<ThemeButtonUI>();
 
+        // Register all UI button callbacks once at startup.
         private void Awake()
         {
-            multipleChoiceModeButton.onClick.AddListener(ShowThemeAndDifficultySelect);
-            selectBackButton.onClick.AddListener(ShowMainMenu);
-            t1Button.onClick.AddListener(() => StartQuiz(DifficultyTier.T1));
-            t2Button.onClick.AddListener(() => StartQuiz(DifficultyTier.T2));
-            t3Button.onClick.AddListener(() => StartQuiz(DifficultyTier.T3));
-            backToMenuButton.onClick.AddListener(ShowMainMenu);
+            multipleChoiceModeButton.onClick.AddListener(() => { selectedMode = GameModeType.MultipleChoice; ShowCategorySelect(); });
+            categoryBackToMenuButton.onClick.AddListener(ShowMainMenu);
+            backButton.onClick.AddListener(ShowCategorySelect);
+
+            categoryButtonTemplate.gameObject.SetActive(false);
+
+            t1Button.onClick.AddListener(() => SelectTier(DifficultyTier.T1));
+            t2Button.onClick.AddListener(() => SelectTier(DifficultyTier.T2));
+            t3Button.onClick.AddListener(() => SelectTier(DifficultyTier.T3));
+            startGameButton.onClick.AddListener(StartGame);
+
+            quizBackToMenuButton.onClick.AddListener(ShowMainMenu);
+            quizTopBarBackToThemeButton.onClick.AddListener(ShowThemeAndDifficultySelect);
+            quizTopBarBackToMenuButton.onClick.AddListener(ShowMainMenu);
+            matchPairBackToMenuButton.onClick.AddListener(ShowMainMenu);
 
             themeButtonTemplate.gameObject.SetActive(false);
 
@@ -81,78 +114,182 @@ namespace NursingQuiz.UI
 
         private void ShowMainMenu() => SetActivePanel(mainMenuPanel);
 
+        /// <summary>
+        /// Rebuilds the themeInfo list for the currently selected category and resets the difficulty selection state.
+        /// </summary>
         private void ShowThemeAndDifficultySelect()
         {
-            // Clear any buttons from a previous visit, but keep the template itself.
-            foreach (Transform child in themeButtonContainer)
+            foreach (Transform child in themeList)
             {
                 if (child == themeButtonTemplate.transform) continue;
                 Destroy(child.gameObject);
             }
             spawnedThemeButtons.Clear();
 
-            foreach (var theme in availableThemes)
+            foreach (var themeInfo in availableThemes.Where(t => t.category == selectedCategory))
             {
-                var clone = Instantiate(themeButtonTemplate, themeButtonContainer);
+                var clone = Instantiate(themeButtonTemplate, themeList);
                 clone.gameObject.SetActive(true);
-                clone.Label.text = string.IsNullOrEmpty(theme.displayName) ? theme.aihekori : theme.displayName;
-                clone.Aihe = theme.aihe;
+                clone.Label.text = string.IsNullOrEmpty(themeInfo.displayName) ? themeInfo.theme : themeInfo.displayName;
+                clone.ObjectiveText.text = themeInfo.oppimistavoite;
+                clone.Category = themeInfo.category;
+                clone.Theme = themeInfo.theme;
 
-                var capturedAihe = theme.aihe;
-                clone.Button.onClick.AddListener(() => SelectTheme(capturedAihe));
+                var capturedCategory = themeInfo.category;
+                var capturedTheme = themeInfo.theme;
+                clone.Button.onClick.AddListener(() => SelectTheme(capturedCategory, capturedTheme));
 
                 spawnedThemeButtons.Add(clone);
             }
 
             SetActivePanel(themeAndDifficultyPanel);
 
-            // Auto-select the first theme so the difficulty side is never empty on entry.
-            if (availableThemes.Count > 0)
-                SelectTheme(availableThemes[0].aihe);
+            ResetDifficultySide();
         }
 
         /// <summary>
-        /// Updates the right-hand (difficulty) side in place and highlights the chosen theme
-        /// on the left -- no panel switch, this is what makes it feel like one combined screen.
+        /// Clears the right column back to "nothing chosen yet" -- called on entry and whenever no themeInfo is selected.
         /// </summary>
-        private void SelectTheme(string aihe)
+        private void ResetDifficultySide()
         {
-            selectedAihe = aihe;
+            selectedCategory = null;
+            selectedTheme = null;
+            selectedTier = null;
 
-            SetupTierButton(t1Button, t1ObjectiveText, aihe, DifficultyTier.T1);
-            SetupTierButton(t2Button, t2ObjectiveText, aihe, DifficultyTier.T2);
-            SetupTierButton(t3Button, t3ObjectiveText, aihe, DifficultyTier.T3);
+            startGameButton.gameObject.SetActive(false);
+
+            t1Button.interactable = false;
+            t2Button.interactable = false;
+            t3Button.interactable = false;
+            t1StatusText.text = "";
+            t2StatusText.text = "";
+            t3StatusText.text = "";
+
+            RefreshTierHighlights();
 
             foreach (var themeButton in spawnedThemeButtons)
-                themeButton.Background.color = themeButton.Aihe == aihe ? themeSelectedColor : themeNormalColor;
+                themeButton.Background.color = normalColor;
         }
 
         /// <summary>
-        /// Enables/disables a tier button depending on whether that tier's bank has been
-        /// imported yet, and shows its Oppimistavoite -- this is the "objective visible when
-        /// picking difficulty" behavior, driven directly from QuestionBank.oppimistavoite.
+        /// Builds category buttons dynamically from available themes and category metadata.
         /// </summary>
-        private void SetupTierButton(Button button, TMP_Text objectiveText, string aihe, DifficultyTier tier)
+        private void ShowCategorySelect()
         {
-            var bank = availableBanks.FirstOrDefault(b => b.aihe == aihe && b.tier == tier);
-            bool available = bank != null && bank.questions.Count > 0;
+            foreach (Transform child in categoryList)
+            {
+                if (child == categoryButtonTemplate.transform) continue;
+                Destroy(child.gameObject);
+            }
+
+            foreach (var category in availableThemes.Select(t => t.category).Distinct())
+            {
+                var info = categories.FirstOrDefault(c => c.category == category);
+                var clone = Instantiate(categoryButtonTemplate, categoryList);
+                clone.gameObject.SetActive(true);
+                clone.Label.text = info != null && !string.IsNullOrEmpty(info.displayName) ? info.displayName : category;
+                clone.ObjectiveText.text = info != null ? info.description : "";
+
+                var captured = category;
+                clone.Button.onClick.AddListener(() =>
+                {
+                    selectedCategory = captured;
+                    ShowThemeAndDifficultySelect();
+                });
+            }
+
+            SetActivePanel(categorySelectPanel);
+        }
+
+        /// <summary>
+        /// Selects a themeInfo and resets the current difficulty selection and refreshes tier availability highlights.
+        /// </summary>
+        private void SelectTheme(string category, string theme)
+        {
+            selectedCategory = category;
+            selectedTheme = theme;
+            selectedTier = null;
+            startGameButton.gameObject.SetActive(false);
+
+            SetupTierButton(t1Button, t1StatusText, category, theme, DifficultyTier.T1);
+            SetupTierButton(t2Button, t2StatusText, category, theme, DifficultyTier.T2);
+            SetupTierButton(t3Button, t3StatusText, category, theme, DifficultyTier.T3);
+
+            RefreshTierHighlights();
+
+            foreach (var themeButton in spawnedThemeButtons)
+                themeButton.Background.color = (themeButton.Category == category && themeButton.Theme == theme) ? selectedColor : normalColor;
+        }
+
+        /// <summary>
+        /// Updates availability state for a single tier button based on whether there are any questions/pairs for the selected themeInfo and tier.
+        /// </summary>
+        private void SetupTierButton(Button button, TMP_Text statusText, string category, string theme, DifficultyTier tier)
+        {
+            bool available = selectedMode == GameModeType.MultipleChoice
+                ? availableBanks.Any(b => b.category == category && b.theme == theme && b.tier == tier && b.questions.Count > 0)
+                : availableMatchPairSets.Any(s => s.category == category && s.theme == theme && s.tier == tier && s.pairs.Count > 0);
 
             button.interactable = available;
-            objectiveText.text = available ? bank.oppimistavoite : "Ei vielä saatavilla";
+            statusText.text = available ? "Saatavilla" : "Ei vielä saatavilla";
         }
 
-        private void StartQuiz(DifficultyTier tier)
+        private void SelectTier(DifficultyTier tier)
         {
-            var banksForTheme = availableBanks.Where(b => b.aihe == selectedAihe).ToList();
-            SetActivePanel(quizScreen);
-            quizView.BeginRound(banksForTheme, selectedAihe, tier, questionsPerRound);
+            selectedTier = tier;
+            startGameButton.gameObject.SetActive(true);
+            RefreshTierHighlights();
         }
 
+        private void RefreshTierHighlights()
+        {
+            t1ButtonBackground.color = selectedTier == DifficultyTier.T1 ? selectedColor : normalColor;
+            t2ButtonBackground.color = selectedTier == DifficultyTier.T2 ? selectedColor : normalColor;
+            t3ButtonBackground.color = selectedTier == DifficultyTier.T3 ? selectedColor : normalColor;
+        }
+
+        /// <summary>
+        /// Starts the currently selected game mode using the selected themeInfo and difficulty tier.
+        /// </summary>
+        private void StartGame()
+        {
+            if (selectedTier == null) return;
+            var tier = selectedTier.Value;
+
+            if (selectedMode == GameModeType.MultipleChoice)
+            {
+                var banksForTheme = availableBanks
+                    .Where(b => b.category == selectedCategory && b.theme == selectedTheme)
+                    .ToList();
+
+                var themeInfo = availableThemes.FirstOrDefault(t => t.category == selectedCategory && t.theme == selectedTheme);
+                quizTopBarThemeText.text = themeInfo != null
+                    ? (string.IsNullOrEmpty(themeInfo.displayName) ? themeInfo.theme : themeInfo.displayName)
+                    : "";
+
+                SetActivePanel(quizScreen);
+                quizView.BeginRound(banksForTheme, selectedCategory, tier, questionsPerRound);
+            }
+            else
+            {
+                var setsForTheme = availableMatchPairSets
+                    .Where(s => s.category == selectedCategory && s.theme == selectedTheme)
+                    .ToList();
+                SetActivePanel(matchPairScreen);
+                matchPairView.BeginRound(setsForTheme, selectedCategory, tier);
+            }
+        }
+
+        /// <summary>
+        /// Shows one panel and hides all other top level screens.
+        /// </summary>
         private void SetActivePanel(GameObject panelToShow)
         {
             mainMenuPanel.SetActive(panelToShow == mainMenuPanel);
+            categorySelectPanel.SetActive(panelToShow == categorySelectPanel);
             themeAndDifficultyPanel.SetActive(panelToShow == themeAndDifficultyPanel);
             quizScreen.SetActive(panelToShow == quizScreen);
+            matchPairScreen.SetActive(panelToShow == matchPairScreen);
         }
     }
 }

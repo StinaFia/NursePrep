@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-036
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-036
+  category: LAA
+  theme: TUR
+  tier: 0
+  questionText: "Miten tulee toimia, jos huomaat l\xE4\xE4kevirheen ennen l\xE4\xE4kkeen
+    antamista?"
+  options:
+  - "Antaa l\xE4\xE4ke normaalisti, jos potilas odottaa"
+  - "Korjata tilanne ennen l\xE4\xE4kkeen antamista ja toimia organisaation ohjeiden
+    mukaisesti"
+  - "Odottaa seuraavaa ty\xF6vuoroa"
+  - "H\xE4vitt\xE4\xE4 l\xE4\xE4ke kertomatta asiasta kenellek\xE4\xE4n"
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "L\xE4\xE4kevirheen havaitseminen ennen l\xE4\xE4kkeen antamista
+    on mahdollisuus ehk\xE4ist\xE4 haitta potilaalle."
+  rationale: "Jos l\xE4\xE4kevirhe havaitaan ennen l\xE4\xE4kkeen antamista, tilanne
+    tulee korjata v\xE4litt\xF6m\xE4sti ja toimia ty\xF6paikan ohjeiden mukaisesti."
+  professionalPatch: "Virheen huomaaminen ei ole ep\xE4onnistuminen \u2013 t\xE4rkeint\xE4
+    on toimia tilanteessa oikein."
