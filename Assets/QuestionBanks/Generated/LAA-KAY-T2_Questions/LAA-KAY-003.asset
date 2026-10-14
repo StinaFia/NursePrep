@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-003
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-003
+  category: LAA
+  theme: KAY
+  tier: 1
+  questionText: "Miksi potilaalle kerrotaan etuk\xE4teen, mit\xE4 l\xE4\xE4kkeen
+    antamisen aikana tapahtuu?"
+  options:
+  - "Potilas ehtii valmistautua tilanteeseen ja tiet\xE4\xE4, mit\xE4 tapahtuu."
+  - "L\xE4\xE4kkeen vaikutus alkaa nopeammin."
+  - "Hoitajan ty\xF6 nopeutuu."
+  - "Potilaan ei tarvitse en\xE4\xE4 kysy\xE4 mit\xE4\xE4n."
+  correctIndices: 000000000100000002000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Ei aivan oikein. Pohdi, miten tieto tulevasta auttaa potilasta.
+  rationale: "Selke\xE4 ennakkokertominen lis\xE4\xE4 turvallisuuden tunnetta ja
+    tukee hyv\xE4\xE4 vuorovaikutusta."
+  professionalPatch: "Lyhytkin selitys lis\xE4\xE4 usein potilaan turvallisuuden
+    tunnetta ja vahvistaa luottamusta hoitajaan."

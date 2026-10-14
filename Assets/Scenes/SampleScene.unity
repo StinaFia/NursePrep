@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 48519862}
   - component: {fileID: 48519861}
   m_Layer: 5
-  m_Name: T3
+  m_Name: T3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: T3 - Kokemuksellinen oppiminen
+  m_text: "Kokemuksellinen oppiminen\nYksi, useampi tai ei yht\xE4\xE4n oikeaa vastausta"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -595,8 +595,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 120, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1608,7 +1608,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 470, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190112892
 MonoBehaviour:
@@ -3004,7 +3004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3781,13 +3781,16 @@ MonoBehaviour:
   professionalTipRow: {fileID: 534430654}
   professionalTipText: {fileID: 213781514}
   nextButton: {fileID: 2072942434}
+  nextButtonLabel: {fileID: 379422115}
   resultPanel: {fileID: 568043382}
   topBarThemeText: {fileID: 910249752}
   scoreText: {fileID: 236781084}
   retryButton: {fileID: 1419884950}
   normalOptionColor: {r: 0.9529412, g: 0.95686275, b: 0.94509804, a: 0.54901963}
-  selectedOptionColor: {r: 1, g: 0.8363855, b: 0.80817604, a: 0.7607843}
+  selectedOptionColor: {r: 0.7878841, g: 0.8698706, b: 0.9245283, a: 0.54901963}
+  wrongColor: {r: 1, g: 0.87, b: 0.84, a: 0.7607843}
   correctColor: {r: 0.8117647, g: 0.9098039, b: 0.827451, a: 0.54901963}
+  missedCorrectColor: {r: 0.89, g: 0.949, b: 0.898, a: 0.47058824}
 --- !u!114 &431822822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4089,7 +4092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4308,7 +4311,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 550, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468167972
 MonoBehaviour:
@@ -4896,8 +4899,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 731.7583, y: -215}
-  m_SizeDelta: {x: 1463.5166, y: 0}
+  m_AnchoredPosition: {x: 642.1548, y: -215}
+  m_SizeDelta: {x: 1284.3096, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534430656
 MonoBehaviour:
@@ -5649,7 +5652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6065,7 +6068,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6798,7 +6801,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 560, y: 100}
+  m_SizeDelta: {x: 620, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &830429614
 MonoBehaviour:
@@ -7342,7 +7345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7438,7 +7441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8070,7 +8073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8324,7 +8327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -10184,7 +10187,7 @@ GameObject:
   - component: {fileID: 1383663280}
   - component: {fileID: 1383663279}
   m_Layer: 5
-  m_Name: T2
+  m_Name: T2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10229,7 +10232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "T2 - Ammatillinen p\xE4\xE4t\xF6ksenteko"
+  m_text: "Ammatillinen p\xE4\xE4t\xF6ksenteko\nYksi tai useampi oikea vastaus\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10256,8 +10259,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11430,7 +11433,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: T1 - Perustiedot & muistaminen
+  m_text: 'Perustiedot & muistaminen
+
+    Yksi oikea vastaus
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11457,8 +11464,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11644,6 +11651,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1441ca21d31ce3d4a802f83d7a10cbc9, type: 2}
   - {fileID: 11400000, guid: e9cfb4a4394af4b449e26f0d3f93467e, type: 2}
   - {fileID: 11400000, guid: e35e330183480414693e3f70cfa82721, type: 2}
+  - {fileID: 11400000, guid: 5aab897ef57beb14db4a064d1b8726e0, type: 2}
   availableMatchPairSets: []
   questionsPerRound: 10
   mainMenuPanel: {fileID: 239779772}
@@ -12530,7 +12538,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13237,7 +13245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13677,7 +13685,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 38, y: 38}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721114021
 MonoBehaviour:
@@ -13699,7 +13707,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14171,7 +14179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14226,8 +14234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 781.7583, y: -709.99335}
-  m_SizeDelta: {x: 1463.5166, y: 0}
+  m_AnchoredPosition: {x: 692.1548, y: -709.99335}
+  m_SizeDelta: {x: 1284.3096, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782545731
 MonoBehaviour:
@@ -14505,7 +14513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14707,7 +14715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e10fbb30ae248c4295eecc2031899d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d946fa1b1f77cd74e8f8e4eff12c303f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
