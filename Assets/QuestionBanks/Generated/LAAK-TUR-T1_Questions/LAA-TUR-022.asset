@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-022
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-022
+  category: LAAK
+  theme: TUR
+  tier: 0
+  questionText: "Miksi potilaalle on hyv\xE4 kertoa, mit\xE4 l\xE4\xE4kett\xE4 h\xE4n
+    on saamassa?"
+  options:
+  - Se nopeuttaa kirjaamista
+  - "Potilas voi osallistua omaan l\xE4\xE4kehoitoonsa ja mahdolliset virheet voidaan
+    havaita ajoissa"
+  - "Potilas ei tarvitse tietoa l\xE4\xE4kkeest\xE4\xE4n"
+  - "Se v\xE4hent\xE4\xE4 l\xE4\xE4kehuoneen ty\xF6m\xE4\xE4r\xE4\xE4"
+  infoBubble: 
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Potilas on t\xE4rke\xE4 osa turvallista l\xE4\xE4kehoitoa."
+  rationale: "Potilaan osallistuminen lis\xE4\xE4 l\xE4\xE4kehoidon turvallisuutta
+    ja tukee hyv\xE4\xE4 hoitosuhdetta."
+  professionalPatch: "Kerro l\xE4\xE4kkeest\xE4 rauhallisesti ja anna potilaalle
+    mahdollisuus kysy\xE4."

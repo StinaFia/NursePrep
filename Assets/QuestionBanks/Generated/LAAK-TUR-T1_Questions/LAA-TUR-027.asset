@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-027
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-027
+  category: LAAK
+  theme: TUR
+  tier: 0
+  questionText: "Miksi my\xF6s mahdolliset haittavaikutukset tulee huomioida l\xE4\xE4kkeen
+    annon j\xE4lkeen?"
+  options:
+  - Haittavaikutukset ovat aina vaarattomia
+  - Haittavaikutukset voivat vaatia nopeaa reagointia ja jatkotoimia
+  - "Haittavaikutuksia esiintyy vain uusilla l\xE4\xE4kkeill\xE4"
+  - Haittavaikutuksia ei tarvitse seurata
+  infoBubble: 
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Muista, ett\xE4 my\xF6s odottamattomat oireet voivat liitty\xE4
+    annettuun l\xE4\xE4kkeeseen."
+  rationale: Haittavaikutusten varhainen tunnistaminen parantaa potilasturvallisuutta
+    ja mahdollistaa oikea-aikaisen hoidon.
+  professionalPatch: "Potilaan voinnin seuranta jatkuu my\xF6s l\xE4\xE4kkeen annon
+    j\xE4lkeen."

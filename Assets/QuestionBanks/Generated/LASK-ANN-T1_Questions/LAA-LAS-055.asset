@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-055
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-055
+  category: LASK
+  theme: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty 20 mmol l\xE4\xE4kett\xE4. Liuoksen
+    vahvuus on 2 mmol/ml. Kuinka monta millilitraa annat?"
+  options:
+  - 40 ml
+  - 10 ml
+  - 20 ml
+  - 5 ml
+  infoBubble: "Jaa m\xE4\xE4r\xE4tty mmol-m\xE4\xE4r\xE4 liuoksen vahvuudella mmol/ml."
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista m\xE4\xE4r\xE4tty mmol-m\xE4\xE4r\xE4 ja se, kuinka
+    monta mmol yhdess\xE4 millilitrassa on."
+  rationale: "20 mmol \xF7 2 mmol/ml = 10 ml."
+  professionalPatch: "Kun m\xE4\xE4r\xE4ys on mmol ja vahvuus mmol/ml, laskuperiaate
+    on sama kuin esimerkiksi mg- ja mg/ml-laskuissa."

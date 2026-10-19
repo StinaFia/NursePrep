@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-088
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-088
+  category: LASK
+  theme: ANN
+  tier: 0
+  questionText: "Potilas juo vuorokauden aikana 12 dl nestett\xE4 ja saa lis\xE4ksi
+    suonensis\xE4isesti 700 ml nestett\xE4. Nesteit\xE4 menetet\xE4\xE4n yhteens\xE4
+    1 600 ml. Mik\xE4 on laskennallinen nestetasapaino?"
+  options:
+  - "\u2212900 ml"
+  - +300 ml
+  - "\u2212400 ml"
+  - +400 ml
+  infoBubble: "Yhten\xE4ist\xE4 nestem\xE4\xE4rien yksik\xF6t ennen nestetasapainon
+    laskemista."
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Kaikkien nestem\xE4\xE4rien t\xE4ytyy olla samassa yksik\xF6ss\xE4
+    ennen yhteen- ja v\xE4hennyslaskuja."
+  rationale: "12 dl = 1 200 ml. Nesteit\xE4 saadaan yhteens\xE4 1 200 ml + 700 ml
+    = 1 900 ml. Nestetasapaino on 1 900 ml \u2212 1 600 ml = +300 ml."
+  professionalPatch: "Tee yksikk\xF6muunnokset ensin. Sen j\xE4lkeen laske saanti,
+    menetykset ja lopuksi nestetasapaino."

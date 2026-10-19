@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-058
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-058
+  category: LAAK
+  theme: KAY
+  tier: 0
+  questionText: "Mik\xE4 seuraavista kuvaa parhaiten hyv\xE4\xE4 l\xE4\xE4kkeen annon
+    kirjaamista?"
+  options:
+  - "\"L\xE4\xE4kkeet annettu.\""
+  - "\"Aamul\xE4\xE4kkeet annettu.\""
+  - "\"L\xE4\xE4kehoito hoidettu.\""
+  - "Organisaation ohjeiden mukainen, selke\xE4 ja toteutunutta l\xE4\xE4kehoitoa
+    kuvaava kirjaus."
+  infoBubble: 
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Hyv\xE4 kirjaus sis\xE4lt\xE4\xE4 riitt\xE4v\xE4t
+    tiedot toteutuneesta l\xE4\xE4kehoidosta."
+  rationale: "Hyv\xE4 kirjaus on selke\xE4, ajantasainen ja organisaation ohjeiden
+    mukainen."
+  professionalPatch: "Hyv\xE4 kirjaus auttaa my\xF6s seuraavaa potilasta hoitavaa
+    ammattilaista."

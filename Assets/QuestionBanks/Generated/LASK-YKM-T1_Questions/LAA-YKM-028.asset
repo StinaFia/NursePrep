@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-028
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-028
+  category: LASK
+  theme: YKM
+  tier: 0
+  questionText: "Mik\xE4 seuraavista vastaa samaa m\xE4\xE4r\xE4\xE4 kuin 2,5 dl?"
+  options:
+  - 25 ml
+  - 0,25 ml
+  - 2 500 ml
+  - 250 ml
+  infoBubble: 
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista desilitrojen ja millilitrojen v\xE4linen muunnos."
+  rationale: 1 dl = 100 ml, joten 2,5 dl = 250 ml.
+  professionalPatch: "Mieti ensin, kuinka monta millilitraa on yhdess\xE4 desilitrassa."

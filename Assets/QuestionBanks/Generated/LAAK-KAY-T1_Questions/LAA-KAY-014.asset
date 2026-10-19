@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-014
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-014
+  category: LAAK
+  theme: KAY
+  tier: 0
+  questionText: "Miksi potilaalle annetaan mahdollisuus ottaa l\xE4\xE4ke omaan tahtiinsa,
+    jos tilanne sen sallii?"
+  options:
+  - "Jotta l\xE4\xE4ke vaikuttaisi voimakkaammin."
+  - "Jotta hoitaja ehtii valmistella seuraavan l\xE4\xE4kkeen."
+  - "Jotta l\xE4\xE4kett\xE4 voidaan antaa suurempi annos."
+  - "Jotta l\xE4\xE4kkeen ottaminen olisi potilaalle mahdollisimman turvallista ja
+    miellytt\xE4v\xE4\xE4."
+  infoBubble: 
+  correctIndices: 03000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Pohdi asiaa potilaan n\xE4k\xF6kulmasta."
+  rationale: "Rauhallinen eteneminen lis\xE4\xE4 potilaan turvallisuuden tunnetta
+    ja helpottaa l\xE4\xE4kkeen ottamista."
+  professionalPatch: "Kiireet\xF6n kohtaaminen on osa hyv\xE4\xE4 l\xE4\xE4kehoitoa
+    ja potilaan arvostavaa kohtaamista."

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-037
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-037
+  category: LAAK
+  theme: KAY
+  tier: 0
+  questionText: "Miksi hengityst\xE4 pid\xE4tet\xE4\xE4n hetki l\xE4\xE4kkeen ottamisen
+    j\xE4lkeen, jos se on mahdollista?"
+  options:
+  - "Jotta l\xE4\xE4ke ehtii vaikuttaa hengitysteiss\xE4."
+  - "Jotta l\xE4\xE4ke ei maistuisi."
+  - "Jotta l\xE4\xE4kett\xE4 voidaan ottaa lis\xE4\xE4."
+  - Jotta hengitys tasaantuu nopeammin.
+  infoBubble: 
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, mit\xE4 hy\xF6ty\xE4 lyhyest\xE4 hengityksen
+    pid\xE4tt\xE4misest\xE4 on l\xE4\xE4kkeen vaikutukselle."
+  rationale: "Lyhyt hengityksen pid\xE4tt\xE4minen auttaa l\xE4\xE4kkeen laskeutumista
+    hengitysteihin."
+  professionalPatch: "Lyhytkin hengityksen pid\xE4tt\xE4minen on hy\xF6dyllist\xE4,
+    jos potilas siihen pystyy."

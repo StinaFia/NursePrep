@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-037
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-037
+  category: LASK
+  theme: ANN
+  tier: 0
+  questionText: "Potilas painaa 60 kg. L\xE4\xE4kett\xE4 on m\xE4\xE4r\xE4tty 20
+    mg/kg/vrk jaettuna nelj\xE4\xE4n yht\xE4 suureen annokseen. Kuinka paljon l\xE4\xE4keainetta
+    potilas saa yhdell\xE4 antokerralla?"
+  options:
+  - 80 mg
+  - 300 mg
+  - 1 200 mg
+  - 4 800 mg
+  infoBubble: "Laske ensin koko vuorokauden l\xE4\xE4keannos. Jaa se sen j\xE4lkeen
+    nelj\xE4\xE4n yht\xE4 suureen annokseen."
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "\xC4l\xE4 k\xE4yt\xE4 koko vuorokausiannosta yhden antokerran
+    annoksena. Laske vuorokausiannos ensin ja jaa se nelj\xE4\xE4n osaan."
+  rationale: "Vuorokausiannos on 60 kg \xD7 20 mg/kg/vrk = 1 200 mg/vrk. Yksi annos
+    on 1 200 mg \xF7 4 = 300 mg."
+  professionalPatch: "Merkint\xE4 mg/kg/vrk ja annosten lukum\xE4\xE4r\xE4 ovat kaksi
+    eri tietoa: ensin vuorokausiannos, sitten kerta-annos."

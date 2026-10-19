@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-006
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-006
+  category: LAAK
+  theme: KAY
+  tier: 0
+  questionText: "Miten toimit, jos potilas kertoo juuri ennen l\xE4\xE4kkeen antamista
+    voivansa huonosti?"
+  options:
+  - "Annat l\xE4\xE4kkeen normaalisti keskustelematta asiasta."
+  - "Keskeyt\xE4t tilanteen, selvit\xE4t voinnin ja toimit tilanteen edellytt\xE4m\xE4ll\xE4
+    tavalla."
+  - "Kehotat potilasta odottamaan seuraavaan l\xE4\xE4kkeenottoon asti."
+  - Poistut hakemaan seuraavaa potilasta.
+  infoBubble: 
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Potilaan vointi tulee aina huomioida ennen
+    l\xE4\xE4kkeen antamista."
+  rationale: "Potilaan vointi arvioidaan aina ennen l\xE4\xE4kkeen antamista. Tarvittaessa
+    l\xE4\xE4kkeen antoa siirret\xE4\xE4n tai tilanteesta konsultoidaan l\xE4\xE4k\xE4ri\xE4
+    tai muuta vastuuhenkil\xF6\xE4."
+  professionalPatch: "Kuuntele potilasta. Pienelt\xE4kin vaikuttava voinnin muutos
+    voi olla t\xE4rke\xE4 tieto l\xE4\xE4kehoidon kannalta."

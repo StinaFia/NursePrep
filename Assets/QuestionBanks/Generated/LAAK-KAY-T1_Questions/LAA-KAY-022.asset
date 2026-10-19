@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-022
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-022
+  category: LAAK
+  theme: KAY
+  tier: 0
+  questionText: "Miksi potilaan yksityisyydest\xE4 huolehditaan erityisen tarkasti
+    intiimialueelle annettavia l\xE4\xE4kkeit\xE4 annettaessa?"
+  options:
+  - Jotta huone pysyisi hiljaisena.
+  - "Jotta l\xE4\xE4kkeen vaikutus paranisi."
+  - Jotta potilas kokisi tilanteen mahdollisimman turvalliseksi ja arvokkaaksi.
+  - "Jotta l\xE4\xE4kkeen antaminen nopeutuisi."
+  infoBubble: 
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Pohdi, mik\xE4 merkitys yksityisyydell\xE4
+    on potilaan kokemukseen."
+  rationale: "Intiimit toimenpiteet edellytt\xE4v\xE4t potilaan yksityisyyden ja
+    ihmisarvon kunnioittamista."
+  professionalPatch: "Huolehdi aina n\xE4k\xF6suojasta ja etene potilaan tahdissa."

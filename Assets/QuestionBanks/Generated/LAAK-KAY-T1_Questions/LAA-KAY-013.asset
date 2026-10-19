@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-013
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-013
+  category: LAAK
+  theme: KAY
+  tier: 0
+  questionText: "Mit\xE4 tehd\xE4\xE4n, jos potilaalla on vaikeuksia niell\xE4 tabletti?"
+  options:
+  - Tabletti murskataan aina.
+  - "Potilasta pyydet\xE4\xE4n yritt\xE4m\xE4\xE4n uudelleen samalla tavalla."
+  - "Selvitet\xE4\xE4n turvallinen vaihtoehto ennen l\xE4\xE4kkeen antamista."
+  - "L\xE4\xE4ke j\xE4tet\xE4\xE4n antamatta ilman kirjaamista."
+  infoBubble: 
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Kaikkia tabletteja ei saa murskata eik\xE4
+    nielemisvaikeutta tule ohittaa."
+  rationale: "Nielemisvaikeus huomioidaan aina. Ennen l\xE4\xE4kkeen antamista varmistetaan
+    turvallinen antotapa l\xE4\xE4kekohtaisten ohjeiden mukaisesti."
+  professionalPatch: "Nielemisvaikeus on t\xE4rke\xE4 havainto. Pys\xE4hdy selvitt\xE4m\xE4\xE4n
+    turvallinen ratkaisu ennen l\xE4\xE4kkeen antamista."

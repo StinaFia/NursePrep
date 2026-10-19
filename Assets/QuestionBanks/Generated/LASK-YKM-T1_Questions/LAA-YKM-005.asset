@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-005
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-005
+  category: LASK
+  theme: YKM
+  tier: 0
+  questionText: Muunna 3 kg grammoiksi.
+  options:
+  - 300 g
+  - 3 000 g
+  - 30 000 g
+  - 0,003 g
+  infoBubble: 
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista kilogrammojen ja grammojen v\xE4linen muunnos."
+  rationale: "3 kg \xD7 1 000 = 3 000 g."
+  professionalPatch: 1 kg = 1 000 g.

@@ -30,6 +30,11 @@ namespace NursingQuiz.GameModes.MultipleChoice
         [SerializeField] private TMP_Text questionText;
         [SerializeField] private TMP_Text progressText;
         [SerializeField] private ResultView resultCard;
+
+        [Header("Info bubble (optional)")]
+        [SerializeField] private GameObject infoBubble;
+        [SerializeField] private TMP_Text infoBubbleText;
+
         [Header("Answer options (assign in order: A, B, C, D)")]
         [SerializeField] private List<AnswerOptionUI> options = new List<AnswerOptionUI>();
 
@@ -134,6 +139,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
         /// </summary>
         private void ResetUIForNewRound()
         {
+            SetInfoBubble(null);
             answerLocked = false;
             awaitingSubmit = false;
 
@@ -148,6 +154,15 @@ namespace NursingQuiz.GameModes.MultipleChoice
             feedbackPanel.SetActive(false);
             resultPanel.SetActive(false);
             nextButton.gameObject.SetActive(false);
+        }
+
+        private void SetInfoBubble(string text)
+        {
+            if (infoBubble == null || infoBubbleText == null) return;
+
+            bool hasText = !string.IsNullOrWhiteSpace(text);
+            infoBubble.SetActive(hasText);
+            infoBubbleText.text = hasText ? text : "";
         }
 
         /// <summary>
@@ -248,6 +263,10 @@ namespace NursingQuiz.GameModes.MultipleChoice
             answerLocked = true;
             awaitingSubmit = false;
 
+            // Hide the calculation hint "Infopallo" after answering.
+            if (infoBubble != null)
+                infoBubble.SetActive(false);
+
             var q = controller.LastAnsweredQuestion;
             bool correct = controller.LastAnswerWasCorrect;
 
@@ -320,6 +339,9 @@ namespace NursingQuiz.GameModes.MultipleChoice
         {
             answerLocked = false;
 
+            if (infoBubble != null)
+                infoBubble.SetActive(true);
+
             var q = controller.CurrentQuestion;
             if (q == null)
             {
@@ -329,6 +351,8 @@ namespace NursingQuiz.GameModes.MultipleChoice
 
             progressText.text = $"Kysymys {controller.CurrentQuestionNumber}/{controller.TotalQuestionsThisRound}";
             questionText.text = q.questionText;
+
+            SetInfoBubble(q.infoBubble);
 
             for (int i = 0; i < options.Count; i++)
             {
@@ -365,6 +389,7 @@ namespace NursingQuiz.GameModes.MultipleChoice
             awaitingSubmit = false;
 
             questionText.gameObject.SetActive(false);
+            SetInfoBubble(null);
             progressText.gameObject.SetActive(false);
             foreach (var o in options) o.gameObject.SetActive(false);
             feedbackPanel.SetActive(false);

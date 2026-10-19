@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-089
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-089
+  category: LASK
+  theme: ANN
+  tier: 0
+  questionText: "Potilas juo vuorokauden aikana 1 300 ml nestett\xE4 ja saa suonensis\xE4isesti
+    600 ml nestett\xE4. Virtsaa erittyy 1 450 ml, oksennusta 200 ml ja dreenieritett\xE4
+    100 ml. Mik\xE4 on laskennallinen nestetasapaino?"
+  options:
+  - +150 ml
+  - "\u2212150 ml"
+  - +1 750 ml
+  - "\u22121 750 ml"
+  infoBubble: "Selvit\xE4 saatujen ja menetettyjen nesteiden kokonaism\xE4\xE4r\xE4t
+    erikseen ennen nestetasapainon laskemista."
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "J\xE4senn\xE4 teht\xE4v\xE4 kahteen ryhm\xE4\xE4n: saadut nesteet
+    ja menetetyt nesteet. Laske niiden kokonaism\xE4\xE4r\xE4t ennen erotusta."
+  rationale: "Saadut nesteet: 1 300 ml + 600 ml = 1 900 ml. Menetetyt nesteet: 1
+    450 ml + 200 ml + 100 ml = 1 750 ml. Nestetasapaino: 1 900 ml \u2212 1 750 ml
+    = +150 ml."
+  professionalPatch: "Pitk\xE4ss\xE4 teht\xE4v\xE4ss\xE4 voit kirjoittaa v\xE4lituloksiksi
+    erikseen saanti yhteens\xE4 ja menetykset yhteens\xE4."

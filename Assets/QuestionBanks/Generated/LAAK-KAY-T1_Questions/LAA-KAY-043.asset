@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-043
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-043
+  category: LAAK
+  theme: KAY
+  tier: 0
+  questionText: "Miksi potilasta pyydet\xE4\xE4n n\xE4ytt\xE4m\xE4\xE4n itse l\xE4\xE4kkeen
+    ottaminen ohjauksen j\xE4lkeen?"
+  options:
+  - "Jotta voidaan varmistaa, ett\xE4 ohjaus on ymm\xE4rretty oikein."
+  - "Jotta l\xE4\xE4kkeen vaikutus voidaan arvioida heti."
+  - "Jotta l\xE4\xE4kett\xE4 voidaan ottaa toinen annos."
+  - Jotta kirjaaminen helpottuu.
+  infoBubble: 
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Mieti, mik\xE4 on potilaan oman n\xE4ytt\xE4misen
+    t\xE4rkein tarkoitus."
+  rationale: "Kun potilas n\xE4ytt\xE4\xE4 l\xE4\xE4kkeen ottamisen itse, mahdolliset
+    virheet voidaan huomata ja korjata heti."
+  professionalPatch: "Pyyd\xE4 potilasta n\xE4ytt\xE4m\xE4\xE4n l\xE4\xE4kkeen ottaminen
+    omin sanoin annetun ohjauksen j\xE4lkeen. Se kertoo usein enemm\xE4n kuin pelkk\xE4
+    \"ymm\xE4rsin\"."
