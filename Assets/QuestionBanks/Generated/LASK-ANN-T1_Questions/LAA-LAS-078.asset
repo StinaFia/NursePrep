@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-078
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-078
+  category: LASK
+  theme: ANN
+  tier: 0
+  questionText: "Potilaalle on m\xE4\xE4r\xE4tty l\xE4\xE4kett\xE4 45 mg. L\xE4\xE4kkeen
+    vahvuus on 30 mg/ml. Valmisteen annostelijalla 1 ml = 20 tippaa. Kuinka monta
+    tippaa annat?"
+  options:
+  - 15 tippaa
+  - 30 tippaa
+  - 45 tippaa
+  - 60 tippaa
+  infoBubble: "Selvit\xE4 ensin m\xE4\xE4r\xE4tty\xE4 l\xE4\xE4keannosta vastaava
+    tilavuus. Tippakerrointa tarvitset vasta sen j\xE4lkeen."
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Etene yksikk\xF6 kerrallaan: l\xE4\xE4keainem\xE4\xE4r\xE4st\xE4
+    tilavuuteen ja tilavuudesta tippoihin."
+  rationale: "Tarvittava tilavuus on 45 mg \xF7 30 mg/ml = 1,5 ml. Tippam\xE4\xE4r\xE4
+    on 1,5 ml \xD7 20 tippaa/ml = 30 tippaa."
+  professionalPatch: "Monivaiheisessa laskussa tarkista jokaisen vaiheen j\xE4lkeen,
+    miss\xE4 yksik\xF6ss\xE4 tuloksesi on."

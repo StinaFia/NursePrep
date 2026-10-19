@@ -56,7 +56,7 @@ namespace NursingQuiz.EditorTools
         private static readonly string[] RequiredColumns =
         {
             "Tunniste", "Kysymys", "A", "B", "C", "D", "Oikea vastaus",
-            "Palaute oikein", "Palaute väärin", "Perustelu"
+            "Palaute oikein", "Palaute väärin", "Perustelu", 
         };
 
         [MenuItem("Nursing Quiz/Import Question Banks")]
@@ -245,11 +245,12 @@ namespace NursingQuiz.EditorTools
                 question.incorrectFeedback = Get(row, columnMap, "Palaute väärin");
                 question.rationale = Get(row, columnMap, "Perustelu");
 
-                // Support both legacy quiz files with "Ammattilaisen merkki" and newer ones with "Laskuvinkki" column.
+                /// Support both legacy quiz files with "Ammattilaisen merkki" and newer ones with "Laskuvinkki" column.
                 string patch = "";
                 if (columnMap.ContainsKey("Ammattilaisen merkki")) patch = Get(row, columnMap, "Ammattilaisen merkki");
                 if (string.IsNullOrWhiteSpace(patch) && columnMap.ContainsKey("Laskuvinkki")) patch = Get(row, columnMap, "Laskuvinkki");
                 question.professionalPatch = patch;
+                question.infoBubble = Get(row, columnMap, "Infopallo");
                 EditorUtility.SetDirty(question);
                 bank.questions.Add(question);
             }

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-011
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-011
+  category: LAAK
+  theme: TUR
+  tier: 0
+  questionText: "Voiko kaikkien kapseleiden sis\xE4ll\xF6n tyhjent\xE4\xE4 ruokaan
+    tai nesteeseen?"
+  options:
+  - Vain antibioottikapselit voidaan avata
+  - "Kyll\xE4 voi"
+  - "Ei, asia tulee aina varmistaa l\xE4\xE4kekohtaisista ohjeista"
+  - "Kaikki kapselit tulee avata ennen l\xE4\xE4kkeen antoa"
+  infoBubble: 
+  correctIndices: 02000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Muista, ett\xE4 kapselin avaaminen voi muuttaa l\xE4\xE4kkeen
+    vaikutusta."
+  rationale: "Kaikkia kapseleita ei saa avata. L\xE4\xE4kekohtaiset ohjeet ratkaisevat,
+    miten l\xE4\xE4ke voidaan antaa turvallisesti."
+  professionalPatch: "Turvallinen l\xE4\xE4kehoito perustuu aina l\xE4\xE4kekohtaisten
+    ohjeiden noudattamiseen."

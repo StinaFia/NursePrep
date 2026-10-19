@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a736ef29d12d474aaadc284ea9b80e9, type: 3}
+  m_Name: LAAK-PER-T1
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionBank
+  category: LAAK
+  theme: PER
+  tier: 0
+  sourceFileName: LAAK-PER-laakehoito_t1_tietovisa_perustiedot.csv
+  questions:
+  - {fileID: 11400000, guid: ad60324e629b62b49891510676c5e77d, type: 2}
+  - {fileID: 11400000, guid: 718b62d8909a04a45805f6ff6b73b89e, type: 2}
+  - {fileID: 11400000, guid: e01139b84721836459dc6788f79bb3e8, type: 2}
+  - {fileID: 11400000, guid: e23ffc2a83eabb24f86165d4eaba279c, type: 2}
+  - {fileID: 11400000, guid: 6c871fc727f428b449ab6615b566311f, type: 2}
+  - {fileID: 11400000, guid: cda27a11157310948b3814bbeb7dafa0, type: 2}
+  - {fileID: 11400000, guid: 46a26d236e2dba547a9d34773a0a0199, type: 2}
+  - {fileID: 11400000, guid: 89db314832734404ab58e07b39329504, type: 2}
+  - {fileID: 11400000, guid: bf528106ce6fa1c41ad38aa63468eacd, type: 2}
+  - {fileID: 11400000, guid: 24faf04c3078136419e9fad4a7fe49a6, type: 2}
+  - {fileID: 11400000, guid: 76bdec38d5a21424ba35387b2b2c6e39, type: 2}
+  - {fileID: 11400000, guid: 17381c37882cf8b428a38a5a5b33f31b, type: 2}
+  - {fileID: 11400000, guid: 82809471b4a32d44dafceb51e7614928, type: 2}
+  - {fileID: 11400000, guid: 2d58b455e05fda34e81544fbce000c4b, type: 2}
+  - {fileID: 11400000, guid: a566a4500f92f6647815d932845adf4b, type: 2}
+  - {fileID: 11400000, guid: 4573f241b8d569f4a9acf252d6d7b0f1, type: 2}
+  - {fileID: 11400000, guid: 5e116842321981c47852df6113045263, type: 2}
+  - {fileID: 11400000, guid: b7cce2e29e3861240b6fe4d53136af18, type: 2}
+  - {fileID: 11400000, guid: 40f3d4bf26ec2714d947354beea2e8ff, type: 2}
+  - {fileID: 11400000, guid: 6c1eac2bd5b18d14193e26226117c02c, type: 2}
+  - {fileID: 11400000, guid: 5caefa64b6e62b946b9c219957ee087a, type: 2}
+  - {fileID: 11400000, guid: 15dee85601303374ba11e8e2e3789068, type: 2}

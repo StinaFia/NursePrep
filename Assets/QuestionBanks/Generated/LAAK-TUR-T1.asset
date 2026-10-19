@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a736ef29d12d474aaadc284ea9b80e9, type: 3}
+  m_Name: LAAK-TUR-T1
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionBank
+  category: LAAK
+  theme: TUR
+  tier: 0
+  sourceFileName: LAAK-TUR-laakehoito_t1_tietovisa_turvallinen laakehoito.csv
+  questions:
+  - {fileID: 11400000, guid: 3c0246a53757b7243b2e35d95c45f2d6, type: 2}
+  - {fileID: 11400000, guid: 8c26e6fd9a7ea274ca8be274221a3ada, type: 2}
+  - {fileID: 11400000, guid: 3cbc87cf60df5f94abf7a1cbe0eeac33, type: 2}
+  - {fileID: 11400000, guid: e51a8c6098cf8f143a162f3cf8281a7e, type: 2}
+  - {fileID: 11400000, guid: f47adfccefd7c63498d09a46e3e134e8, type: 2}
+  - {fileID: 11400000, guid: eac584cb966ce484eb66c930712ea1cb, type: 2}
+  - {fileID: 11400000, guid: a44c6e475aa0eb04297a7602795fe2c3, type: 2}
+  - {fileID: 11400000, guid: 551d043b57c33c94d875713ec90f81dd, type: 2}
+  - {fileID: 11400000, guid: 99fd68d2a3bc82c4ca04da5c72b7e9e9, type: 2}
+  - {fileID: 11400000, guid: dfd27fda4742a5645b357b5ba9ee5bc6, type: 2}
+  - {fileID: 11400000, guid: 045b00d20e07fa240ae895e699b0c262, type: 2}
+  - {fileID: 11400000, guid: 84d5ac860a49bc64e831622082415d68, type: 2}
+  - {fileID: 11400000, guid: 9aba02c03e1a8a44eb25d344e615fba4, type: 2}
+  - {fileID: 11400000, guid: 6385c1a949fdee84080ae61b3befe807, type: 2}
+  - {fileID: 11400000, guid: dca1298de94a7034ea0c9740bb41ea9d, type: 2}
+  - {fileID: 11400000, guid: ef53c33d9ffea7a418a9366905f96f7a, type: 2}
+  - {fileID: 11400000, guid: 50cb792eedd29794884a410efe3e3304, type: 2}
+  - {fileID: 11400000, guid: 6d9402d66140e8f4480637d209916667, type: 2}
+  - {fileID: 11400000, guid: 00e04acb954cecb48b6a63f20239339d, type: 2}
+  - {fileID: 11400000, guid: 2b9ff2ac46902a448abba9731c8e1deb, type: 2}
+  - {fileID: 11400000, guid: 74269991c71f8be4e93dac6d4a017d93, type: 2}
+  - {fileID: 11400000, guid: bd7f324eff057e841b5e7fb2b33b1f46, type: 2}
+  - {fileID: 11400000, guid: 1005633c38a9ffd4a80d037083be67a3, type: 2}
+  - {fileID: 11400000, guid: 90672c87bb0cba341a69c19616a4e95f, type: 2}
+  - {fileID: 11400000, guid: 91362f95c3ce1c24285350badc3feeb7, type: 2}
+  - {fileID: 11400000, guid: 8cafa75fa9323c04486f5e9188b44ec8, type: 2}
+  - {fileID: 11400000, guid: 01ee553a15312db40a4345dfe2b08ecc, type: 2}
+  - {fileID: 11400000, guid: 4505eced2f28748498bfd2a347f2555b, type: 2}
+  - {fileID: 11400000, guid: 50798cdfa07870847b8c551a9937e67b, type: 2}
+  - {fileID: 11400000, guid: 81382225402ceab44a77ba0c94d30d5a, type: 2}
+  - {fileID: 11400000, guid: a754fae4fa5c10c489eb7faac7bd07a0, type: 2}
+  - {fileID: 11400000, guid: d76c84ff072d5f544a500afcab380a3b, type: 2}
+  - {fileID: 11400000, guid: 169ef43ffae3fc24e8c69853885f3972, type: 2}
+  - {fileID: 11400000, guid: 48e4251a113e9e343b2dc869550579f0, type: 2}
+  - {fileID: 11400000, guid: 5fed45de93bf5104094bb46e207e230c, type: 2}
+  - {fileID: 11400000, guid: f3da6f30f119aa144b0b49fd1de4f0c2, type: 2}
+  - {fileID: 11400000, guid: 948b6b04978f28c46be766ffe74cb301, type: 2}
+  - {fileID: 11400000, guid: 7f002db2a7858164c9862566b399fc2d, type: 2}
+  - {fileID: 11400000, guid: 71360f49b61ba0045a740a3a084f0367, type: 2}
+  - {fileID: 11400000, guid: ee0008cea9bcfcd4d80517e025c99420, type: 2}

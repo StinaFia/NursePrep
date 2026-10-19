@@ -21,7 +21,7 @@ namespace NursingQuiz.Data
         public string tunniste;
         /// <summary>
         /// Category identifier.
-        /// Example: LAA or LAS.
+        /// Example: LAAK or LASK.
         /// </summary>
         public string category;
         /// <summary>
@@ -36,7 +36,9 @@ namespace NursingQuiz.Data
         /// <summary>
         /// Answer option texts in display order (A-D).
         /// </summary>
-        public List<string> options = new List<string>(); 
+        public List<string> options = new List<string>();
+
+        [TextArea(1, 4)] public string infoBubble;
 
         [Tooltip("0-based indices into 'options' that are correct. Empty list = no correct answer (T3 only).")]
         public List<int> correctIndices = new List<int>();

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-001
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-001
+  category: LAAK
+  theme: KAY
+  tier: 0
+  questionText: "Miksi k\xE4det desinfioidaan ennen l\xE4\xE4kkeen antamista?"
+  options:
+  - Suojataan potilasta mikrobeilta.
+  - "Helpotetaan l\xE4\xE4kkeen imeytymist\xE4."
+  - "Nopeutetaan l\xE4\xE4kkeen vaikutusta."
+  - "Estet\xE4\xE4n l\xE4\xE4kkeen haihtuminen."
+  infoBubble: 
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Ei aivan oikein. Kiinnit\xE4 huomiota siihen, miten k\xE4sihygienia
+    liittyy potilasturvallisuuteen."
+  rationale: "Hyv\xE4 k\xE4sihygienia v\xE4hent\xE4\xE4 mikrobien siirtymist\xE4
+    hoitajasta potilaaseen ja on t\xE4rke\xE4 osa turvallista l\xE4\xE4kehoitoa."
+  professionalPatch: "K\xE4sien desinfiointi tehd\xE4\xE4n aina juuri ennen l\xE4\xE4kkeen
+    k\xE4sittely\xE4 ja antamista, vaikka k\xE4ytt\xE4isit suojak\xE4sineit\xE4."

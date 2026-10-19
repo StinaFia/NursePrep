@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-TUR-014
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-TUR-014
+  category: LAAK
+  theme: TUR
+  tier: 0
+  questionText: "Miksi osa l\xE4\xE4kkeist\xE4 otetaan tyhj\xE4\xE4n mahaan?"
+  options:
+  - "Siksi, ett\xE4 l\xE4\xE4ke imeytyy suunnitellulla tavalla"
+  - Maku paranee
+  - "Kaikki l\xE4\xE4kkeet tulee ottaa tyhj\xE4\xE4n mahaan"
+  - "Sill\xE4 ei ole merkityst\xE4"
+  infoBubble: 
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista aina l\xE4\xE4kkeen ottamiseen liittyv\xE4t ohjeet."
+  rationale: "Osa l\xE4\xE4kkeist\xE4 tarvitsee tyhj\xE4n mahan imeyty\xE4kseen oikein
+    ja saavuttaakseen suunnitellun vaikutuksen."
+  professionalPatch: "Hyv\xE4 potilasohjaus tukee l\xE4\xE4kehoidon onnistumista."

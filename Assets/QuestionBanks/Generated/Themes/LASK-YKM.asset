@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efc970b14c2cca4daeb097aecffac11, type: 3}
+  m_Name: LASK-YKM
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.ThemeInfo
+  category: LASK
+  theme: YKM
+  displayName: "Yksikk\xF6muunnokset"
+  oppimistavoite: "Opiskelija osaa tehd\xE4 l\xE4\xE4kelaskennassa tarvittavia yksikk\xF6muunnoksia
+    ja k\xE4ytt\xE4\xE4 yksik\xF6it\xE4 oikein."

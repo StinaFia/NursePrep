@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-YKM-017
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-YKM-017
+  category: LASK
+  theme: YKM
+  tier: 0
+  questionText: Muunna 1 litra millilitroiksi.
+  options:
+  - 100 ml
+  - 1 000 ml
+  - 10 ml
+  - 10 000 ml
+  infoBubble: 
+  correctIndices: 01000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista litrojen ja millilitrojen v\xE4linen muunnos."
+  rationale: 1 l = 1 000 ml.
+  professionalPatch: Litroista millilitroiksi muunnettaessa kerrotaan 1 000:lla.

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-087
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-087
+  category: LASK
+  theme: ANN
+  tier: 0
+  questionText: "Potilas saa vuorokauden aikana nesteit\xE4 2 750 ml. Nesteit\xE4
+    menetet\xE4\xE4n virtsana 1 900 ml ja dreenieritteen\xE4 250 ml. Mik\xE4 on laskennallinen
+    nestetasapaino?"
+  options:
+  - +600 ml
+  - "\u2212600 ml"
+  - +2 150 ml
+  - +850 ml
+  infoBubble: "Laske ensin menetettyjen nesteiden kokonaism\xE4\xE4r\xE4 ja v\xE4henn\xE4
+    se saaduista nesteist\xE4."
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "\xC4l\xE4 vertaa saantia vain yhteen menetykseen. Laske ensin
+    kaikki ilmoitetut menetykset yhteen."
+  rationale: "Menetetyt nesteet ovat 1 900 ml + 250 ml = 2 150 ml. Nestetasapaino
+    on 2 750 ml \u2212 2 150 ml = +600 ml."
+  professionalPatch: "Monivaiheisessa nestetasapainolaskussa laske saanti ja menetykset
+    omiksi kokonaisuuksikseen ennen v\xE4hennyslaskua."

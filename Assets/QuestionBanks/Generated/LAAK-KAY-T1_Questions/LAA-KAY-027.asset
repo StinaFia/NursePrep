@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-KAY-027
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-KAY-027
+  category: LAAK
+  theme: KAY
+  tier: 0
+  questionText: "Miksi l\xE4\xE4kevoidetta levitet\xE4\xE4n vain ohjeen mukainen
+    m\xE4\xE4r\xE4?"
+  options:
+  - "Jotta l\xE4\xE4kkeen k\xE4ytt\xF6 olisi turvallista ja tarkoituksenmukaista."
+  - Jotta voide loppuisi nopeammin.
+  - "Jotta iho kostuisi enemm\xE4n."
+  - "Jotta l\xE4\xE4kett\xE4 olisi helpompi levitt\xE4\xE4."
+  infoBubble: 
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: Ei aivan oikein. Pohdi, miksi annostusohjeita noudatetaan.
+  rationale: "L\xE4\xE4kett\xE4 k\xE4ytet\xE4\xE4n aina m\xE4\xE4r\xE4tyn annoksen
+    mukaisesti. Liian suuri tai pieni m\xE4\xE4r\xE4 voi vaikuttaa hoidon onnistumiseen."
+  professionalPatch: "Noudata aina l\xE4\xE4kkeen annostusohjeita, vaikka voidetta
+    j\xE4isi viel\xE4 paljon pakkaukseen."

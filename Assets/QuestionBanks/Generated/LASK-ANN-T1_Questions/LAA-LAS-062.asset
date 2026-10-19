@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35de3eeb6470245bc92f931c9d823b, type: 3}
+  m_Name: LAA-LAS-062
+  m_EditorClassIdentifier: Assembly-CSharp::NursingQuiz.Data.QuestionData
+  tunniste: LAA-LAS-062
+  category: LASK
+  theme: ANN
+  tier: 0
+  questionText: "Potilaalle annetaan 30 tippaa l\xE4\xE4kett\xE4. Valmisteen annostelijalla
+    1 ml = 15 tippaa. Kuinka monta millilitraa annat?"
+  options:
+  - 2 ml
+  - 0,5 ml
+  - 15 ml
+  - 450 ml
+  infoBubble: "Jaa tippojen m\xE4\xE4r\xE4 yhden millilitran tippam\xE4\xE4r\xE4ll\xE4."
+  correctIndices: 00000000
+  correctFeedback: Hienoa! Vastasit oikein.
+  incorrectFeedback: "Tarkista, kuinka monta tippaa vastaa yht\xE4 millilitraa t\xE4ss\xE4
+    teht\xE4v\xE4ss\xE4."
+  rationale: "30 tippaa \xF7 15 tippaa/ml = 2 ml."
+  professionalPatch: "Kun muutat tipat millilitroiksi, jaa tippojen m\xE4\xE4r\xE4
+    annetulla tippakertoimella."
