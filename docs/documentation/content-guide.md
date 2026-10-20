@@ -11,12 +11,12 @@ The game content is organised into four levels:
 
 | Level | Example | In code |
 |---|---|---|
-| Category | Medication calculations / Lääkelaskut (`LAS`) | `category` |
+| Category | Medication calculations / Lääkelaskut (`LASK`) | `category` |
 | Theme | Unit conversions / Yksikkömuunnokset (`YKM`) | `theme` |
 | Difficulty tier | Tier 1–3 | `tier` (`T1`, `T2`, `T3`) |
-| Question | `LAS-YKM-001` | `QuestionData` |
+| Question | `LASK-YKM-001` | `QuestionData` |
 
-A theme is identified by the combination of category and theme codes, so the same theme code can be used in several categories (e.g. `LAA-YKM` and `LAS-YKM`) without the questions getting mixed up.
+A theme is identified by the combination of category and theme codes, so the same theme code can be used in several categories (e.g. `LAAK-YKM` and `LASK-YKM`) without the questions getting mixed up.
 
 ### Difficulty tiers
 
@@ -33,7 +33,7 @@ T2 and T3 are always presented as multi-select questions (several options can be
 ```
 Assets/
 └─ QuestionBanks/
-   ├─ CSV/                        (source files)
+   ├─ CSV/              (source files)
    │  ├─ Laakehoito/
    │  └─ Laakelaskut/             
    └─ Generated/        (assets created by the Importer)
@@ -57,11 +57,13 @@ Workflow summary:
 
 ### 1. Write the questions in a spreadsheet
 
+![Excel](../images/excel.png)
+
 The column names must be exactly as follows. The row above the header row may contain the learning objective in the form `Oppimistavoite: ...`.
 
 | Column | Required | Description |
 |---|---|---|
-| `Tunniste` | yes | Unique identifier of the question, e.g. `LAS-YKM-001`. Must be unique within the file |
+| `Tunniste` | yes | Unique identifier of the question, e.g. `LASK-YKM-001`. Must be unique within the file |
 | `Kysymys` | yes | The question text |
 | `A`, `B`, `C`, `D` | yes | Answer options, all four must be filled in |
 | `Oikea vastaus` | yes | The correct answer, see below |
@@ -76,13 +78,7 @@ The column names must be exactly as follows. The row above the header row may co
 - T2/T3, several correct answers: letters separated by commas, e.g. `A,C`
 - T3, no correct answer: `EI YHTÄÄN` (diacritics and letter case are optional)
 
-Example (semicolon as the delimiter):
 
-```csv
-Oppimistavoite: Opiskelija osaa muuntaa yksiköitä oikein.
-Tunniste;Kysymys;A;B;C;D;Oikea vastaus;Palaute oikein;Palaute väärin;Perustelu
-LAS-YKM-001;Kuinka monta milligrammaa on yksi gramma?;10 mg;100 mg;1000 mg;10 000 mg;C;Oikein!;Ei aivan.;1 g = 1000 mg.
-```
 
 ### 2. Save the CSV with the right name in the right folder
 
@@ -94,7 +90,7 @@ LAS-YKM-001;Kuinka monta milligrammaa on yksi gramma?;10 mg;100 mg;1000 mg;10 00
 <CATEGORY>-<THEME>-<anything>_t<1-3>_<anything>.csv
 ```
 
-Example: `LAA-PER-laakehoito_t1_tietovisa_perustiedot.csv` is interpreted as category `LAA`, theme `PER` and tier `T1`.
+Example: `LAAK-PER-laakehoito_t1_tietovisa_perustiedot.csv` is interpreted as category `LAAK`, theme `PER` and tier `T1`.
 
 The delimiter (comma, semicolon or tab) is detected from the file automatically.
 
@@ -127,6 +123,8 @@ The importer creates assets but does not automatically register them in the game
 
 Save the scene.
 
+![gameflowcontroller](../images/gameflowcontroller-content.png)
+
 ### 6. Test
 
 Play through the new theme at all imported difficulty tiers. A difficulty tier button can be selected only if questions have been imported for that theme and tier.
@@ -142,8 +140,9 @@ Play through the new theme at all imported difficulty tiers. A difficulty tier b
 ## Troubleshooting
 
 ### The theme does not appear in the game
+
+Check that:
 - The CSV file name follows the naming convention
 - The import completed without errors
 - The generated ThemeInfo asset has been added to GameFlowController > Available Themes
-- The generated QuestionBank asset has been added to GameFlowController > Available Banks.
-
+- The generated QuestionBank asset has been added to GameFlowController > Available Banks

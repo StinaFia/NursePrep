@@ -4,7 +4,7 @@ This document describes the code structure of the game, its limitations and idea
 
 <!-- [TODO: add the diagrams to the docs/images folder, e.g. ![Game structure](images/pelin_rakenne.png)] -->
 
-## ⌨ Code structure
+## 🏗️ Code structure
 
 Namespaces:
 
@@ -33,13 +33,16 @@ Namespaces:
 Main menu → Category selection → Theme and Difficulty selection → Game view → Results
 ```
 
-The number of questions in a round is set in the *Questions Per Round* field of the `GameFlowController` component (default 5).
+The number of questions in a round is set in the *Questions Per Round* field of the `GameFlowController` component (default 10).
 
 ### Multiple-choice game mode
 
-`GameFlowController` starts a round by calling `MultipleChoiceView.BeginRound` with the selected category and difficulty tier and the question banks of the selected theme. `MultipleChoiceView` requires a `MultipleChoiceController` component on the same object, which manages the logic of the round (selecting questions, evaluating answers and counting points) -> the view and the logic are separate from UI presentation.
+`GameFlowController` starts a round by calling `MultipleChoiceView.BeginRound` with the selected category and difficulty tier and the question banks of the selected theme. `MultipleChoiceView` requires a `MultipleChoiceController` component on the same object, which manages the logic of the round (selecting questions, evaluating answers and counting points). This keeps gameplay logic separate from UI presentation.
+
 
 **Answering by difficulty tier**
+
+Different difficulty tiers define how answers are submitted:
 
 | Tier | Answering |
 |---|---|
@@ -56,7 +59,7 @@ The number of questions in a round is set in the *Questions Per Round* field of 
 
 **Result screen (`ResultView`)**
 
-At the end of a round the screen shows the theme, the score in the form *correct / total* and stars. The number of stars is calculated from the share of correct answers (rounded to the total number of stars), and the unearned stars turn grey and shrink. The feedback message depends on the share of correct answers:
+At the end of a round the screen shows the theme, the score in the form *correct / total* and stars. The number of stars is calculated from the share of correct answers, and the unearned stars turn grey and shrink. The feedback message depends on the share of correct answers:
 
 | Correct answers | Message |
 |---|---|
