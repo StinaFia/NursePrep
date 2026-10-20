@@ -8,6 +8,20 @@ The application was developed for the Testbed project at Lapland University of A
 
 > **Note:** The game interface and question content are in Finnish.
 
+![Game screen](docs/images/game_screen.png)
+
+## 🎮 Play Online
+
+Play the latest WebGL version directly in your browser:
+
+https://stinafia.github.io/NursePrep/
+
+### Android APK
+Download the latest Android build from the Releases page.
+
+https://github.com/StinaFia/NursePrep/releases
+
+
 ## ✨ Features
 
 - Content organised by category, theme and difficulty tier (T1–T3)
@@ -28,7 +42,7 @@ The application was developed for the Testbed project at Lapland University of A
 1. Install Unity **6.3 LTS (6000.3.17f1)** through Unity Hub.
 2. Clone this repository.
 3. Open the project in Unity Hub (**Add > Add project from disk**).
-4. Open the main scene **[TODO: scene name]** and press Play.
+4. Open the main scene **SampleScene** and press Play.
 
 ## 📊 Content Workflow
 
@@ -38,12 +52,12 @@ The importer generates the required assets. Generated assets are then linked man
 
 ## 📋 Documentation
 
-- [Adding content](docs/content-guide.en.md): CSV structure, naming conventions and import workflow
-- [Architecture and further development](docs/architecture.en.md): project structure, design decisions and future development notes
+- [Adding content](docs/documentation/content-guide.md): CSV structure, naming conventions and import workflow
+- [Architecture and further development](docs/documentation/architecture.md): project structure, design decisions and future development notes
 
 ## 💼 Project Status
 
-The first playable version of NursePrep is complete and includes the multiple-choice game mode. The code structure allows further game modes to be added.
+The first playable version of NursePrep is complete and includes the multiple-choice game mode. The architecture is designed to support additional game modes.
 
 Ideas for future game modes:
 - Matching Pairs
@@ -51,12 +65,7 @@ Ideas for future game modes:
 - Correct Order
 - Experience-based Learning
 
-## 🧮 Disclaimer
+## ❗ Disclaimer
 
 The question content is intended as study support and is not clinical guidance.
 
-## 👥 Author and licence
-
-- Author: **[TODO]**
-- Commissioned by: Lapland University of Applied Sciences, Testbed project
-- Licence: **[TODO]**
