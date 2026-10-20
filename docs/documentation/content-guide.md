@@ -57,7 +57,7 @@ Workflow summary:
 
 ### 1. Write the questions in a spreadsheet
 
-![Excel](images/excel.png)
+![Excel](../images/excel.png)
 
 The column names must be exactly as follows. The row above the header row may contain the learning objective in the form `Oppimistavoite: ...`.
 
@@ -123,7 +123,7 @@ The importer creates assets but does not automatically register them in the game
 
 Save the scene.
 
-![](images/gameflowcontroller-content.png)
+![gameflowcontroller](../images/gameflowcontroller-content.png)
 
 ### 6. Test
 
